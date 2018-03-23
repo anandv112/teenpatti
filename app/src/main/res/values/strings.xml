@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Exchange</string>
+    <string name="language_english">English</string>
+    <string name="language_hindi">हिंदी</string>
+    <string name="language_gujarati">ગુજરાતી</string>
+    <string name="language_marathi">मराठी</string>
+    <string name="user_name">Name</string>
+</resources>

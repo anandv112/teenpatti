@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:src="@drawable/tpc_screenbg"
+        android:layout_gravity="center"
+        android:scaleType = "centerCrop"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/loadingouter"
+        android:src="@drawable/loadingbtnouter"
+        android:layout_gravity="center"
+        android:layout_width="160dp"
+        android:layout_height="160dp"/>
+    <ImageView
+        android:id="@+id/loadinginner"
+        android:src="@drawable/loadingbtninner"
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+    <ImageView
+        android:id="@+id/loadingbtntext"
+        android:src="@drawable/loadingbtntext"
+        android:layout_gravity="center"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
+    <ImageView
+        android:id="@+id/btnconnecting"
+        android:src="@drawable/btnconnecting"
+        android:layout_gravity="center"
+        android:layout_width="40dp"
+        android:layout_height="40dp"/>
+    <TextView
+        android:id="@+id/connectingtxt"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="CONNECTING"
+        android:textSize="8sp"
+        android:textColor="#000000" />
+
+    <!--<TextView-->
+        <!--android:id="@+id/signintxt"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="30dp"-->
+        <!--android:gravity="center"-->
+        <!--android:text="SIGNING IN"-->
+        <!--android:textColor="#000000" />-->
+    <!--<ImageView-->
+        <!--android:id="@+id/btnretrieve"-->
+        <!--android:src="@drawable/btnretrievingactivetable"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="40dp"/>-->
+    <!--<TextView-->
+        <!--android:id="@+id/retrievetxt"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="30dp"-->
+        <!--android:gravity="center"-->
+        <!--android:text="RETRIEVING-->
+ <!--ACTIVE TABLE"-->
+        <!--android:textColor="#000000" />-->
+
+</FrameLayout>
+
