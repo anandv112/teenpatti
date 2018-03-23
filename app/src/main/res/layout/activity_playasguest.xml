@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="affwl.com.exchange.PlayasguestActivity"
-    android:background="@drawable/tpc_screenbg"
+    android:background="@drawable/bg"
     android:orientation="horizontal">
 
     <ImageView
@@ -43,55 +43,49 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar0" />
+                android:src="@drawable/avatar1" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar1" />
+                android:src="@drawable/avatar2" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar2" />
+                android:src="@drawable/avatar3" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar3" />
+                android:src="@drawable/avatar4" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar4" />
+                android:src="@drawable/avatar5" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar5" />
+                android:src="@drawable/avatar6" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar6" />
-
+                android:src="@drawable/avatar7" />
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar7" />
+                android:src="@drawable/avatar8" />
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_margin="3dp"
-                android:src="@drawable/avtar8" />
         </LinearLayout>
 
         <LinearLayout
