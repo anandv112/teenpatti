@@ -38,7 +38,7 @@
             android:background="@drawable/playasguestnew"
             android:gravity="center"
             android:paddingLeft="20dp"
-            android:text="Play As Guest"
+            android:text="Playy As Guest"
             android:onClick="sendMessage"
             android:textColor="#ffffff"/>
 
