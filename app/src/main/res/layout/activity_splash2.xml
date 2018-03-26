@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/bg3"
     android:orientation="horizontal">
 
 
@@ -23,8 +23,8 @@
         android:id="@+id/loadingbtntext"
         android:src="@drawable/loadingbtntext"
         android:layout_gravity="center"
-        android:layout_width="60dp"
-        android:layout_height="60dp"/>
+        android:layout_width="40dp"
+        android:layout_height="40dp"/>
     <ImageView
         android:id="@+id/btnconnecting"
         android:src="@drawable/btnconnecting"

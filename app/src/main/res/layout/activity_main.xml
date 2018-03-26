@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="affwl.com.exchange.MainActivity"
-    android:background="@drawable/bg">
+    android:background="@drawable/bg3">
 
     <LinearLayout
         android:layout_width="wrap_content"
