@@ -35,7 +35,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/playasguest"
+            android:background="@drawable/playasguestnew"
             android:gravity="center"
             android:paddingLeft="20dp"
             android:text="Play As Guest"
