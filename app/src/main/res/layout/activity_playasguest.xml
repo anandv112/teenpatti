@@ -43,55 +43,49 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar0" />
+                android:src="@drawable/avatar1" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar1" />
+                android:src="@drawable/avatar2" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar2" />
+                android:src="@drawable/avatar3" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar3" />
+                android:src="@drawable/avatar4" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar4" />
+                android:src="@drawable/avatar5" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar5" />
+                android:src="@drawable/avatar6" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar6" />
+                android:src="@drawable/avatar7" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
-                android:src="@drawable/avtar7" />
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_margin="3dp"
-                android:src="@drawable/avtar8" />
+                android:src="@drawable/avatar8" />
         </LinearLayout>
 
         <LinearLayout
