@@ -4,8 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="@drawable/mainpagebkg"
     tools:context="affwl.com.exchange.MainActivity">
+    tools:context="affwl.com.exchange.MainActivity"
+    android:background="@drawable/bg3">
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -28,6 +32,7 @@
             android:layout_height="30dp"
             android:src="@drawable/chips_add" />
     </LinearLayout>
+
 
 
     <RelativeLayout
@@ -103,4 +108,24 @@
                 android:src="@drawable/loader_settings" />
         </LinearLayout>
     </RelativeLayout>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/rotatorchip_green"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/rotatorchip_red"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/rotatorchip_blue"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
 </RelativeLayout>
