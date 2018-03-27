@@ -9,13 +9,14 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.PopupWindow;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView showPopupBtn, closePopupBtn;
-    PopupWindow popupWindow;
-    RelativeLayout linearLayoutloader;
+    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn;
+    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow;
+    RelativeLayout RelativeLayoutloader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Popup for RateUS
         showPopupBtn = (ImageView) findViewById(R.id.rateus_btn_loader);
-        linearLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutrateus);
+        RelativeLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutloader);
 
         showPopupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,19 +34,19 @@ public class MainActivity extends AppCompatActivity {
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.rateus_popup,null);
 
-                closePopupBtn = (ImageView) customView.findViewById(R.id.close_rateus);
+                closeRateus = (ImageView) customView.findViewById(R.id.close_rateus);
 
                 //instantiate popup window
-                popupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+                RateuspopupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 
                 //display the popup window
-                popupWindow.showAtLocation(linearLayoutloader, Gravity.CENTER, 0, 0);
+                RateuspopupWindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
 
                 //close the popup window on button click
-                closePopupBtn.setOnClickListener(new View.OnClickListener() {
+                closeRateus.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        popupWindow.dismiss();
+                        RateuspopupWindow.dismiss();
                     }
                 });
 
@@ -54,28 +55,28 @@ public class MainActivity extends AppCompatActivity {
 
         // Popup for Help
         showPopupBtn = (ImageView) findViewById(R.id.help_btn_loader);
-        linearLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutrateus);
+        RelativeLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutloader);
 
         showPopupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View customView = layoutInflater.inflate(R.layout.rateus_popup,null);
+                View customView = layoutInflater.inflate(R.layout.help_popup,null);
 
-                closePopupBtn = (ImageView) customView.findViewById(R.id.close_rateus);
+                closeHelpBtn = (ImageView) customView.findViewById(R.id.close_helpus);
 
                 //instantiate popup window
-                popupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+                HelpUspopupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 
                 //display the popup window
-                popupWindow.showAtLocation(linearLayoutloader, Gravity.CENTER, 0, 0);
+                HelpUspopupWindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
 
                 //close the popup window on button click
-                closePopupBtn.setOnClickListener(new View.OnClickListener() {
+                closeHelpBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        popupWindow.dismiss();
+                        HelpUspopupWindow.dismiss();
                     }
                 });
 
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Popup for Leaderboard
         showPopupBtn = (ImageView) findViewById(R.id.trophy_btn_loader);
-        linearLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutrateus);
+        RelativeLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutloader);
 
         showPopupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,19 +94,19 @@ public class MainActivity extends AppCompatActivity {
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.rateus_popup,null);
 
-                closePopupBtn = (ImageView) customView.findViewById(R.id.close_rateus);
+                closeTrophyBtn = (ImageView) customView.findViewById(R.id.close_rateus);
 
                 //instantiate popup window
-                popupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+                TrophypopupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 
                 //display the popup window
-                popupWindow.showAtLocation(linearLayoutloader, Gravity.CENTER, 0, 0);
+                TrophypopupWindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
 
                 //close the popup window on button click
-                closePopupBtn.setOnClickListener(new View.OnClickListener() {
+                closeTrophyBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        popupWindow.dismiss();
+                        TrophypopupWindow.dismiss();
                     }
                 });
             }
