@@ -5,4 +5,13 @@
     <string name="language_gujarati">ગુજરાતી</string>
     <string name="language_marathi">मराठी</string>
     <string name="user_name">Name</string>
+    <string name="table_boot">Boot Value:</string>
+    <string name="table_pot">Pot Limit:</string>
+    <string name="table_max">Max Bet:</string>
+    <string name="close">CLOSE</string>
+    <string name="backtolobby">BACK TO LOBBY</string>
+    <string name="standup">STAND-UP</string>
+    <string name="nxtround">STAND-UP\nNEXT ROUND\n</string>
+    <string name="switchtble">SWITCH TABLE</string>
+
 </resources>

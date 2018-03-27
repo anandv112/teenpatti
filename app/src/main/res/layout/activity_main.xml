@@ -4,11 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:background="@drawable/mainpagebkg"
-    tools:context="affwl.com.exchange.MainActivity">
     tools:context="affwl.com.exchange.MainActivity"
     android:background="@drawable/bg3">
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/mainychips"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/yellowchips"
+                android:layout_margin="20dp"
+                android:onClick="sendTeenpattiPage"/>
+
+            <ImageView
+                android:id="@+id/mainbchips"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bluechips"
+                android:layout_margin="20dp"/>
+
+            <ImageView
+                android:id="@+id/mainlimegchips"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:src="@drawable/limegreenchips" />
+
+            <ImageView
+                android:id="@+id/mainorgchips"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/orangechips"
+                android:layout_margin="20dp"/>
+
+            <ImageView
+                android:id="@+id/darkbluechips"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/darkbluechips"
+                android:layout_margin="20dp"/>
+
+            <ImageView
+                android:id="@+id/blackchips"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/blackchips"
+                android:layout_margin="20dp"/>
+
+            <ImageView
+                android:id="@+id/cyanchips"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cyanchips"
+                android:layout_margin="20dp"/>
+
+            <ImageView
+                android:id="@+id/ygreenchips"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ygreenchips"
+                android:layout_margin="20dp"/>
+        </LinearLayout>
+    </HorizontalScrollView>
 
 
     <LinearLayout
@@ -62,7 +130,7 @@
         <TextView
             android:id="@+id/buy_chips_loader"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_margin="5dp"
@@ -108,24 +176,4 @@
                 android:src="@drawable/loader_settings" />
         </LinearLayout>
     </RelativeLayout>
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/rotatorchip_green"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/rotatorchip_red"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/rotatorchip_blue"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </LinearLayout>
 </RelativeLayout>
