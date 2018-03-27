@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="affwl.com.exchange.MainActivity"
-    android:background="@drawable/bg3">
+    android:background="@drawable/bg3"
+    android:id="@+id/linearLayoutloader">
 
     <HorizontalScrollView
         android:id="@+id/horizontalScroll"
@@ -155,25 +156,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:src="@drawable/loader_rateus" />
+                android:clickable="true"
+                android:src="@drawable/loader_rateus"
+                android:id="@+id/rateus_btn_loader"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:src="@drawable/loader_help" />
+                android:clickable="true"
+                android:src="@drawable/loader_help"
+                android:id="@+id/help_btn_loader"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:src="@drawable/loader_trophy" />
+                android:clickable="true"
+                android:src="@drawable/loader_trophy"
+                android:id="@+id/trophy_btn_loader"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:src="@drawable/loader_settings" />
+                android:clickable="true"
+                android:src="@drawable/loader_settings"
+                android:id="@+id/settings_btn_loader"/>
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>
