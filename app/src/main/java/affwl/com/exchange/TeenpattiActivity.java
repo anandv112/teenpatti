@@ -13,20 +13,22 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class TeenpattiActivity extends AppCompatActivity {
-    ImageView backbtn;
+    ImageView backbtn,infobtn,infoclosebtn;
     TextView closebtn;
-    PopupWindow popupWindow;
+    PopupWindow popupWindow,infopopupWindow;
     RelativeLayout relativeLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teenpatti);
 
-        backbtn=(ImageView) findViewById(R.id.back);
-        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
 
 
         //////////////// Popup for Backbutton ///////////////////
+
+
+        backbtn=(ImageView) findViewById(R.id.back);
+        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,9 +54,37 @@ public class TeenpattiActivity extends AppCompatActivity {
                 });
             }
         });
-    }
 
+    //////////////// Popup for InfoButton ///////////////////
 
+        infobtn=(ImageView) findViewById(R.id.info);
+        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
+
+        infobtn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //instantiate the popup.xml layout file
+            LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View customView = layoutInflater.inflate(R.layout.infogame_popup, null);
+
+            infoclosebtn = (ImageView) customView.findViewById(R.id.infoclose);
+
+            //instantiate popup window
+            infopopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+            //display the popup window
+            infopopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
+
+            //close the popup window on button click
+            infoclosebtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    infopopupWindow.dismiss();
+                }
+            });
+        }
+    });
+}
     /////////// Onclick for Backtolobby /////////////
 
     public void backtolobby(View view)
