@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 closeRateus = (ImageView) customView.findViewById(R.id.close_rateus);
 
                 //instantiate popup window
-                RateuspopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                RateuspopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
                 //display the popup window
                 RateuspopupWindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);

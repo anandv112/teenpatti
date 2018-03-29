@@ -13,9 +13,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class TeenpattiActivity extends AppCompatActivity {
-    ImageView backbtn,infobtn,infoclosebtn;
+    ImageView backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2;
     TextView closebtn;
-    PopupWindow popupWindow,infopopupWindow;
+    PopupWindow popupWindow,infopopupWindow,chatpopupWindow;
     RelativeLayout relativeLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +84,43 @@ public class TeenpattiActivity extends AppCompatActivity {
             });
         }
     });
+
+
+        //////////////// Popup for ChatButton ///////////////////
+
+        chatbtn=(ImageView) findViewById(R.id.chat);
+        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
+
+        chatbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.chat_popup, null);
+
+                chatclosebtn = (ImageView) customView.findViewById(R.id.chatclose);
+                chatclosebtn2 = (ImageView) customView.findViewById(R.id.chatclose2);
+                //instantiate popup window
+                chatpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                chatpopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
+
+                //close the popup window on button click
+                chatclosebtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        chatpopupWindow.dismiss();
+                    }
+                });
+                chatclosebtn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        chatpopupWindow.dismiss();
+                    }
+                });
+            }
+        });
 }
     /////////// Onclick for Backtolobby /////////////
 

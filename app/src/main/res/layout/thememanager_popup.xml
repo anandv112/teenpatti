@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/themeheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fb810404"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:padding="10dp"
+            android:text="THEME MANAGER"
+            android:textAlignment="center"
+            android:textColor="@color/colorYellowDark" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:src="@drawable/cross" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/themeheader"
+        android:background="@drawable/bg3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:background="#fbdc2e2e"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/fest"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/themelistlabelback"
+                    android:text="@string/festival"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="25dp" />
+
+
+                <TextView
+                    android:id="@+id/place"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/themelistlabelback"
+                    android:text="@string/places"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/sport"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/themelistlabelback"
+                    android:text="@string/sports"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/nature"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/themelistlabelback"
+                    android:text="@string/nature"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/mood"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/themelistlabelback"
+                    android:text="@string/mood"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/color"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/themelistlabelback"
+                    android:text="@string/colors"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="25dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="#94c90c0c"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Diwali"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorYellowDark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="₹ 10,000"
+                    android:textColor="@color/colorYellowDark" />
+
+                <ImageView
+                    android:id="@+id/tableview"
+                    android:layout_width="250dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="-10dp"
+                    android:src="@drawable/festtble" />
+
+                <ImageView
+                    android:id="@+id/themestand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/themestand" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/addnewpdmbtn"
+                    android:layout_gravity="center"
+                    android:text="PURCHASE"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBlack"
+                    android:paddingTop="10dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+
