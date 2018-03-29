@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         // Popup for RateUS
         showPopupBtn = findViewById(R.id.rateus_btn_loader);
@@ -84,21 +88,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
         // Popup for Leaderboard
-        showPopupBtn = (ImageView) findViewById(R.id.trophy_btn_loader);
+        ImageView showPopupBtnTropy = (ImageView) findViewById(R.id.trophy_btn_loader);
         RelativeLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutloader);
 
-        showPopupBtn.setOnClickListener(new View.OnClickListener() {
+        showPopupBtnTropy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View customView = layoutInflater.inflate(R.layout.rateus_popup,null);
+                View customView = layoutInflater.inflate(R.layout.leaderboard_popup,null);
 
-                closeTrophyBtn = (ImageView) customView.findViewById(R.id.close_rateus);
+
+                closeTrophyBtn = customView.findViewById(R.id.leaderboardclose);
 
                 //instantiate popup window
-                TrophypopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                TrophypopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
                 //display the popup window
                 TrophypopupWindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
@@ -110,6 +117,11 @@ public class MainActivity extends AppCompatActivity {
                         TrophypopupWindow.dismiss();
                     }
                 });
+
+                RecyclerView playerList = customView.findViewById(R.id.leaderboardlist);
+                playerList.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+                String[] values = {"1","2"};
+                playerList.setAdapter(new LeaderboardListAdapter(values));
             }
         });
 
