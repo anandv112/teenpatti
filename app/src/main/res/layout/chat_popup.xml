@@ -1,86 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/chatlayout">
 
     <LinearLayout
+        android:id="@+id/llchat_popup_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ccff0000"
-        android:weightSum="3"
-        android:id="@+id/llchat_popup_header">
+        android:background="#84af0808"
+        android:weightSum="3">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_weight="2"
             android:text="Table Chat"
+            android:layout_marginLeft="10dp"
             android:textColor="@color/colorWhite"
-            android:textSize="25sp"
-            android:layout_marginTop="10dp"
-           />
+            android:textSize="25sp" />
+
         <ImageView
+            android:id="@+id/chatclose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/cancelchatmsg"
+            android:layout_weight="2"
             android:gravity="end"
-            android:layout_weight="2"/>
+            android:src="@drawable/cancelchatmsg" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#d6000000"
-        android:layout_alignParentEnd="true"
-        android:orientation="horizontal"
         android:layout_below="@+id/llchat_popup_header"
-        android:layout_alignParentRight="true">
+        android:background="#d6000000"
+        android:orientation="horizontal">
+
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:background="@color/darkbrown"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true">
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/addnewpdmbtn"
-                android:text="Add New PDM" />
-            <TextView
+                android:paddingTop="10dp"
+                android:text="Add New PDM"
+                android:textColor="@color/colorBlack"
+                android:textAlignment="center" />
+
+            <ScrollView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/addnewpdmbtn"
-                android:text="Add New PDM" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/addnewpdmbtn"
-                android:text="Add New PDM" />
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="I Love 6Patti"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Please play blind"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Please play fast"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="This game is FAST,but why are you slow?"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="I Luuuuuv the dealer"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Please play blind"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Please play Blind"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Please play Blind"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+            </ScrollView>
         </LinearLayout>
 
-    </LinearLayout>
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:weightSum="3"
-        android:background="@color/darkbrown">
+        android:background="@color/darkbrown"
+        android:weightSum="3">
 
         <ImageView
+            android:id="@+id/chatclose2"
             android:layout_width="92dp"
             android:layout_height="62dp"
-            android:src="@drawable/chat_close"
-            android:layout_weight="0"/>
+            android:layout_weight="0"
+            android:src="@drawable/chat_close" />
+
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:background="@color/colorWhite"/>
+            android:background="@color/colorWhite" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/sendchatmsg"
-            android:gravity="end"/>
+            android:gravity="end"
+            android:src="@drawable/sendchatmsg" />
     </LinearLayout>
 </RelativeLayout>

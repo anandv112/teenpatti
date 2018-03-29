@@ -40,7 +40,8 @@
 <color name="colorYellowDark">#ddaa00</color>
 <color name="colorYellowDarkTransparent">#7dddaa00</color>
 <color name="colorLightYellow">#aaffffa3</color>
-
+<color name="coralorange">#FF7F50</color>
+<color name="orangered">#FF4500</color>
 
 <color name="colorRedLightFlip">#5aff0000</color>
 <color name="colorRedLightF">#83ff0000</color>

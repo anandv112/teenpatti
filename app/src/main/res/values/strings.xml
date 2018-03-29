@@ -13,5 +13,10 @@
     <string name="standup">STAND-UP</string>
     <string name="nxtround">STAND-UP\nNEXT ROUND\n</string>
     <string name="switchtble">SWITCH TABLE</string>
-
+    <string name="festival">Festival</string>
+    <string name="places">Places</string>
+    <string name="sports">Sports</string>
+    <string name="nature">Nature</string>
+    <string name="mood">Mood</string>
+    <string name="colors">Colors</string>
 </resources>
