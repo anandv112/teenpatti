@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Popup for RateUS
-        showPopupBtn = (ImageView) findViewById(R.id.rateus_btn_loader);
-        RelativeLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutloader);
+        showPopupBtn = findViewById(R.id.rateus_btn_loader);
+        RelativeLayoutloader = findViewById(R.id.linearLayoutloader);
 
         showPopupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.rateus_popup,null);
 
-                closeRateus = (ImageView) customView.findViewById(R.id.close_rateus);
+                closeRateus = customView.findViewById(R.id.close_rateus);
 
                 //instantiate popup window
-                RateuspopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                RateuspopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
                 //display the popup window
                 RateuspopupWindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 HelpUspopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
                 //display the popup window
-                HelpUspopupWindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
+                HelpUspopupWindow.showAtLocation(RelativeLayoutloader, Gravity.TOP, 0, 0);
 
                 //close the popup window on button click
                 closeHelpBtn.setOnClickListener(new View.OnClickListener() {
