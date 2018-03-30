@@ -13,9 +13,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class TeenpattiActivity extends AppCompatActivity {
-    ImageView backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2;
+    ImageView backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn;
     TextView closebtn;
-    PopupWindow popupWindow,infopopupWindow,chatpopupWindow;
+    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow;
     RelativeLayout relativeLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,6 +117,35 @@ public class TeenpattiActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         chatpopupWindow.dismiss();
+                    }
+                });
+            }
+        });
+
+        //////////////// Popup for ThemeButton ///////////////////
+
+        themebtn=(ImageView) findViewById(R.id.theme);
+        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
+
+        themebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.thememanager_popup, null);
+
+                themeclosebtn = (ImageView) customView.findViewById(R.id.themeclose);
+                //instantiate popup window
+                themepopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                themepopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
+
+                //close the popup window on button click
+                themeclosebtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        themepopupWindow.dismiss();
                     }
                 });
             }
