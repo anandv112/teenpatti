@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class TeenpattiActivity extends AppCompatActivity {
     ImageView backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,
                 themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn;
-    TextView closebtn,tipsbtn,changedbtn,canceltipbtn;
+    TextView closebtn,tipsbtn,changedbtn,canceltipbtn,plusbtn,minusbtn;
     PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
     int minteger = 0;
@@ -214,10 +214,8 @@ public class TeenpattiActivity extends AppCompatActivity {
                          {
                              relativeLayout3.setVisibility(View.INVISIBLE);
                          }
-
-
-
                     }
+
                 });
                 // onclick event for cancel button of tip
                 canceltipbtn.setOnClickListener(new View.OnClickListener() {
@@ -232,7 +230,29 @@ public class TeenpattiActivity extends AppCompatActivity {
                         }
                     }
                 });
+                final TextView displayInteger = customView.findViewById(R.id.tipamount);
+                plusbtn=customView.findViewById(R.id.plus);
+                plusbtn.setOnClickListener(new View.OnClickListener() {
 
+                    public void onClick(View v) {
+                       String sub= displayInteger.getText().toString().substring(1);
+                        minteger = Integer.parseInt(sub)*2;
+//                        display(minteger);
+
+                        displayInteger.setText("₹" + minteger);
+
+                    }
+
+                });
+                minusbtn=customView.findViewById(R.id.minus);
+                minusbtn.setOnClickListener(new View.OnClickListener() {
+
+                    public void onClick(View v) {
+                        String sub= displayInteger.getText().toString().substring(1);
+                        minteger =Integer.parseInt(sub)/2;
+                        displayInteger.setText("₹" + minteger);
+                    }
+                });
                 dealerclsbtn = (ImageView) customView.findViewById(R.id.dealerclose);
                 //instantiate popup window
                 dealerpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -257,4 +277,20 @@ public class TeenpattiActivity extends AppCompatActivity {
         Intent intent = new Intent(TeenpattiActivity.this, MainActivity.class);
         startActivity(intent);
     }
+//    public void increaseInteger(View v) {
+//        minteger = minteger + 1;
+//        display(minteger);
+//
+//    }
+//    public void decreaseInteger(View v) {
+//        minteger = minteger - 1;
+//        display(minteger);
+//    }
+//
+//    private void display(int number) {
+//        TextView displayInteger = (TextView) findViewById(R.id.tipamount);
+//        if (displayInteger.getVisibility()==View.VISIBLE) {
+//            displayInteger.setText("" + number);
+//        }
+//    }
 }
