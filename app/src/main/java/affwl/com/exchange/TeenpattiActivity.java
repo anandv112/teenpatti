@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -15,9 +16,10 @@ import android.widget.Toast;
 
 public class TeenpattiActivity extends AppCompatActivity {
     ImageView backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,
-                themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn;
+                themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn;
     TextView closebtn,tipsbtn,changedbtn,canceltipbtn,plusbtn,minusbtn;
-    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow;
+    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow;
+    Button msgbtn,blockbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
     int minteger = 0;
     @Override
@@ -170,10 +172,10 @@ public class TeenpattiActivity extends AppCompatActivity {
 
                 ustatusclosebtn = (ImageView) customView.findViewById(R.id.userstatusclose);
                 //instantiate popup window
-                ustatuspopupWindow = new PopupWindow(customView,1600, 1000);
+                ustatuspopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
                 //display the popup window
-                ustatuspopupWindow.showAtLocation(relativeLayout, Gravity.CENTER_HORIZONTAL, -50, 0);
+                ustatuspopupWindow.showAtLocation(relativeLayout, Gravity.CENTER_HORIZONTAL, 0, 0);
 
                 //close the popup window on button click
                 ustatusclosebtn.setOnClickListener(new View.OnClickListener() {
@@ -185,6 +187,63 @@ public class TeenpattiActivity extends AppCompatActivity {
             }
         });
 
+
+
+        //////////////// Popup for Otheruserstatus ///////////////////
+
+        oplayerbtn=(ImageView) findViewById(R.id.playerbg2);
+        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
+
+       oplayerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.other_player_status, null);
+
+                msgbtn=customView.findViewById(R.id.msg);
+
+                // onclick event for message button
+                msgbtn.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View customView1 = layoutInflater.inflate(R.layout.send_message_popup, null);
+                        msgclosebtn=customView1.findViewById(R.id.msgclose);
+                        //instantiate popup window
+                        sendmsgpopupWindow = new PopupWindow(customView1,RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+                        //display the popup window
+                        sendmsgpopupWindow.showAtLocation(relativeLayout, Gravity.TOP, 0, 0);
+
+                        //close the popup window on button click
+                        msgclosebtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                sendmsgpopupWindow.dismiss();
+                            }
+                        });
+
+                        oustatuspopupWindow.dismiss();
+                    }
+
+                });
+
+                oustatusclosebtn = (ImageView) customView.findViewById(R.id.ouserstatusclose);
+                //instantiate popup window
+                oustatuspopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                oustatuspopupWindow.showAtLocation(relativeLayout, Gravity.CENTER_HORIZONTAL, 0, 0);
+
+                //close the popup window on button click
+                oustatusclosebtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        oustatuspopupWindow.dismiss();
+                    }
+                });
+            }
+        });
 
         //////////////// Popup for Dealer ///////////////////
 
@@ -230,6 +289,8 @@ public class TeenpattiActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+//                Implementation of increament button
                 final TextView displayInteger = customView.findViewById(R.id.tipamount);
                 plusbtn=customView.findViewById(R.id.plus);
                 plusbtn.setOnClickListener(new View.OnClickListener() {
@@ -237,13 +298,13 @@ public class TeenpattiActivity extends AppCompatActivity {
                     public void onClick(View v) {
                        String sub= displayInteger.getText().toString().substring(1);
                         minteger = Integer.parseInt(sub)*2;
-//                        display(minteger);
-
                         displayInteger.setText("₹" + minteger);
 
                     }
 
                 });
+
+//                Implementation of decreament
                 minusbtn=customView.findViewById(R.id.minus);
                 minusbtn.setOnClickListener(new View.OnClickListener() {
 
@@ -277,20 +338,4 @@ public class TeenpattiActivity extends AppCompatActivity {
         Intent intent = new Intent(TeenpattiActivity.this, MainActivity.class);
         startActivity(intent);
     }
-//    public void increaseInteger(View v) {
-//        minteger = minteger + 1;
-//        display(minteger);
-//
-//    }
-//    public void decreaseInteger(View v) {
-//        minteger = minteger - 1;
-//        display(minteger);
-//    }
-//
-//    private void display(int number) {
-//        TextView displayInteger = (TextView) findViewById(R.id.tipamount);
-//        if (displayInteger.getVisibility()==View.VISIBLE) {
-//            displayInteger.setText("" + number);
-//        }
-//    }
 }
