@@ -11,12 +11,15 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TeenpattiActivity extends AppCompatActivity {
-    ImageView backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn;
-    TextView closebtn;
-    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow;
-    RelativeLayout relativeLayout;
+    ImageView backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,
+                themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn;
+    TextView closebtn,tipsbtn,changedbtn,canceltipbtn;
+    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow;
+    RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
+    int minteger = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,6 +149,102 @@ public class TeenpattiActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         themepopupWindow.dismiss();
+                    }
+                });
+            }
+        });
+
+
+
+        //////////////// Popup for Userstatus ///////////////////
+
+        myplayerbtn=(ImageView) findViewById(R.id.myplayer);
+        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
+
+        myplayerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.player_status_popup, null);
+
+                ustatusclosebtn = (ImageView) customView.findViewById(R.id.userstatusclose);
+                //instantiate popup window
+                ustatuspopupWindow = new PopupWindow(customView,1600, 1000);
+
+                //display the popup window
+                ustatuspopupWindow.showAtLocation(relativeLayout, Gravity.CENTER_HORIZONTAL, -50, 0);
+
+                //close the popup window on button click
+                ustatusclosebtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ustatuspopupWindow.dismiss();
+                    }
+                });
+            }
+        });
+
+
+        //////////////// Popup for Dealer ///////////////////
+
+        dealerbtn=(ImageView) findViewById(R.id.dealer);
+        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
+
+        dealerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.dealer_popup, null);
+
+                relativeLayout2=customView.findViewById(R.id.inctip_layout);
+                relativeLayout3=customView.findViewById(R.id.bottombtns);
+                tipsbtn=customView.findViewById(R.id.tipbtn);
+                canceltipbtn=customView.findViewById(R.id.canceltip);
+
+                // onclick event for tip button to hide and show layout
+                tipsbtn.setOnClickListener(new View.OnClickListener() {
+
+                    public void onClick(View v) {
+                        if (relativeLayout2.getVisibility()==View.INVISIBLE) {
+                            relativeLayout2.setVisibility(View.VISIBLE);
+                         }
+                         if (relativeLayout3.getVisibility()==View.VISIBLE)
+                         {
+                             relativeLayout3.setVisibility(View.INVISIBLE);
+                         }
+
+
+
+                    }
+                });
+                // onclick event for cancel button of tip
+                canceltipbtn.setOnClickListener(new View.OnClickListener() {
+
+                    public void onClick(View v) {
+                        if (relativeLayout2.getVisibility()==View.VISIBLE) {
+                            relativeLayout2.setVisibility(View.INVISIBLE);
+                        }
+                        if (relativeLayout3.getVisibility()==View.INVISIBLE)
+                        {
+                            relativeLayout3.setVisibility(View.VISIBLE);
+                        }
+                    }
+                });
+
+                dealerclsbtn = (ImageView) customView.findViewById(R.id.dealerclose);
+                //instantiate popup window
+                dealerpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                dealerpopupWindow.showAtLocation(relativeLayout, Gravity.CENTER_HORIZONTAL, -50, 0);
+
+                //close the popup window on button click
+                dealerclsbtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dealerpopupWindow.dismiss();
                     }
                 });
             }

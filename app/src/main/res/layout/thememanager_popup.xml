@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--Header layout-->
     <LinearLayout
         android:id="@+id/themeheader"
         android:layout_width="match_parent"
@@ -38,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!--Buttons layout-->
             <LinearLayout
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
@@ -119,7 +121,7 @@
                     android:textSize="25dp" />
             </LinearLayout>
 
-
+            <!--Theme layout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

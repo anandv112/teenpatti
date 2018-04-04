@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#a6000000"
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_deselect_language">
+        <ImageView
+            android:id="@+id/userstatusclose"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/cross"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" />
+        <LinearLayout
+            android:id="@+id/userstatuslayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:id="@+id/userstatuscircle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/useravatarcircle"
+                android:layout_gravity="center"
+                android:layout_marginLeft="50dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp">
+
+                <RelativeLayout
+                    android:id="@+id/amountlayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/totalamountchip"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:paddingTop="1dp"
+                        android:src="@drawable/playerinfostackchips"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/totalamount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹ 1,97,731"
+                        android:layout_toEndOf="@+id/totalamountchip"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp"
+                        android:layout_toRightOf="@+id/totalamountchip"
+                        android:layout_marginLeft="20dp"
+                        android:paddingTop="1dp"/>
+
+                    <View
+                        android:id="@+id/viewtotalamount"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/totalamount"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/colorYellowDark" />
+
+
+                    <ImageView
+                        android:id="@+id/totaldiamondimg"
+                        android:layout_below="@+id/viewtotalamount"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/diamondstoreconvertbtndiamond"
+                        android:layout_marginLeft="10dp"
+                        android:paddingTop="1dp"/>
+
+                    <TextView
+                        android:id="@+id/totaldiamond"
+                        android:layout_below="@+id/viewtotalamount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:layout_toEndOf="@+id/totaldiamondimg"
+                        android:text="30 Diamonds"
+                        android:textSize="20sp"
+                        android:layout_toRightOf="@+id/totaldiamondimg"
+                        android:layout_marginLeft="20dp"
+                        android:paddingTop="1dp"/>
+
+                    <View
+                        android:id="@+id/viewtotaldiamond"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/totaldiamond"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/colorYellowDark" />
+
+
+                    <ImageView
+                        android:id="@+id/totalhandwoncard"
+                        android:layout_below="@+id/viewtotaldiamond"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/card"
+                        android:layout_marginLeft="10dp"
+                        android:paddingTop="1dp"/>
+
+                    <TextView
+                        android:id="@+id/totalhandwon"
+                        android:layout_below="@+id/viewtotaldiamond"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/totalhandwoncard"
+                        android:text="Hand Won :0/1"
+                        android:textColor="@color/colorYellowDark"
+                        android:layout_toRightOf="@+id/totalhandwoncard"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="20dp"
+                        android:paddingTop="1dp"/>
+                    <View
+                        android:id="@+id/viewtotalhandwon"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/totalhandwon"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/colorYellowDark" />
+
+                    <ImageView
+                        android:id="@+id/wonimg"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_below="@+id/viewtotalhandwon"
+                        android:src="@drawable/playerinfosinglechip"
+                        android:paddingTop="1dp"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Won :₹ 0"
+                        android:layout_below="@+id/viewtotalhandwon"
+                        android:layout_toEndOf="@+id/wonimg"
+                        android:textColor="@color/colorYellowDark"
+                        android:layout_toRightOf="@+id/wonimg"
+                        android:paddingTop="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="20sp"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--Achievement layout-->
+        <LinearLayout
+            android:id="@+id/achievelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorYellowGolden"
+            android:padding="10dp"
+            android:layout_above="@+id/footerlayout"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Achievements : Yet to come..."
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack" />
+        </LinearLayout>
+
+
+        <!--Footer layout-->
+        <LinearLayout
+            android:id="@+id/footerlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:padding="20dp"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true">
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
