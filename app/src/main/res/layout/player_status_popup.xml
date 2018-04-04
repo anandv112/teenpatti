@@ -90,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorWhite"
                         android:layout_toEndOf="@+id/totaldiamondimg"
-                        android:text="30 Diamonds"
+                        android:text="20 Diamonds"
                         android:textSize="20sp"
                         android:layout_toRightOf="@+id/totaldiamondimg"
                         android:layout_marginLeft="20dp"
