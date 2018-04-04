@@ -28,6 +28,7 @@
             android:layout_height="50dp"
             android:src="@drawable/dts" />
 
+        <!--Layout for avatar-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,52 +43,61 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
+                android:id="@+id/avatar1"
                 android:src="@drawable/avatar1" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
+                android:id="@+id/avatar2"
                 android:src="@drawable/avatar2" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
+                android:id="@+id/avatar3"
                 android:src="@drawable/avatar3" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
+                android:id="@+id/avatar4"
                 android:src="@drawable/avatar4" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
+                android:id="@+id/avatar5"
                 android:src="@drawable/avatar5" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
+                android:id="@+id/avatar6"
                 android:src="@drawable/avatar6" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
+                android:id="@+id/avatar7"
                 android:src="@drawable/avatar7" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
+                android:id="@+id/avatar8"
                 android:src="@drawable/avatar8" />
 
         </LinearLayout>
 
+        <!--Layout for camera and gallary-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,27 +107,39 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_margin="5dp"
+                android:id="@+id/camera"
                 android:src="@drawable/btncamera" />
 
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_margin="5dp"
+                android:id="@+id/choosepic"
                 android:src="@drawable/btnchoosepic" />
         </LinearLayout>
 
+        <!--Layout for Edit text and login Button-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/userpicborder" />
-
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/selectimage"
+                    android:src="@drawable/userpicborder" />
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="6dp"
+                    android:id="@+id/avatarimage"
+                    android:layout_gravity="center"/>
+            </FrameLayout>
             <EditText
                 android:layout_width="130dp"
                 android:layout_height="40dp"

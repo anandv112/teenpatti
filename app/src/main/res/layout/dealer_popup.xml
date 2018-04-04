@@ -184,7 +184,8 @@
                     android:text="  -  "
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:onClick="decreaseInteger"/>
 
                 <TextView
                     android:id="@+id/tipamount"
@@ -205,7 +206,7 @@
                     android:textAlignment="center"
                     android:textColor="@color/darkbrown"
                     android:textSize="20sp"
-                    />
+                    android:onClick="increaseInteger"/>
 
             </LinearLayout>
 
