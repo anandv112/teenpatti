@@ -3,6 +3,7 @@ package affwl.com.exchange;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.MediaStore;
@@ -10,12 +11,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
 
 public class PlayasguestActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView selectimage,avatarimage,avatar1,avatar2,avatar3,avatar4,avatar5,avatar6,avatar7,avatar8,camera,choosepic;
+    Session session;
+    TextView login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,7 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
         avatar8=findViewById(R.id.avatar8);
         camera=findViewById(R.id.camera);
         choosepic=findViewById(R.id.choosepic);
+        login=findViewById(R.id.login);
         avatar1.setOnClickListener(this);
         avatar2.setOnClickListener(this);
         avatar3.setOnClickListener(this);
@@ -42,13 +47,11 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
         avatar8.setOnClickListener(this);
         camera.setOnClickListener(this);
         choosepic.setOnClickListener(this);
+        login.setOnClickListener(this);
+        session=new Session(this);
     }
 
-    public void sendMainpage(View view)
-    {
-        Intent intent = new Intent(PlayasguestActivity.this, MainActivity.class);
-        startActivity(intent);
-    }
+
 
 //    Implementation of selecting avatar
     @Override
@@ -113,6 +116,14 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
         {
             Intent intent=new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(intent,6);
+        }
+        if (id==R.id.login)
+        {
+            Bitmap bmp=((BitmapDrawable)avatarimage.getDrawable()).getBitmap();
+            Intent intent=new Intent(PlayasguestActivity.this,MainActivity.class);
+            intent.putExtra("img",bmp);
+            startActivity(intent);
+            Toast.makeText(this, String.valueOf(bmp), Toast.LENGTH_SHORT).show();
         }
     }
 
