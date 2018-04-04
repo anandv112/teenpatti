@@ -16,6 +16,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true" />
 
+    <!--Boot value layout-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,6 +65,7 @@
 
     </RelativeLayout>
 
+    <!--Maximum blind layout-->
     <RelativeLayout
         android:id="@+id/maxblind"
         android:layout_width="match_parent"
@@ -113,6 +115,8 @@
             />
 
     </RelativeLayout>
+
+    <!--Chaal limit layout-->
     <RelativeLayout
         android:id="@+id/chaallimit"
         android:layout_width="match_parent"
@@ -163,6 +167,7 @@
 
     </RelativeLayout>
 
+    <!--Potlimit layout-->
     <RelativeLayout
         android:id="@+id/potlimit"
         android:layout_width="match_parent"
@@ -211,6 +216,8 @@
             android:layout_below="@id/pottxt"
             />
     </RelativeLayout>
+
+    <!--Footer layout-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
