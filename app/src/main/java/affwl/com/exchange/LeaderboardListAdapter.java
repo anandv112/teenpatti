@@ -7,18 +7,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.zip.Inflater;
 
 
 public class LeaderboardListAdapter extends RecyclerView.Adapter<LeaderboardListAdapter.LeaderboardListHolder> {
 
 private String [] data;
-    public LeaderboardListAdapter (String[] data){
+    LeaderboardListAdapter(String[] data){
 
         this.data = data;
-
     }
     @Override
     public LeaderboardListHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -39,12 +35,12 @@ private String [] data;
         return data.length;
     }
 
-    public class LeaderboardListHolder extends RecyclerView.ViewHolder{
+    class LeaderboardListHolder extends RecyclerView.ViewHolder{
 
         ImageView leader_userstatus,leader_userpic, leader_userchips;
         TextView leader_usernumber,leader_username, leader_useramount;
 
-        public LeaderboardListHolder(View itemView) {
+        LeaderboardListHolder(View itemView) {
             super(itemView);
 
             leader_userstatus = itemView.findViewById(R.id.leaderboarduserstatus);
@@ -53,7 +49,6 @@ private String [] data;
             leader_usernumber = itemView.findViewById(R.id.leaderboardsrnumber);
             leader_username = itemView.findViewById(R.id.leaderboardusername);
             leader_useramount = itemView.findViewById(R.id.leaderboardbalance);
-
         }
     }
 }

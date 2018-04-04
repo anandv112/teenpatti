@@ -1,5 +1,6 @@
 package affwl.com.exchange;
 
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,21 +12,35 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.app.Dialog;
+import android.app.DialogFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn;
     PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow;
     RelativeLayout RelativeLayoutloader;
+    TextView loaderbuychips;
+
+    String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry",
+            "WebOS","Ubuntu","Windows7","Max OS X"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,
+                R.layout.fragment_buy_chips, mobileArray);
+
+        ListView listView = (ListView) findViewById(R.id.ll);
+        listView.setAdapter(adapter);
 
 
         // Popup for RateUS
@@ -120,11 +135,23 @@ public class MainActivity extends AppCompatActivity {
 
                 RecyclerView playerList = customView.findViewById(R.id.leaderboardlist);
                 playerList.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-                String[] values = {"1","2"};
+                String[] values = {};
                 playerList.setAdapter(new LeaderboardListAdapter(values));
             }
         });
 
+
+        //Buy Chips Popup
+
+        loaderbuychips = (findViewById(R.id.buy_chips_loader));
+        loaderbuychips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                BuyChipsFragment frag = new BuyChipsFragment();
+                frag.show(ft, "txn_tag");
+            }
+        });
 
 
         // Animation of chips on main page
