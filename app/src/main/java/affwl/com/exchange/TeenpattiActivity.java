@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,25 +19,18 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 public class TeenpattiActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
-    ImageView backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,handle_right;
-
-public class TeenpattiActivity extends AppCompatActivity {
     ImageView backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,
-                themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn;
-
-    TextView closebtn,tipsbtn,changedbtn,canceltipbtn,plusbtn,minusbtn;
-    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow;
+                themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,handle_right,chngdealerclosebtn;
+    TextView closebtn,tipsbtn,changedbtn,canceltipbtn,plusbtn,minusbtn,chngdbtn;
+    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow;
     Button msgbtn,blockbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
     DrawerLayout teenpattitble;
     NavigationView navigationView;
-
     int minteger = 0;
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teenpatti);
 
@@ -56,12 +48,11 @@ public class TeenpattiActivity extends AppCompatActivity {
 
 
 
-
         //////////////// Popup for Backbutton ///////////////////
 
 
         backbtn=(ImageView) findViewById(R.id.back);
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +82,7 @@ public class TeenpattiActivity extends AppCompatActivity {
     //////////////// Popup for InfoButton ///////////////////
 
         infobtn=(ImageView) findViewById(R.id.info);
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
 
         infobtn.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -122,7 +113,7 @@ public class TeenpattiActivity extends AppCompatActivity {
         //////////////// Popup for ChatButton ///////////////////
 
         chatbtn=(ImageView) findViewById(R.id.chat);
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
 
         chatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,7 +149,7 @@ public class TeenpattiActivity extends AppCompatActivity {
         //////////////// Popup for ThemeButton ///////////////////
 
         themebtn=(ImageView) findViewById(R.id.theme);
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
 
         themebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,7 +180,7 @@ public class TeenpattiActivity extends AppCompatActivity {
         //////////////// Popup for Userstatus ///////////////////
 
         myplayerbtn=(ImageView) findViewById(R.id.myplayer);
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
 
         myplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -276,7 +267,7 @@ public class TeenpattiActivity extends AppCompatActivity {
         //////////////// Popup for Dealer ///////////////////
 
         dealerbtn=(ImageView) findViewById(R.id.dealer);
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
 
         dealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -302,6 +293,29 @@ public class TeenpattiActivity extends AppCompatActivity {
                              relativeLayout3.setVisibility(View.INVISIBLE);
                          }
                     }
+                });
+                // onclick event for change dealer button
+                chngdbtn.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View customView2 = layoutInflater.inflate(R.layout.change_dealer, null);
+                        chngdealerclosebtn=customView2.findViewById(R.id.chngdealerclose);
+                        //instantiate popup window
+                        chngdpopupWindow = new PopupWindow(customView2,RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                        //display the popup window
+                        chngdpopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
+
+                        //close the popup window on button click
+                        chngdealerclosebtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                chngdpopupWindow.dismiss();
+                            }
+                        });
+                        dealerpopupWindow.dismiss();
+                    }
+
 
                 });
                 // onclick event for cancel button of tip
@@ -358,32 +372,7 @@ public class TeenpattiActivity extends AppCompatActivity {
                 });
             }
         });
-    }
-
-    /////////// Slider /////////////
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.handle_right:
-                teenpattitble.openDrawer(navigationView);
-                break;
-        }
-    }
-
-
-    @Override
-    public void onBackPressed() {
-
-        if (teenpattitble.isDrawerOpen(GravityCompat.START)) {
-            teenpattitble.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-
-
-
-
+}
     /////////// Onclick for Backtolobby /////////////
 
     public void backtolobby(View view)
@@ -391,27 +380,8 @@ public class TeenpattiActivity extends AppCompatActivity {
         Intent intent = new Intent(TeenpattiActivity.this, MainActivity.class);
         startActivity(intent);
     }
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;
     }
-//    public void increaseInteger(View v) {
-//        minteger = minteger + 1;
-//        display(minteger);
-//
-//    }
-//    public void decreaseInteger(View v) {
-//        minteger = minteger - 1;
-//        display(minteger);
-//    }
-//
-//    private void display(int number) {
-//        TextView displayInteger = (TextView) findViewById(R.id.tipamount);
-//        if (displayInteger.getVisibility()==View.VISIBLE) {
-//            displayInteger.setText("" + number);
-//        }
-//    }
-
 }
