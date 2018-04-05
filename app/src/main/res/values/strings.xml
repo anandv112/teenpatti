@@ -22,6 +22,7 @@
     <string name="send">Send</string>
     <string name="msg">MESSAGE</string>
     <string name="block">BLOCK</string>
+    <string name="play">Play</string>
     <string name="achive">Achievements : Yet to come...</string>
     <string name="edittxt">Input private chat here.</string>
 </resources>

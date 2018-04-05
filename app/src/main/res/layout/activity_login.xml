@@ -22,11 +22,11 @@
             android:layout_height="wrap_content"
             android:src="@drawable/login_game_title" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/step0001" />
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="40dp"-->
+            <!--android:src="@drawable/step0001" />-->
 
         <TextView
             android:id="@+id/playasguest"
@@ -38,7 +38,7 @@
             android:background="@drawable/playasguestnew"
             android:gravity="center"
             android:paddingLeft="20dp"
-            android:text="Play As Guest"
+            android:text="@string/play"
             android:onClick="sendMessage"
             android:textColor="#ffffff"/>
 
