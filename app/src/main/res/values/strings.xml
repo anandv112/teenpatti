@@ -19,4 +19,9 @@
     <string name="nature">Nature</string>
     <string name="mood">Mood</string>
     <string name="colors">Colors</string>
+    <string name="send">Send</string>
+    <string name="msg">MESSAGE</string>
+    <string name="block">BLOCK</string>
+    <string name="achive">Achievements : Yet to come...</string>
+    <string name="edittxt">Input private chat here.</string>
 </resources>
