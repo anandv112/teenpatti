@@ -11,132 +11,118 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bg_deselect_language">
         <ImageView
-            android:id="@+id/userstatusclose"
+            android:id="@+id/ouserstatusclose"
             android:layout_width="42dp"
             android:layout_height="42dp"
             android:src="@drawable/cross"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true" />
-        <LinearLayout
-            android:id="@+id/userstatuslayout"
+        <RelativeLayout
+            android:id="@+id/ouserstatuslayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
+            android:layout_margin="30dp"
+            android:layout_above="@+id/achievelayout">
 
             <ImageView
-                android:id="@+id/userstatuscircle"
+                android:id="@+id/ouserstatuscircle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/useravatarcircle"
                 android:layout_gravity="center"
-                android:layout_marginLeft="50dp"/>
+                android:layout_margin="20dp"
+                />
+            <TextView
+                android:id="@+id/otherusernm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/ouserstatuscircle"
+                android:layout_alignRight="@+id/ouserstatuscircle"
+                android:layout_below="@+id/ouserstatuscircle"
+                android:layout_marginEnd="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_margin="10dp"
+                android:text="Other player"
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp">
+                android:layout_margin="20dp"
+                android:orientation="vertical"
+                android:layout_toEndOf="@+id/ouserstatuscircle"
+                android:layout_toRightOf="@+id/ouserstatuscircle">
 
                 <RelativeLayout
                     android:id="@+id/amountlayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border"
                     android:orientation="horizontal">
 
 
                     <ImageView
-                        android:id="@+id/totalamountchip"
-                        android:layout_width="42dp"
-                        android:layout_height="42dp"
+                        android:id="@+id/ototalamountchip"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
                         android:paddingTop="1dp"
                         android:src="@drawable/playerinfostackchips"
                         android:layout_marginLeft="10dp"/>
 
                     <TextView
-                        android:id="@+id/totalamount"
+                        android:id="@+id/ototalamount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="₹ 1,97,731"
-                        android:layout_toEndOf="@+id/totalamountchip"
+                        android:layout_toEndOf="@+id/ototalamountchip"
                         android:textColor="@color/colorWhite"
-                        android:textSize="20sp"
-                        android:layout_toRightOf="@+id/totalamountchip"
+                        android:textSize="10sp"
+                        android:layout_toRightOf="@+id/ototalamountchip"
                         android:layout_marginLeft="20dp"
-                        android:paddingTop="1dp"/>
+                        android:paddingTop="5dp"/>
 
                     <View
                         android:id="@+id/viewtotalamount"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_below="@id/totalamount"
+                        android:layout_below="@id/ototalamount"
                         android:layout_marginTop="20dp"
                         android:background="@color/colorYellowDark" />
 
 
                     <ImageView
-                        android:id="@+id/totaldiamondimg"
+                        android:id="@+id/ototalhandwoncard"
                         android:layout_below="@+id/viewtotalamount"
-                        android:layout_width="42dp"
-                        android:layout_height="42dp"
-                        android:src="@drawable/diamondstoreconvertbtndiamond"
-                        android:layout_marginLeft="10dp"
-                        android:paddingTop="1dp"/>
-
-                    <TextView
-                        android:id="@+id/totaldiamond"
-                        android:layout_below="@+id/viewtotalamount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorWhite"
-                        android:layout_toEndOf="@+id/totaldiamondimg"
-                        android:text="30 Diamonds"
-                        android:textSize="20sp"
-                        android:layout_toRightOf="@+id/totaldiamondimg"
-                        android:layout_marginLeft="20dp"
-                        android:paddingTop="1dp"/>
-
-                    <View
-                        android:id="@+id/viewtotaldiamond"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_below="@id/totaldiamond"
-                        android:layout_marginTop="20dp"
-                        android:background="@color/colorYellowDark" />
-
-
-                    <ImageView
-                        android:id="@+id/totalhandwoncard"
-                        android:layout_below="@+id/viewtotaldiamond"
-                        android:layout_width="42dp"
-                        android:layout_height="42dp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
                         android:src="@drawable/card"
                         android:layout_marginLeft="10dp"
                         android:paddingTop="1dp"/>
 
                     <TextView
-                        android:id="@+id/totalhandwon"
-                        android:layout_below="@+id/viewtotaldiamond"
+                        android:id="@+id/ototalhandwon"
+                        android:layout_below="@+id/viewtotalamount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@+id/totalhandwoncard"
+                        android:layout_toEndOf="@+id/ototalhandwoncard"
                         android:text="Hand Won :0/1"
                         android:textColor="@color/colorYellowDark"
-                        android:layout_toRightOf="@+id/totalhandwoncard"
-                        android:textSize="20sp"
+                        android:layout_toRightOf="@+id/ototalhandwoncard"
+                        android:textSize="10sp"
                         android:layout_marginLeft="20dp"
-                        android:paddingTop="1dp"/>
+                        android:paddingTop="5dp"/>
                     <View
                         android:id="@+id/viewtotalhandwon"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_below="@id/totalhandwon"
+                        android:layout_below="@id/ototalhandwon"
                         android:layout_marginTop="20dp"
                         android:background="@color/colorYellowDark" />
 
                     <ImageView
-                        android:id="@+id/wonimg"
-                        android:layout_width="42dp"
-                        android:layout_height="42dp"
+                        android:id="@+id/owonimg"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
                         android:layout_below="@+id/viewtotalhandwon"
                         android:src="@drawable/playerinfosinglechip"
                         android:paddingTop="1dp"
@@ -147,23 +133,22 @@
                         android:layout_height="wrap_content"
                         android:text="Won :₹ 0"
                         android:layout_below="@+id/viewtotalhandwon"
-                        android:layout_toEndOf="@+id/wonimg"
+                        android:layout_toEndOf="@+id/owonimg"
                         android:textColor="@color/colorYellowDark"
-                        android:layout_toRightOf="@+id/wonimg"
-                        android:paddingTop="1dp"
+                        android:layout_toRightOf="@+id/owonimg"
+                        android:paddingTop="5dp"
                         android:layout_marginLeft="20dp"
-                        android:textSize="20sp"/>
+                        android:textSize="10sp"/>
                 </RelativeLayout>
             </LinearLayout>
-
-        </LinearLayout>
+        </RelativeLayout>
         <!--Achievement layout-->
         <LinearLayout
             android:id="@+id/achievelayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorYellowGolden"
-            android:padding="10dp"
+            android:padding="15dp"
             android:layout_above="@+id/footerlayout"
             >
 
@@ -172,22 +157,46 @@
                 android:layout_height="wrap_content"
                 android:text="Achievements : Yet to come..."
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="10sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorBlack" />
         </LinearLayout>
 
 
         <!--Footer layout-->
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/footerlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorBlack"
-            android:padding="20dp"
+            android:padding="10dp"
             android:orientation="horizontal"
-            android:layout_alignParentBottom="true">
-        </LinearLayout>
+            android:layout_alignParentBottom="true"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+            <Button
+                android:id="@+id/msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/yellow_buttons"
+                android:text="@string/msg"
+                android:textColor="@color/darkbrown"
+                android:textSize="10sp"/>
+            <Button
+                android:id="@+id/block"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_buttons"
+                android:text="@string/block"
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+        </RelativeLayout>
 
     </RelativeLayout>
 </RelativeLayout>

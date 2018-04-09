@@ -28,6 +28,7 @@
     <string name="colors">Colors</string>
 
 
+
     <string-array name="count_array">
         <item>850Cr</item>
         <item>240Cr</item>
@@ -68,5 +69,12 @@
         <item>₹150.00</item>
     </string-array>
 
+
+
+    <string name="send">Send</string>
+    <string name="msg">MESSAGE</string>
+    <string name="block">BLOCK</string>
+    <string name="achive">Achievements : Yet to come...</string>
+    <string name="edittxt">Input private chat here.</string>
 
 </resources>
