@@ -14,15 +14,17 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="landscape"></activity>
-        <activity
-            android:name=".SplashActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="landscape">
+
         </activity>
         <activity
             android:name=".Splash2Activity"
@@ -35,8 +37,11 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".TeenpattiActivity"
-            android:screenOrientation="landscape"></activity>
-        <activity android:name=".SidedrawerActivity"></activity>
+            android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".SidedrawerActivity">
+
+        </activity>
     </application>
 
 </manifest>
