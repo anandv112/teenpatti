@@ -1,4 +1,11 @@
 <resources>
+
+    <!--slider-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!--slider-->
+
+
     <string name="app_name">Exchange</string>
     <string name="language_english">English</string>
     <string name="language_hindi">हिंदी</string>
@@ -19,9 +26,55 @@
     <string name="nature">Nature</string>
     <string name="mood">Mood</string>
     <string name="colors">Colors</string>
+
+
+
+    <string-array name="count_array">
+        <item>850Cr</item>
+        <item>240Cr</item>
+        <item>85Cr</item>
+        <item>23Cr</item>
+        <item>9Cr</item>
+        <item>4Cr</item>
+        <item>25L</item>
+    </string-array>
+    <string-array name="price_array">
+        <item>₹26,000.00</item>
+        <item>₹7,900.00</item>
+        <item>₹4,000.00</item>
+        <item>₹1,200.00</item>
+        <item>₹500.00</item>
+        <item>₹250.00</item>
+        <item>₹30.00</item>
+    </string-array>
+    <string-array name="specification_array">
+        <item>850 Crore Chips for Power User (Teen Patti-Indian Poker)</item>
+        <item>240 Crore Chips for Power User (Teen Patti-Indian Poker)</item>
+        <item>85 Crore Chips for Elite Player (Teen Patti-Indian Poker)</item>
+        <item>23 Crore Chips for Elite Player (Teen Patti-Indian Poker)</item>
+        <item>9 Crore Chips for Power User (Teen Patti-Indian Poker)</item>
+        <item>4 Crore Chips for Power User (Teen Patti-Indian Poker)</item>
+        <item>25 Lakh Chips for Power User (Teen Patti-Indian Poker)</item>
+    </string-array>
+    <string-array name="diamond_count">
+        <item>2,80,000</item>
+        <item>60,000</item>
+        <item>25,000</item>
+        <item>5,000</item>
+    </string-array>
+    <string-array name="diamond_price">
+        <item>₹4,000.00</item>
+        <item>₹1,000.00</item>
+        <item>₹500.00</item>
+        <item>₹150.00</item>
+    </string-array>
+
+
+
     <string name="send">Send</string>
     <string name="msg">MESSAGE</string>
     <string name="block">BLOCK</string>
     <string name="achive">Achievements : Yet to come...</string>
     <string name="edittxt">Input private chat here.</string>
+
 </resources>

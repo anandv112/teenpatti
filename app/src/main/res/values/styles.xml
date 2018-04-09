@@ -8,6 +8,15 @@
     </style>
 
 
+    <!--dialogue for buy chips tabbed popup-->
+    <style name="MY.DIALOG" parent="android:Theme" >
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+
+
 
     <!--<style name="AppTheme" parent="Theme.AppCompat.NoActionBar">-->
         <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->

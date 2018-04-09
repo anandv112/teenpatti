@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:cardCornerRadius="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/bg_deselect_language"
+            android:weightSum="4">
+
+            <ImageView
+                android:id="@+id/diamondimage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/buy_chips_diamond"/>
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2,80,000"
+                android:textColor="@color/colorGreen"
+                android:textSize="18sp"
+                android:layout_margin="15dp"
+                android:layout_weight="2.5"/>
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹4,000.00"
+                android:textColor="@color/colorYellow"
+                android:textSize="18sp"
+                android:layout_weight="1.5"/>
+
+            <TextView
+                android:id="@+id/buy"
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:text="BUY"
+                android:textSize="15sp"
+                android:textColor="@color/colorWhite"
+                android:paddingTop="13dp"
+                android:paddingLeft="25dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/buy_chips_btn_loader_green"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

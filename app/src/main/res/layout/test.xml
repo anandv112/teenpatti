@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buy_chips_tab1_bg_yellow"
+                android:text="Every Purchase" />
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_deselect_language">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Get 680Cr. Chips for"
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/buy_chips_tab1_bg_yellow"
+                    android:paddingTop="5dp"
+                    android:text="26,000"
+                    android:textAlignment="center" />
+            </RelativeLayout>
+
+
+            <CheckBox
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I Agree to Terms and Conditions"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:paddingTop="5dp"
+                android:text="BUY NOW"
+                android:textSize="15sp"
+                android:background="@drawable/buy_chips_tab1_bg_yellow"/>
+
+            <!--<CheckBox-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:button="@drawable/checkbox_selector"-->
+                <!--android:text="CheckBox"-->
+                <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+                <!--android:textColor="@color/Black" />-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BENEFITS"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:padding="10dp"
+                android:background="@drawable/buy_chips_tab1_bg_yellow"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_deselect_language"
+                android:orientation="vertical">
+                <ListView
+                    android:id="@+id/ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/buy_chips_grey_btn"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
