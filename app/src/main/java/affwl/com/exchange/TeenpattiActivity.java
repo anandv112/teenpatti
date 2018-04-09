@@ -26,10 +26,16 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
 
 public class TeenpattiActivity extends AppCompatActivity {
     ImageView backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,
+
+                themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;
+    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn;
+    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow;
+
                 themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn;
 
     TextView closebtn,tipsbtn,changedbtn,canceltipbtn,plusbtn,minusbtn;
     PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow;
+
     Button msgbtn,blockbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
     DrawerLayout teenpattitble;
@@ -285,69 +291,92 @@ public class TeenpattiActivity extends AppCompatActivity {
                 LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.dealer_popup, null);
 
-                relativeLayout2=customView.findViewById(R.id.inctip_layout);
-                relativeLayout3=customView.findViewById(R.id.bottombtns);
-                tipsbtn=customView.findViewById(R.id.tipbtn);
-                canceltipbtn=customView.findViewById(R.id.canceltip);
+                    relativeLayout2=customView.findViewById(R.id.inctip_layout);
+                    relativeLayout3=customView.findViewById(R.id.bottombtns);
+                    tipsbtn=customView.findViewById(R.id.tipbtn);
+                    canceltipbtn=customView.findViewById(R.id.canceltip);
+                    chngdbtn=customView.findViewById(R.id.chngdealer);
+                        // onclick event for tip button to hide and show layout
+                        tipsbtn.setOnClickListener(new View.OnClickListener() {
 
-                // onclick event for tip button to hide and show layout
-                tipsbtn.setOnClickListener(new View.OnClickListener() {
+                            public void onClick(View v) {
+                                if (relativeLayout2.getVisibility()==View.INVISIBLE) {
+                                    relativeLayout2.setVisibility(View.VISIBLE);
+                                 }
+                                 if (relativeLayout3.getVisibility()==View.VISIBLE)
+                                 {
+                                     relativeLayout3.setVisibility(View.INVISIBLE);
+                                 }
+                            }
 
+                        });
+                // onclick event for change dealer button
+                chngdbtn.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        if (relativeLayout2.getVisibility()==View.INVISIBLE) {
-                            relativeLayout2.setVisibility(View.VISIBLE);
-                         }
-                         if (relativeLayout3.getVisibility()==View.VISIBLE)
-                         {
-                             relativeLayout3.setVisibility(View.INVISIBLE);
-                         }
+                        LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View customView2 = layoutInflater.inflate(R.layout.change_dealer, null);
+                        chngdealerclosebtn=customView2.findViewById(R.id.chngdealerclose);
+                        //instantiate popup window
+                        chngdpopupWindow = new PopupWindow(customView2,RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                        //display the popup window
+                        chngdpopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
+
+                        //close the popup window on button click
+                        chngdealerclosebtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                chngdpopupWindow.dismiss();
+                            }
+                        });
+                        dealerpopupWindow.dismiss();
                     }
 
                 });
-                // onclick event for cancel button of tip
-                canceltipbtn.setOnClickListener(new View.OnClickListener() {
+                        // onclick event for cancel button of tip
+                        canceltipbtn.setOnClickListener(new View.OnClickListener() {
 
-                    public void onClick(View v) {
-                        if (relativeLayout2.getVisibility()==View.VISIBLE) {
-                            relativeLayout2.setVisibility(View.INVISIBLE);
-                        }
-                        if (relativeLayout3.getVisibility()==View.INVISIBLE)
-                        {
-                            relativeLayout3.setVisibility(View.VISIBLE);
-                        }
-                    }
-                });
+                            public void onClick(View v) {
+                                if (relativeLayout2.getVisibility()==View.VISIBLE) {
+                                    relativeLayout2.setVisibility(View.INVISIBLE);
+                                }
+                                if (relativeLayout3.getVisibility()==View.INVISIBLE)
+                                {
+                                    relativeLayout3.setVisibility(View.VISIBLE);
+                                }
+                            }
+                        });
 
-//                Implementation of increament button
-                final TextView displayInteger = customView.findViewById(R.id.tipamount);
-                plusbtn=customView.findViewById(R.id.plus);
-                plusbtn.setOnClickListener(new View.OnClickListener() {
+                        //Implementation of increament button
+                        final TextView displayInteger = customView.findViewById(R.id.tipamount);
+                        plusbtn=customView.findViewById(R.id.plus);
+                        plusbtn.setOnClickListener(new View.OnClickListener() {
 
-                    public void onClick(View v) {
-                       String sub= displayInteger.getText().toString().substring(1);
-                        minteger = Integer.parseInt(sub)*2;
-                        displayInteger.setText("₹" + minteger);
+                            public void onClick(View v) {
+                               String sub= displayInteger.getText().toString().substring(1);
+                                minteger = Integer.parseInt(sub)*2;
+                                displayInteger.setText("₹" + minteger);
 
-                    }
+                            }
 
-                });
+                        });
 
-//                Implementation of decreament
-                minusbtn=customView.findViewById(R.id.minus);
-                minusbtn.setOnClickListener(new View.OnClickListener() {
+                        //Implementation of decreament
+                        minusbtn=customView.findViewById(R.id.minus);
+                        minusbtn.setOnClickListener(new View.OnClickListener() {
 
-                    public void onClick(View v) {
-                        String sub= displayInteger.getText().toString().substring(1);
-                        minteger =Integer.parseInt(sub)/2;
-                        displayInteger.setText("₹" + minteger);
-                    }
-                });
+                            public void onClick(View v) {
+                                String sub= displayInteger.getText().toString().substring(1);
+                                minteger =Integer.parseInt(sub)/2;
+                                displayInteger.setText("₹" + minteger);
+                            }
+                        });
                 dealerclsbtn = (ImageView) customView.findViewById(R.id.dealerclose);
                 //instantiate popup window
                 dealerpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
                 //display the popup window
-                dealerpopupWindow.showAtLocation(relativeLayout, Gravity.CENTER_HORIZONTAL, -50, 0);
+                dealerpopupWindow.showAtLocation(relativeLayout, Gravity.CENTER_HORIZONTAL, 0, 0);
 
                 //close the popup window on button click
                 dealerclsbtn.setOnClickListener(new View.OnClickListener() {
