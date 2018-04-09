@@ -133,9 +133,11 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.mainychips).startAnimation(animation);
 //        findViewById(R.id.mainbchips).startAnimation(animation);
         findViewById(R.id.mainlimegchips).startAnimation(animation);
-//        findViewById(R.id.mainorgchips).startAnimation(animation);
+        findViewById(R.id.mainorgchips).startAnimation(animation);
         findViewById(R.id.darkbluechips).startAnimation(animation);
         findViewById(R.id.cyanchips).startAnimation(animation);
+        findViewById(R.id.blackchips).startAnimation(animation);
+        findViewById(R.id.ygreenchips).startAnimation(animation);
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -156,10 +158,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Animation antianimation = AnimationUtils.loadAnimation(this, R.anim.mainactivity_chips_rotate_anticlockwise);
-        findViewById(R.id.mainbchips).startAnimation(antianimation);
-        findViewById(R.id.mainorgchips).startAnimation(antianimation);
-        findViewById(R.id.blackchips).startAnimation(antianimation);
-        findViewById(R.id.ygreenchips).startAnimation(antianimation);
+//        findViewById(R.id.mainbchips).startAnimation(antianimation);
+//        findViewById(R.id.mainorgchips).startAnimation(antianimation);
+//        findViewById(R.id.blackchips).startAnimation(antianimation);
+//        findViewById(R.id.ygreenchips).startAnimation(antianimation);
+        findViewById(R.id.innerlime).startAnimation(antianimation);
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
