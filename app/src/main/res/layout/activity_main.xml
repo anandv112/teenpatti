@@ -138,7 +138,7 @@
             android:background="@drawable/buy_chips"
             android:paddingLeft="43dp"
             android:paddingStart="43dp"
-            android:paddingTop="16dp"
+            android:paddingTop="10dp"
             android:clickable="true"
             android:focusable="true"
             android:text="BUY CHIPS"

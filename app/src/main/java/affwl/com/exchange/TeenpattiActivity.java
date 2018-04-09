@@ -2,10 +2,16 @@ package affwl.com.exchange;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -13,17 +19,33 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TeenpattiActivity extends AppCompatActivity {
-    ImageView backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,
-                themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn;
+public class TeenpattiActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
+    ImageView backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,handle_right;
     TextView closebtn,tipsbtn,changedbtn,canceltipbtn,plusbtn,minusbtn;
     PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
+    DrawerLayout teenpattitble;
+    NavigationView navigationView;
+
     int minteger = 0;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teenpatti);
+
+        handle_right = findViewById(R.id.handle_right);
+        handle_right.setOnClickListener(this);
+
+
+        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, teenpattitble, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        teenpattitble.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView = (NavigationView) findViewById(R.id.teen_nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
 
 
 
@@ -31,7 +53,7 @@ public class TeenpattiActivity extends AppCompatActivity {
 
 
         backbtn=(ImageView) findViewById(R.id.back);
-        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
+        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +83,7 @@ public class TeenpattiActivity extends AppCompatActivity {
     //////////////// Popup for InfoButton ///////////////////
 
         infobtn=(ImageView) findViewById(R.id.info);
-        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
+        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
 
         infobtn.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -92,7 +114,7 @@ public class TeenpattiActivity extends AppCompatActivity {
         //////////////// Popup for ChatButton ///////////////////
 
         chatbtn=(ImageView) findViewById(R.id.chat);
-        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
+        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
 
         chatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,7 +150,7 @@ public class TeenpattiActivity extends AppCompatActivity {
         //////////////// Popup for ThemeButton ///////////////////
 
         themebtn=(ImageView) findViewById(R.id.theme);
-        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
+        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
 
         themebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,7 +181,7 @@ public class TeenpattiActivity extends AppCompatActivity {
         //////////////// Popup for Userstatus ///////////////////
 
         myplayerbtn=(ImageView) findViewById(R.id.myplayer);
-        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
+        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
 
         myplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,7 +211,7 @@ public class TeenpattiActivity extends AppCompatActivity {
         //////////////// Popup for Dealer ///////////////////
 
         dealerbtn=(ImageView) findViewById(R.id.dealer);
-        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitble);
+        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
 
         dealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -269,13 +291,43 @@ public class TeenpattiActivity extends AppCompatActivity {
                 });
             }
         });
-}
+    }
+
+    /////////// Slider /////////////
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.handle_right:
+                teenpattitble.openDrawer(navigationView);
+                break;
+        }
+    }
+
+
+    @Override
+    public void onBackPressed() {
+
+        if (teenpattitble.isDrawerOpen(GravityCompat.START)) {
+            teenpattitble.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+
+
+
+
     /////////// Onclick for Backtolobby /////////////
 
     public void backtolobby(View view)
     {
         Intent intent = new Intent(TeenpattiActivity.this, MainActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 //    public void increaseInteger(View v) {
 //        minteger = minteger + 1;

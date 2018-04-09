@@ -11,34 +11,35 @@ import android.widget.TextView;
 
 public class LeaderboardListAdapter extends RecyclerView.Adapter<LeaderboardListAdapter.LeaderboardListHolder> {
 
-private String [] data;
-    LeaderboardListAdapter(String[] data){
-
-        this.data = data;
+private String [] Username;
+    LeaderboardListAdapter(String[] Username){
+        this.Username = Username;
     }
+
     @Override
     public LeaderboardListHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.leaderboard_list_item, parent, false);
+
         return new LeaderboardListHolder(view);
     }
 
     @Override
     public void onBindViewHolder(LeaderboardListHolder holder, int position) {
 
-        String title = data[position];
+        String title = Username[position];
         holder.leader_username.setText(title);
     }
 
     @Override
     public int getItemCount() {
-        return data.length;
+        return Username.length;
     }
 
     class LeaderboardListHolder extends RecyclerView.ViewHolder{
 
-        ImageView leader_userstatus,leader_userpic, leader_userchips;
-        TextView leader_usernumber,leader_username, leader_useramount;
+        ImageView leader_userstatus, leader_userpic, leader_userchips;
+        TextView leader_usernumber, leader_username, leader_useramount;
 
         LeaderboardListHolder(View itemView) {
             super(itemView);

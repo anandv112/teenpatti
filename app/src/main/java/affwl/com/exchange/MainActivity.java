@@ -29,18 +29,15 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout RelativeLayoutloader;
     TextView loaderbuychips;
 
-    String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry",
-            "WebOS","Ubuntu","Windows7","Max OS X"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,
-                R.layout.fragment_buy_chips, mobileArray);
 
-        ListView listView = (ListView) findViewById(R.id.ll);
-        listView.setAdapter(adapter);
+
+//        ListView listView = (ListView) findViewById(R.id.ll);
+//        listView.setAdapter(adapter);
 
 
         // Popup for RateUS
@@ -135,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
                 RecyclerView playerList = customView.findViewById(R.id.leaderboardlist);
                 playerList.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-                String[] values = {};
+                String[] values = {"Anand","Tejas","Anirudh","Ravi","Rohit","Francis"};
                 playerList.setAdapter(new LeaderboardListAdapter(values));
             }
         });
