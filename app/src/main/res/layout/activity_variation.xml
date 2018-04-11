@@ -2,12 +2,12 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/teenpattitble"
+    android:id="@+id/variationtble"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/teenpattitblerecycler"
+        android:id="@+id/variationrecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg3">
@@ -42,37 +42,34 @@
                     android:layout_marginTop="10dp"
                     android:src="@drawable/back" />
 
+
                 <ImageView
-                    android:id="@+id/theme"
+                    android:id="@+id/info"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="70dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/theme" />
-
-                <ImageView
-                    android:id="@+id/tablesettings"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="70dp"
-                    android:src="@drawable/settings" />
+                    android:src="@drawable/infogame" />
             </RelativeLayout>
 
             <!--Right side icon layout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true">
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="211dp">
+
 
                 <ImageView
-                    android:id="@+id/info"
+                    android:id="@+id/chat"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/infogame" />
-
+                    android:clickable="true"
+                    android:src="@drawable/chatgame" />
                 <ImageView
                     android:id="@+id/getchips"
                     android:layout_width="50dp"
@@ -81,14 +78,7 @@
                     android:layout_marginTop="10dp"
                     android:src="@drawable/getchips" />
 
-                <ImageView
-                    android:id="@+id/chat"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="60dp"
-                    android:layout_marginTop="70dp"
-                    android:clickable="true"
-                    android:src="@drawable/chatgame" />
+
             </RelativeLayout>
         </RelativeLayout>
 
@@ -232,55 +222,6 @@
             </RelativeLayout>
 
 
-        </RelativeLayout>
-
-        <!--Bottom info layout-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="#250400"
-            android:orientation="horizontal"
-            android:padding="5dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true">
-
-                <TextView
-                    android:id="@+id/boot"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/table_boot"
-                    android:textColor="@color/colorWhite" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/pot"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/table_pot"
-                    android:textColor="@color/colorWhite" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/max"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/table_max"
-                    android:textColor="@color/colorWhite" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
         </RelativeLayout>
 
     </RelativeLayout>

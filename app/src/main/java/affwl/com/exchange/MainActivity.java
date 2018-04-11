@@ -3,8 +3,6 @@ package affwl.com.exchange;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,10 +24,10 @@ import android.app.DialogFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile;
-    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow;
+    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,orangechipsbtn;
+    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow,tounpopupWindow;
     RelativeLayout RelativeLayoutloader;
-    TextView loaderbuychips;
+    TextView loaderbuychips,joinnowbtn;
 
 
     @Override
@@ -45,11 +43,7 @@ public class MainActivity extends AppCompatActivity {
         // Popup for RateUS
         showPopupBtn = findViewById(R.id.rateus_btn_loader);
         RelativeLayoutloader = findViewById(R.id.linearLayoutloader);
-        profile=findViewById(R.id.profile);
-        Intent intent=getIntent();
-        Bitmap bmp=intent.getParcelableExtra("img");
-        //Toast.makeText(this, String.valueOf(bmp), Toast.LENGTH_SHORT).show();
-        profile.setImageBitmap(bmp);
+
         showPopupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -157,6 +151,40 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
+        // Popup for 321 tournament
+        orangechipsbtn = (ImageView) findViewById(R.id.mainorgchips);
+        RelativeLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutloader);
+
+        orangechipsbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.how_to_play_popup,null);
+
+
+//                closeTrophyBtn = customView.findViewById(R.id.leaderboardclose);
+
+                //instantiate popup window
+                tounpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                tounpopupWindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
+
+                //join now the popup window on button click
+                joinnowbtn=customView.findViewById(R.id.joinnow);
+                joinnowbtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, ThreetwooneTournament.class);
+                        startActivity(intent);
+                    }
+                });
+
+            }
+        });
         // Animation of chips on main page
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.mainactivity_chips_rotate);
@@ -213,10 +241,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//////////// Onclick method for table
+//////////// Onclick method for teenpatti table
     public void sendTeenpattiPage(View view)
     {
-        Intent intent = new Intent(MainActivity.this, TeenpattiActivity.class);
+        Intent intent = new Intent(MainActivity.this, LoadingScreen_teenpatti.class);
+        startActivity(intent);
+    }
+
+    public void sendVariationPage(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, Variation.class);
         startActivity(intent);
     }
 }
