@@ -42,7 +42,8 @@
         <activity android:name=".SidedrawerActivity" />
         <activity android:name=".LoadingScreen_teenpatti" />
         <activity android:name=".Variation" />
-        <activity android:name=".ThreetwooneTournament"></activity>
+        <activity android:name=".ThreetwooneTournament" />
+        <activity android:name=".HowToPlayThreeTwoOne"></activity>
     </application>
 
 </manifest>
