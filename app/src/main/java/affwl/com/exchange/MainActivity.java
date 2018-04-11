@@ -3,6 +3,8 @@ package affwl.com.exchange;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,8 +26,10 @@ import android.app.DialogFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,orangechipsbtn;
-    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow,tounpopupWindow;
+
+    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile;
+    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindo,wtounpopupWindow,orangechipsbtn;
+
     RelativeLayout RelativeLayoutloader;
     TextView loaderbuychips,joinnowbtn;
 
@@ -43,7 +47,11 @@ public class MainActivity extends AppCompatActivity {
         // Popup for RateUS
         showPopupBtn = findViewById(R.id.rateus_btn_loader);
         RelativeLayoutloader = findViewById(R.id.linearLayoutloader);
-
+        profile=findViewById(R.id.profile);
+        Intent intent=getIntent();
+        Bitmap bmp=intent.getParcelableExtra("img");
+        //Toast.makeText(this, String.valueOf(bmp), Toast.LENGTH_SHORT).show();
+        profile.setImageBitmap(bmp);
         showPopupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

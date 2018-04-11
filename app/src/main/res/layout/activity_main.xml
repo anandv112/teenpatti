@@ -162,7 +162,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/profile_box" />
+            android:id="@+id/profile"/>
 
         <TextView
             android:layout_width="70dp"
