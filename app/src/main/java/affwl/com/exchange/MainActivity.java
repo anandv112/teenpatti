@@ -27,11 +27,11 @@ import android.app.DialogFragment;
 public class MainActivity extends AppCompatActivity {
 
 
-    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile;
-    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindo,wtounpopupWindow,orangechipsbtn;
+    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile,orangechipsbtn,close321;
+    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow,tounpopupWindow,howto321popup;
+    RelativeLayout RelativeLayoutloader,relativelayout321;
+    TextView loaderbuychips,joinnowbtn,howtoplay321btn;
 
-    RelativeLayout RelativeLayoutloader;
-    TextView loaderbuychips,joinnowbtn;
 
 
     @Override
@@ -170,10 +170,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View customView = layoutInflater.inflate(R.layout.how_to_play_popup,null);
+                View customView = layoutInflater.inflate(R.layout.activity_how_to_play_three_two_one,null);
 
-
-//                closeTrophyBtn = customView.findViewById(R.id.leaderboardclose);
 
                 //instantiate popup window
                 tounpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -193,6 +191,37 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+//        // Popup for 321 how to play
+//        howtoplay321btn = (TextView) findViewById(R.id.howtoplay321btn);
+//        relativelayout321 = (RelativeLayout) findViewById(R.id.relativelayout321);
+//
+//        howtoplay321btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //instantiate the popup.xml layout file
+//                LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//                View customView = layoutInflater.inflate(R.layout.help_popup,null);
+//
+//                close321 = (ImageView) customView.findViewById(R.id.close321);
+//
+//                //instantiate popup window
+//                howto321popup = new PopupWindow(customView, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//
+//                //display the popup window
+//                howto321popup.showAtLocation(relativelayout321, Gravity.TOP, 0, 0);
+//
+//                //close the popup window on button click
+//                close321.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        howto321popup.dismiss();
+//                    }
+//                });
+//
+//            }
+//        });
         // Animation of chips on main page
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.mainactivity_chips_rotate);
