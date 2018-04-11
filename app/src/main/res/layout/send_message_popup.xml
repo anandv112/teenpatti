@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/popup_border_bg">
+
+    <ImageView
+        android:id="@+id/msgclose"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/cross"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/relativeLayout4">
+
+        <ImageView
+            android:id="@+id/currentuserpic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/male"/>
+
+        <EditText
+            android:id="@+id/msgedit"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_toEndOf="@+id/currentuserpic"
+            android:layout_toRightOf="@+id/currentuserpic"
+            android:background="@drawable/edittext_border"
+            android:layout_marginLeft="5dp"
+            android:hint="@string/edittxt" />
+        <Button
+            android:id="@+id/sendbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/msgedit"
+            android:layout_below="@+id/msgedit"
+            android:text="@string/send"
+            android:textColor="@color/colorWhite"
+            android:background="#21a90c"
+            android:layout_margin="10dp"
+            android:layout_alignRight="@+id/msgedit" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

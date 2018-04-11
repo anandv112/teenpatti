@@ -1,5 +1,6 @@
 package affwl.com.exchange;
 
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -13,21 +14,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.app.Dialog;
+import android.app.DialogFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+
     ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile;
-    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow;
+    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindo,wtounpopupWindow,orangechipsbtn;
+
     RelativeLayout RelativeLayoutloader;
+    TextView loaderbuychips,joinnowbtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+//        ListView listView = (ListView) findViewById(R.id.ll);
+//        listView.setAdapter(adapter);
 
 
         // Popup for RateUS
@@ -126,22 +140,70 @@ public class MainActivity extends AppCompatActivity {
 
                 RecyclerView playerList = customView.findViewById(R.id.leaderboardlist);
                 playerList.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-                String[] values = {"1","2"};
+                String[] values = {"Anand","Tejas","Anirudh","Ravi","Rohit","Francis"};
                 playerList.setAdapter(new LeaderboardListAdapter(values));
             }
         });
 
 
+        //Buy Chips Popup
 
+        loaderbuychips = (findViewById(R.id.buy_chips_loader));
+        loaderbuychips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                BuyChipsFragment frag = new BuyChipsFragment();
+                frag.show(ft, "txn_tag");
+            }
+        });
+
+
+
+
+        // Popup for 321 tournament
+        orangechipsbtn = (ImageView) findViewById(R.id.mainorgchips);
+        RelativeLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutloader);
+
+        orangechipsbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.how_to_play_popup,null);
+
+
+//                closeTrophyBtn = customView.findViewById(R.id.leaderboardclose);
+
+                //instantiate popup window
+                tounpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                tounpopupWindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
+
+                //join now the popup window on button click
+                joinnowbtn=customView.findViewById(R.id.joinnow);
+                joinnowbtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, ThreetwooneTournament.class);
+                        startActivity(intent);
+                    }
+                });
+
+            }
+        });
         // Animation of chips on main page
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.mainactivity_chips_rotate);
         findViewById(R.id.mainychips).startAnimation(animation);
 //        findViewById(R.id.mainbchips).startAnimation(animation);
         findViewById(R.id.mainlimegchips).startAnimation(animation);
-//        findViewById(R.id.mainorgchips).startAnimation(animation);
+        findViewById(R.id.mainorgchips).startAnimation(animation);
         findViewById(R.id.darkbluechips).startAnimation(animation);
         findViewById(R.id.cyanchips).startAnimation(animation);
+        findViewById(R.id.blackchips).startAnimation(animation);
+        findViewById(R.id.ygreenchips).startAnimation(animation);
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -162,10 +224,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Animation antianimation = AnimationUtils.loadAnimation(this, R.anim.mainactivity_chips_rotate_anticlockwise);
-        findViewById(R.id.mainbchips).startAnimation(antianimation);
-        findViewById(R.id.mainorgchips).startAnimation(antianimation);
-        findViewById(R.id.blackchips).startAnimation(antianimation);
-        findViewById(R.id.ygreenchips).startAnimation(antianimation);
+//        findViewById(R.id.mainbchips).startAnimation(antianimation);
+//        findViewById(R.id.mainorgchips).startAnimation(antianimation);
+//        findViewById(R.id.blackchips).startAnimation(antianimation);
+//        findViewById(R.id.ygreenchips).startAnimation(antianimation);
+        findViewById(R.id.innerlime).startAnimation(antianimation);
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -186,10 +249,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//////////// Onclick method for table
+//////////// Onclick method for teenpatti table
     public void sendTeenpattiPage(View view)
     {
-        Intent intent = new Intent(MainActivity.this, TeenpattiActivity.class);
+        Intent intent = new Intent(MainActivity.this, LoadingScreen_teenpatti.class);
+        startActivity(intent);
+    }
+
+    public void sendVariationPage(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, Variation.class);
         startActivity(intent);
     }
 }
