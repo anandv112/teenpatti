@@ -161,9 +161,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // Popup for 321 tournament
+        //////////////// Popup for 321 tournament ////////////////
         orangechipsbtn = (ImageView) findViewById(R.id.mainorgchips);
         RelativeLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutloader);
+
 
         orangechipsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,6 +173,33 @@ public class MainActivity extends AppCompatActivity {
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.activity_how_to_play_three_two_one,null);
 
+                howtoplay321btn = (TextView) findViewById(R.id.howtoplay321btn);
+
+                // onclick event
+                howtoplay321btn.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v) {
+                        LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View customView2 = layoutInflater.inflate(R.layout.threetwoone_how_to_play_info,null);
+                        close321 = (ImageView) customView2.findViewById(R.id.close321);
+
+                        //Instantiate the popup
+                        howto321popup = new PopupWindow(customView2, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+                        //display the popup window
+                        howto321popup.showAtLocation(relativelayout321, Gravity.TOP, 0, 0);
+
+                        //closing the popup
+                        close321.setOnClickListener(new View.OnClickListener(){
+
+                            @Override
+                            public void onClick(View v) {
+                                howto321popup.dismiss();
+                            }
+                        });
+                    }
+                });
 
                 //instantiate popup window
                 tounpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -191,6 +219,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
 
 
 //        // Popup for 321 how to play
