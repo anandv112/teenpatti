@@ -196,11 +196,24 @@
                         android:src="@drawable/myplayerbackground" />
 
                     <ImageView
+                        android:id="@+id/imageView2"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_alignTop="@+id/myplayer"
-                        android:layout_marginTop="40dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
                         android:src="@drawable/playerinviteavatar" />
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/myplayer">
+                        <ImageView
+                            android:id="@+id/playerdealervar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/playerdealer" />
+                    </RelativeLayout>
+
                 </RelativeLayout>
 
             </RelativeLayout>

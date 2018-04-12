@@ -29,7 +29,11 @@
     <string name="selcetv">IS SELECTING THE VARIATION</string>
     <string name="cvariation">CURRENT VARIATION :</string>
     <string name="howtoplay">HOW TO PLAY</string>
-
+    <string name="selectvariation">SELECT VARIATION</string>
+    <string name="joker">Joker</string>
+    <string name="ak">AK47</string>
+    <string name="xboot">4x Boot</string>
+    <string name="hukum">Hukum</string>
     <string-array name="count_array">
         <item>850Cr</item>
         <item>240Cr</item>

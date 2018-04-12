@@ -28,7 +28,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile;
-    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindo,wtounpopupWindow,orangechipsbtn;
+    PopupWindow RateuspopupWindow;
+    PopupWindow HelpUspopupWindow;
+    PopupWindow TrophypopupWindo;
+    PopupWindow tounpopupWindow;
+    ImageView orangechipsbtn;
+    PopupWindow TrophypopupWindow;
 
     RelativeLayout RelativeLayoutloader;
     TextView loaderbuychips,joinnowbtn;
