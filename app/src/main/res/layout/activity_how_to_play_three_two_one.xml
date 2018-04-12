@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativelayout321"
+    android:background="@drawable/popup_border_bg">
+
+
+    <RelativeLayout
+        android:id="@+id/toplayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:clickable="true"
+            android:id="@+id/howtoplay321btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_button"
+            android:text="@string/howtoplay"
+            android:textColor="@color/colorBlack"
+            android:padding="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/tournament"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="3-2-1 TOURNAMENT"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tournament"
+            android:layout_centerHorizontal="true"
+            android:text="You have ₹2,56,984 chips"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="10dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/brownlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toplayout"
+        android:background="@color/darkbrown"
+        android:layout_margin="20dp"
+        >
+        <RelativeLayout
+            android:id="@+id/outerlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+            <RelativeLayout
+                android:id="@+id/buyinlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:id="@+id/buyin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Buy-in"
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/buyin"
+                    android:layout_centerHorizontal="true"
+                    android:text="₹1,00,000"
+                    android:textColor="@color/colorWhite" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/entryfeelayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_margin="20dp"
+                android:layout_toEndOf="@+id/buyinlayout"
+                android:layout_toRightOf="@+id/buyinlayout">
+
+                <TextView
+                    android:id="@+id/entryfee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Entry Fee"
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/entryfee"
+                    android:layout_centerHorizontal="true"
+                    android:text="₹5000"
+                    android:textColor="@color/colorWhite" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+        <View
+            android:id="@+id/viewmiddle"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorYellowDark"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/outerlayout"
+            />
+        <RelativeLayout
+            android:id="@+id/winamountlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewmiddle"
+            android:layout_centerHorizontal="true"
+            android:padding="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Win Amount Upto :₹5,00,000"
+                android:textColor="@color/colorWhite"
+                android:layout_margin="10dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/brownlayout"
+        >
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:max="300"
+            android:progress="100"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:id="@+id/joinnow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yellow_buttons"
+            android:text="JOIN NOW"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:textColor="@color/colorBlack"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:id="@+id/short312info"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/infogame"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:clickable="true"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>
