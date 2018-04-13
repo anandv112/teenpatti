@@ -152,33 +152,6 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
 
         //////////////// Popup for ThemeButton ///////////////////
 
-        themebtn=(ImageView) findViewById(R.id.theme);
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
-
-        themebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View customView = layoutInflater.inflate(R.layout.thememanager_popup, null);
-
-                themeclosebtn = (ImageView) customView.findViewById(R.id.themeclose);
-                //instantiate popup window
-                themepopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
-
-                //display the popup window
-                themepopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
-
-                //close the popup window on button click
-                themeclosebtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        themepopupWindow.dismiss();
-                    }
-                });
-            }
-        });
-
 
 
         //////////////// Popup for Userstatus ///////////////////

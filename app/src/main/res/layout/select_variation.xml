@@ -109,6 +109,7 @@
             </RelativeLayout>
         </FrameLayout>
         <TextView
+            android:id="@+id/timecountervar"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_alignParentBottom="true"
