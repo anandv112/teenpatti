@@ -195,7 +195,7 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
                 LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.other_player_status, null);
 
-                msgbtn=customView.findViewById(R.id.msg);
+                msgbtn = customView.findViewById(R.id.msg);
 
                 // onclick event for message button
                 msgbtn.setOnClickListener(new View.OnClickListener() {

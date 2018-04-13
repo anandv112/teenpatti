@@ -27,7 +27,7 @@ import android.app.DialogFragment;
 public class MainActivity extends AppCompatActivity {
 
 
-    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile;
+ ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile;
     PopupWindow RateuspopupWindow;
     PopupWindow HelpUspopupWindow;
     PopupWindow TrophypopupWindo;
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     RelativeLayout RelativeLayoutloader;
     TextView loaderbuychips,joinnowbtn;
+
 
 
     @Override
@@ -166,19 +167,45 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // Popup for 321 tournament
+        //////////////// Popup for 321 tournament ////////////////
         orangechipsbtn = (ImageView) findViewById(R.id.mainorgchips);
         RelativeLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutloader);
+
 
         orangechipsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View customView = layoutInflater.inflate(R.layout.how_to_play_popup,null);
+                View customView = layoutInflater.inflate(R.layout.activity_how_to_play_three_two_one,null);
 
+                howtoplay321btn = (TextView) findViewById(R.id.howtoplay321btn);
 
-//                closeTrophyBtn = customView.findViewById(R.id.leaderboardclose);
+                // onclick event
+                howtoplay321btn.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v) {
+                        LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View customView2 = layoutInflater.inflate(R.layout.threetwoone_how_to_play_info,null);
+                        close321 = (ImageView) customView2.findViewById(R.id.close312help);
+
+                        //Instantiate the popup
+                        howto321popup = new PopupWindow(customView2, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+                        //display the popup window
+                        howto321popup.showAtLocation(relativelayout321, Gravity.TOP, 0, 0);
+
+                        //closing the popup
+                        close321.setOnClickListener(new View.OnClickListener(){
+
+                            @Override
+                            public void onClick(View v) {
+                                howto321popup.dismiss();
+                            }
+                        });
+                    }
+                });
 
                 //instantiate popup window
                 tounpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -198,6 +225,39 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+
+//        // Popup for 321 how to play
+//        howtoplay321btn = (TextView) findViewById(R.id.howtoplay321btn);
+//        relativelayout321 = (RelativeLayout) findViewById(R.id.relativelayout321);
+//
+//        howtoplay321btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //instantiate the popup.xml layout file
+//                LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//                View customView = layoutInflater.inflate(R.layout.help_popup,null);
+//
+//                close321 = (ImageView) customView.findViewById(R.id.close321);
+//
+//                //instantiate popup window
+//                howto321popup = new PopupWindow(customView, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//
+//                //display the popup window
+//                howto321popup.showAtLocation(relativelayout321, Gravity.TOP, 0, 0);
+//
+//                //close the popup window on button click
+//                close321.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        howto321popup.dismiss();
+//                    }
+//                });
+//
+//            }
+//        });
         // Animation of chips on main page
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.mainactivity_chips_rotate);
