@@ -112,6 +112,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_toEndOf="@+id/totaldiamondimg"
 
+
                         android:layout_toRightOf="@+id/totaldiamondimg"
                         android:paddingTop="5dp"
                         android:text="30 Diamonds"
