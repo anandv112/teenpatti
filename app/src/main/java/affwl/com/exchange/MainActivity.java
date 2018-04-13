@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View customView2 = layoutInflater.inflate(R.layout.threetwoone_how_to_play_info,null);
-                        close321 = (ImageView) customView2.findViewById(R.id.close321);
+                        close321 = (ImageView) customView2.findViewById(R.id.close312help);
 
                         //Instantiate the popup
                         howto321popup = new PopupWindow(customView2, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
