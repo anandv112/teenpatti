@@ -26,8 +26,9 @@
     <string name="nature">Nature</string>
     <string name="mood">Mood</string>
     <string name="colors">Colors</string>
-
-
+    <string name="selcetv">IS SELECTING THE VARIATION</string>
+    <string name="cvariation">CURRENT VARIATION :</string>
+    <string name="howtoplay">HOW TO PLAY</string>
 
     <string-array name="count_array">
         <item>850Cr</item>
@@ -70,11 +71,29 @@
     </string-array>
 
 
-
     <string name="send">Send</string>
     <string name="msg">MESSAGE</string>
     <string name="block">BLOCK</string>
+    <string name="play">Play</string>
     <string name="achive">Achievements : Yet to come...</string>
     <string name="edittxt">Input private chat here.</string>
+    <string name="game_prep">One deck used per round. 6 cards are dealt to each player on the table.</string>
+    <string name="game_play1">• Select table level and click on "JOIN NOW" to enter the tournament.</string>
+    <string name="game_play2">• 3 empty sets displayed on the bottom left side.</string>
+    <string name="game_play3">• 6 cards displayed on bottom right side.</string>
+    <string name="game_play4">• Place the best possible cards in the sets of 3 cards, 2 cards, 1 card respectively.</string>
+    <string name="game_play4_1">◦ Assume one card in set of 2; assume two cards in set of 1.</string>
+    <string name="game_play5">• Cards can be placed using any of the following methods.</string>
+    <string name="game_play5_1">◦ One card at a time: Drag any one card to a particular set.</string>
+    <string name="game_play5_2">◦ Multiple cards together: Click and select multiple cards then click on the set where you want to drop the cards.</string>
+    <string name="game_play6">• After placing all the 6 cards in 3 sets, place "GO" button.</string>
+    <string name="game_play7">• Then there will be a consecutive showdown on the table for all the 3 sets.</string>
+    <string name="score1">• Winning of a set will be decided based on Teenpatti ranking of hands.</string>
+    <string name="score2">• Player will get 60 points on winning a hand. So, in a single round 3 hands will be played.</string>
+    <string name="score3">• Maximum 180 points can be scored in one round.</string>
+    <string name="score4">• There will be total 5 rounds in the tournament with max score 900 for a single player.</string>
+    <string name="score5">• In case of tie, points will be divided equally amongst the players.</string>
+    <string name="score6">• Click on "PLAY AGAIN" to enter the same level tournament.</string>
+
 
 </resources>

@@ -120,7 +120,7 @@
             android:layout_below="@+id/relativeLayout3"
             android:layout_marginEnd="31dp"
             android:layout_marginRight="31dp"
-            android:layout_marginTop="19dp"
+            android:layout_marginBottom="20dp"
             android:layout_toLeftOf="@+id/dealerclose"
             android:layout_toStartOf="@+id/dealerclose">
 

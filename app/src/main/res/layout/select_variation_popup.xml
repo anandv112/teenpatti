@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/variation"
+    android:background="@drawable/transp_red_bg">
+
+    <ImageView
+        android:id="@+id/closeselectv"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/cross"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/currentuserimg"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/userpicborder" />
+        <TextView
+            android:id="@+id/currentusername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/currentuserimg"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="ABC"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="15sp"/>
+        <TextView
+            android:id="@+id/selectvtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/currentusername"
+            android:text="@string/selcetv"
+            android:textSize="10sp"
+            android:layout_toRightOf="@id/currentuserimg"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/colorLightYellow"/>
+        <TextView
+            android:id="@+id/countdowntimer"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/selectvtxt"
+            android:text="15"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:background="@color/colorWhite"/>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

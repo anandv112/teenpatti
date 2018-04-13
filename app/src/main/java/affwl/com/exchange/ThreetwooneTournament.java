@@ -2,6 +2,7 @@ package affwl.com.exchange;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +14,8 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -21,29 +24,28 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class TeenpattiActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
+public class ThreetwooneTournament extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
     ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;;
-    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn;
+    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond;
     PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow;
     Button msgbtn,blockbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
-    DrawerLayout teenpattitble;
+    DrawerLayout tournamenttble;
     NavigationView navigationView;
-
     int minteger = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teenpatti);
+        setContentView(R.layout.activity_threetwoone_tournament);
 
         handle_right = findViewById(R.id.handle_right);
         handle_right.setOnClickListener(this);
 
 
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, teenpattitble, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        teenpattitble.addDrawerListener(toggle);
+        tournamenttble = (DrawerLayout) findViewById(R.id.tournamenttble);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, tournamenttble, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        tournamenttble.addDrawerListener(toggle);
         toggle.syncState();
 
         navigationView = (NavigationView) findViewById(R.id.teen_nav_view);
@@ -51,18 +53,17 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
 
 
 
-
         //////////////// Popup for Backbutton ///////////////////
 
 
         backbtn=(ImageView) findViewById(R.id.back);
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
+        tournamenttble = (DrawerLayout) findViewById(R.id.tournamenttble);
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
                 closebtn = (TextView) customView.findViewById(R.id.close);
@@ -83,47 +84,47 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
             }
         });
 
-    //////////////// Popup for InfoButton ///////////////////
+        //////////////// Popup for InfoButton ///////////////////
 
         infobtn=(ImageView) findViewById(R.id.info);
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
+        tournamenttble = (DrawerLayout) findViewById(R.id.tournamenttble);
 
         infobtn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            //instantiate the popup.xml layout file
-            LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View customView = layoutInflater.inflate(R.layout.infogame_popup, null);
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.infogame_popup, null);
 
-            infoclosebtn = (ImageView) customView.findViewById(R.id.infoclose);
+                infoclosebtn = (ImageView) customView.findViewById(R.id.infoclose);
 
-            //instantiate popup window
-            infopopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+                //instantiate popup window
+                infopopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
-            //display the popup window
-            infopopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
+                //display the popup window
+                infopopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
 
-            //close the popup window on button click
-            infoclosebtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    infopopupWindow.dismiss();
-                }
-            });
-        }
-    });
+                //close the popup window on button click
+                infoclosebtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        infopopupWindow.dismiss();
+                    }
+                });
+            }
+        });
 
 
         //////////////// Popup for ChatButton ///////////////////
 
         chatbtn=(ImageView) findViewById(R.id.chat);
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
+        tournamenttble = (DrawerLayout) findViewById(R.id.tournamenttble);
 
         chatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.chat_popup, null);
 
                 chatclosebtn = (ImageView) customView.findViewById(R.id.chatclose);
@@ -150,47 +151,17 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
             }
         });
 
-        //////////////// Popup for ThemeButton ///////////////////
-
-        themebtn=(ImageView) findViewById(R.id.theme);
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
-
-        themebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View customView = layoutInflater.inflate(R.layout.thememanager_popup, null);
-
-                themeclosebtn = (ImageView) customView.findViewById(R.id.themeclose);
-                //instantiate popup window
-                themepopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
-
-                //display the popup window
-                themepopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
-
-                //close the popup window on button click
-                themeclosebtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        themepopupWindow.dismiss();
-                    }
-                });
-            }
-        });
-
-
 
         //////////////// Popup for Userstatus ///////////////////
 
         myplayerbtn=(ImageView) findViewById(R.id.myplayer);
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
+        tournamenttble = (DrawerLayout) findViewById(R.id.tournamenttble);
 
         myplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.player_status_popup, null);
 
                 ustatusclosebtn = (ImageView) customView.findViewById(R.id.userstatusclose);
@@ -215,21 +186,21 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
         //////////////// Popup for Otheruserstatus ///////////////////
 
         oplayerbtn=(ImageView) findViewById(R.id.playerbg2);
-        relativeLayout= (RelativeLayout) findViewById(R.id.teenpattitblerecycler);
+        relativeLayout= (RelativeLayout) findViewById(R.id.tournamentrecycler);
 
-       oplayerbtn.setOnClickListener(new View.OnClickListener() {
+        oplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.other_player_status, null);
 
-                msgbtn=customView.findViewById(R.id.msg);
+                msgbtn = customView.findViewById(R.id.msg);
 
                 // onclick event for message button
                 msgbtn.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View customView1 = layoutInflater.inflate(R.layout.send_message_popup, null);
                         msgclosebtn=customView1.findViewById(R.id.msgclose);
                         //instantiate popup window
@@ -271,38 +242,38 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
         //////////////// Popup for Dealer ///////////////////
 
         dealerbtn=(ImageView) findViewById(R.id.dealer);
-        teenpattitble = (DrawerLayout) findViewById(R.id.teenpattitble);
+        tournamenttble = (DrawerLayout) findViewById(R.id.tournamenttble);
 
         dealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.dealer_popup, null);
 
-                    relativeLayout2=customView.findViewById(R.id.inctip_layout);
-                    relativeLayout3=customView.findViewById(R.id.bottombtns);
-                    tipsbtn=customView.findViewById(R.id.tipbtn);
-                    canceltipbtn=customView.findViewById(R.id.canceltip);
-                    chngdbtn=customView.findViewById(R.id.chngdealer);
-                        // onclick event for tip button to hide and show layout
-                        tipsbtn.setOnClickListener(new View.OnClickListener() {
+                relativeLayout2=customView.findViewById(R.id.inctip_layout);
+                relativeLayout3=customView.findViewById(R.id.bottombtns);
+                tipsbtn=customView.findViewById(R.id.tipbtn);
+                canceltipbtn=customView.findViewById(R.id.canceltip);
+                chngdbtn=customView.findViewById(R.id.chngdealer);
+                // onclick event for tip button to hide and show layout
+                tipsbtn.setOnClickListener(new View.OnClickListener() {
 
-                            public void onClick(View v) {
-                                if (relativeLayout2.getVisibility()==View.INVISIBLE) {
-                                    relativeLayout2.setVisibility(View.VISIBLE);
-                                 }
-                                 if (relativeLayout3.getVisibility()==View.VISIBLE)
-                                 {
-                                     relativeLayout3.setVisibility(View.INVISIBLE);
-                                 }
-                            }
+                    public void onClick(View v) {
+                        if (relativeLayout2.getVisibility()==View.INVISIBLE) {
+                            relativeLayout2.setVisibility(View.VISIBLE);
+                        }
+                        if (relativeLayout3.getVisibility()==View.VISIBLE)
+                        {
+                            relativeLayout3.setVisibility(View.INVISIBLE);
+                        }
+                    }
 
-                        });
+                });
                 // onclick event for change dealer button
                 chngdbtn.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View customView2 = layoutInflater.inflate(R.layout.change_dealer, null);
                         chngdealerclosebtn=customView2.findViewById(R.id.chngdealerclose);
                         //instantiate popup window
@@ -322,44 +293,44 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
                     }
 
                 });
-                        // onclick event for cancel button of tip
-                        canceltipbtn.setOnClickListener(new View.OnClickListener() {
+                // onclick event for cancel button of tip
+                canceltipbtn.setOnClickListener(new View.OnClickListener() {
 
-                            public void onClick(View v) {
-                                if (relativeLayout2.getVisibility()==View.VISIBLE) {
-                                    relativeLayout2.setVisibility(View.INVISIBLE);
-                                }
-                                if (relativeLayout3.getVisibility()==View.INVISIBLE)
-                                {
-                                    relativeLayout3.setVisibility(View.VISIBLE);
-                                }
-                            }
-                        });
+                    public void onClick(View v) {
+                        if (relativeLayout2.getVisibility()==View.VISIBLE) {
+                            relativeLayout2.setVisibility(View.INVISIBLE);
+                        }
+                        if (relativeLayout3.getVisibility()==View.INVISIBLE)
+                        {
+                            relativeLayout3.setVisibility(View.VISIBLE);
+                        }
+                    }
+                });
 
-                        //Implementation of increament button
-                        final TextView displayInteger = customView.findViewById(R.id.tipamount);
-                        plusbtn=customView.findViewById(R.id.plus);
-                        plusbtn.setOnClickListener(new View.OnClickListener() {
+                //Implementation of increament button
+                final TextView displayInteger = customView.findViewById(R.id.tipamount);
+                plusbtn=customView.findViewById(R.id.plus);
+                plusbtn.setOnClickListener(new View.OnClickListener() {
 
-                            public void onClick(View v) {
-                               String sub= displayInteger.getText().toString().substring(1);
-                                minteger = Integer.parseInt(sub)*2;
-                                displayInteger.setText("₹" + minteger);
+                    public void onClick(View v) {
+                        String sub= displayInteger.getText().toString().substring(1);
+                        minteger = Integer.parseInt(sub)*2;
+                        displayInteger.setText("₹" + minteger);
 
-                            }
+                    }
 
-                        });
+                });
 
-                        //Implementation of decreament
-                        minusbtn=customView.findViewById(R.id.minus);
-                        minusbtn.setOnClickListener(new View.OnClickListener() {
+                //Implementation of decreament
+                minusbtn=customView.findViewById(R.id.minus);
+                minusbtn.setOnClickListener(new View.OnClickListener() {
 
-                            public void onClick(View v) {
-                                String sub= displayInteger.getText().toString().substring(1);
-                                minteger =Integer.parseInt(sub)/2;
-                                displayInteger.setText("₹" + minteger);
-                            }
-                        });
+                    public void onClick(View v) {
+                        String sub= displayInteger.getText().toString().substring(1);
+                        minteger =Integer.parseInt(sub)/2;
+                        displayInteger.setText("₹" + minteger);
+                    }
+                });
                 dealerclsbtn = (ImageView) customView.findViewById(R.id.dealerclose);
                 //instantiate popup window
                 dealerpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -382,7 +353,7 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.handle_right:
-                teenpattitble.openDrawer(navigationView);
+                tournamenttble.openDrawer(navigationView);
                 break;
         }
     }
@@ -391,8 +362,8 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onBackPressed() {
 
-        if (teenpattitble.isDrawerOpen(GravityCompat.START)) {
-            teenpattitble.closeDrawer(GravityCompat.START);
+        if (tournamenttble.isDrawerOpen(GravityCompat.START)) {
+            tournamenttble.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
@@ -406,7 +377,7 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
 
     public void backtolobby(View view)
     {
-        Intent intent = new Intent(TeenpattiActivity.this, MainActivity.class);
+        Intent intent = new Intent(ThreetwooneTournament.this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -415,21 +386,18 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;
     }
-//    public void increaseInteger(View v) {
-//        minteger = minteger + 1;
-//        display(minteger);
-//
-//    }
-//    public void decreaseInteger(View v) {
-//        minteger = minteger - 1;
-//        display(minteger);
-//    }
-//
-//    private void display(int number) {
-//        TextView displayInteger = (TextView) findViewById(R.id.tipamount);
-//        if (displayInteger.getVisibility()==View.VISIBLE) {
-//            displayInteger.setText("" + number);
-//        }
-//    }
 
-}
+
+//        Animation animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(),
+//                R.anim.zoom_in);
+//        RelativeLayout vrelative=layout.findViewById(R.id.variation);
+//        vrelative.setVisibility(View.VISIBLE);
+//        vrelative.startAnimation(animZoomIn);
+//
+//
+//        Animation animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(),
+//                R.anim.zoom_out);
+//        vrelative.setVisibility(View.VISIBLE);
+//        vrelative.startAnimation(animZoomOut);
+//        windows.dismiss();
+    }

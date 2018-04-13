@@ -15,69 +15,140 @@
         android:animateLayoutChanges="true"
         android:scrollbars="none">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="6dp">
 
-            <ImageView
-                android:id="@+id/mainychips"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_margin="20dp"
-                android:onClick="sendTeenpattiPage"
-                android:src="@drawable/yellowchips" />
 
-            <ImageView
-                android:id="@+id/mainbchips"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_margin="20dp"
-                android:src="@drawable/bluechips" />
+            <RelativeLayout
+                android:id="@+id/yellowchiplayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/mainychips"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="20dp"
+                    android:onClick="sendTeenpattiPage"
+                    android:src="@drawable/yellowchips" />
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_alignLeft="@+id/mainychips"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignStart="@+id/mainychips"
+                    android:src="@drawable/tpatti" />
+            </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/mainlimegchips"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_margin="20dp"
-                android:src="@drawable/limegreenchips" />
 
-            <ImageView
-                android:id="@+id/mainorgchips"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_margin="20dp"
-                android:src="@drawable/orangechips" />
+            <RelativeLayout
+                android:id="@+id/orangechipslayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/yellowchiplayout">
 
-            <ImageView
-                android:id="@+id/darkbluechips"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_margin="20dp"
-                android:src="@drawable/darkbluechips" />
+                <ImageView
+                    android:id="@+id/mainorgchips"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/orangechips1"/>
 
-            <ImageView
-                android:id="@+id/blackchips"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_margin="20dp"
-                android:src="@drawable/blackchips" />
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/outerorangechips1"/>
+            </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/cyanchips"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_margin="20dp"
-                android:src="@drawable/cyanchips" />
+            <RelativeLayout
+                android:id="@+id/limechipslayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/orangechipslayout">
 
-            <ImageView
-                android:id="@+id/ygreenchips"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_margin="20dp"
-                android:src="@drawable/ygreenchips" />
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/mainlimegchips"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/limegreenchips"
+                    android:onClick="sendVariationPage"/>
+                <ImageView
+                    android:id="@+id/innerlime"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/limeloadingbtninner"
+                    />
+
+                <ImageView
+                    android:layout_width="129dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/variation" />
+            </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/darkbluechiplayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/limechipslayout">
+                <ImageView
+                    android:id="@+id/darkbluechips"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/darkbluechips"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/blackchipslayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/darkbluechiplayout">
+                <ImageView
+                    android:id="@+id/blackchips"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/blackchips"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cyanchipslayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/blackchipslayout"
+                >
+                <ImageView
+                    android:id="@+id/cyanchips"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/cyanchips"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ygreenchipslayout"
+                android:layout_toRightOf="@+id/cyanchipslayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/ygreenchips"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/ygreenchips"/>
+            </RelativeLayout>
+        </RelativeLayout>
     </HorizontalScrollView>
 
 
@@ -85,12 +156,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/profile_box" />
+            android:id="@+id/profile"/>
 
         <TextView
             android:layout_width="70dp"
@@ -106,7 +178,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp">
 
         <LinearLayout
             android:id="@+id/share_icons_loader"

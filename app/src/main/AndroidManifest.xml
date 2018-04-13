@@ -37,11 +37,12 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".TeenpattiActivity"
-            android:screenOrientation="landscape">
-        </activity>
-        <activity android:name=".SidedrawerActivity">
+            android:screenOrientation="landscape"/>
 
-        </activity>
+        <activity android:name=".SidedrawerActivity" />
+        <activity android:name=".LoadingScreen_teenpatti" />
+        <activity android:name=".Variation" />
+        <activity android:name=".ThreetwooneTournament" />
     </application>
 
 </manifest>

@@ -154,14 +154,14 @@
                 android:layout_width="85dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="5dp"
+                android:id="@+id/login"
                 android:layout_marginTop="27dp"
                 android:background="@drawable/btnlogin_of_playguest"
                 android:text="Login"
                 android:textSize="12sp"
                 android:paddingTop="10dp"
                 android:textColor="#ffffff"
-                android:paddingLeft="37dp"
-                android:onClick="sendMainpage"/>
+                android:paddingLeft="37dp" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

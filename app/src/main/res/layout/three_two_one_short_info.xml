@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg3"
+    android:id="@+id/howto321shortinfo">
+
+    <ImageView
+        android:id="@+id/close321shortinfo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/cross"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TOURNAMENT INFORMATION"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:layout_gravity="center"/>
+
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MORE INFO"
+        android:textSize="15sp"
+        android:background="@drawable/yellow_buttons"
+        android:layout_alignParentBottom="true"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"/>
+
+
+</RelativeLayout>
