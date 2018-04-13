@@ -5,6 +5,7 @@
     android:background="@drawable/bg3"
     android:id="@+id/howto321popup">
 
+
     <ImageView
         android:id="@+id/close312help"
         android:layout_width="40dp"
@@ -13,7 +14,6 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:clickable="true"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

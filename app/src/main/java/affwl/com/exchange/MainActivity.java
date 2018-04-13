@@ -27,8 +27,8 @@ import android.app.DialogFragment;
 public class MainActivity extends AppCompatActivity {
 
 
-    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile,orangechipsbtn,close312help,close321tour,short321info,close321shortinfo;
-    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow, tounpopupWindow,howto321popup,threetwoonetour,infoshort321;
+    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile,orangechipsbtn,close321;
+    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow,tounpopupWindow,howto321popup;
     RelativeLayout RelativeLayoutloader,relativelayout321;
     TextView loaderbuychips,joinnowbtn,howtoplay321btn;
 
@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Popup for Help
-        showPopupBtn = findViewById(R.id.help_btn_loader);
-        RelativeLayoutloader = findViewById(R.id.linearLayoutloader);
+        showPopupBtn = (ImageView) findViewById(R.id.help_btn_loader);
+        RelativeLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutloader);
 
         showPopupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.help_popup,null);
 
-                closeHelpBtn = customView.findViewById(R.id.close_helpus);
+                closeHelpBtn = (ImageView) customView.findViewById(R.id.close_helpus);
 
                 //instantiate popup window
                 HelpUspopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
@@ -111,8 +111,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Popup for Leaderboard
-        ImageView showPopupBtnTropy = findViewById(R.id.trophy_btn_loader);
-        RelativeLayoutloader = findViewById(R.id.linearLayoutloader);
+        ImageView showPopupBtnTropy = (ImageView) findViewById(R.id.trophy_btn_loader);
+        RelativeLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutloader);
 
         showPopupBtnTropy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,10 +159,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
         //////////////// Popup for 321 tournament ////////////////
-        orangechipsbtn = findViewById(R.id.mainorgchips);
-        RelativeLayoutloader = findViewById(R.id.linearLayoutloader);
-        relativelayout321 = findViewById(R.id.relativelayout321);
+        orangechipsbtn = (ImageView) findViewById(R.id.mainorgchips);
+        RelativeLayoutloader = (RelativeLayout) findViewById(R.id.linearLayoutloader);
 
 
         orangechipsbtn.setOnClickListener(new View.OnClickListener() {
@@ -171,61 +172,35 @@ public class MainActivity extends AppCompatActivity {
                 //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.activity_how_to_play_three_two_one,null);
-                short321info = findViewById(R.id.short312info);
 
-                howtoplay321btn = customView.findViewById(R.id.howtoplay321btn);
-
-
+                howtoplay321btn = (TextView) findViewById(R.id.howtoplay321btn);
 
                 // onclick event
                 howtoplay321btn.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
                     public void onClick(View v) {
-                        LayoutInflater layoutInflater1 = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                        View customView1 = layoutInflater1.inflate(R.layout.threetwoone_how_to_play_info,null);
-                        close312help = customView1.findViewById(R.id.close312help);
+                        LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View customView2 = layoutInflater.inflate(R.layout.threetwoone_how_to_play_info,null);
+                        close321 = (ImageView) customView2.findViewById(R.id.close321);
 
                         //Instantiate the popup
-                        howto321popup = new PopupWindow(customView1, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+                        howto321popup = new PopupWindow(customView2, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
                         //display the popup window
-                        howto321popup.showAtLocation(RelativeLayoutloader, Gravity.TOP, 0, 0);
+                        howto321popup.showAtLocation(relativelayout321, Gravity.TOP, 0, 0);
 
                         //closing the popup
-                        close312help.setOnClickListener(new View.OnClickListener(){
+                        close321.setOnClickListener(new View.OnClickListener(){
 
                             @Override
                             public void onClick(View v) {
                                 howto321popup.dismiss();
                             }
                         });
-                        tounpopupWindow.dismiss();
                     }
                 });
 
-//                short321info.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        LayoutInflater layoutInflater = (LayoutInflater)MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//                        View customView2 = layoutInflater.inflate(R.layout.three_two_one_short_info,null);
-//
-//                        close321shortinfo = customView2.findViewById(R.id.close321shortinfo);
-//
-//                        //Instantiate
-//                        infoshort321 = new PopupWindow(customView2,RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT);
-//
-//                        //Display
-//                        infoshort321.showAtLocation(RelativeLayoutloader,Gravity.TOP,0,0);
-//
-//                        //close
-//                        close321shortinfo.setOnClickListener(new View.OnClickListener(){
-//
-//                            @Override
-//                            public void onClick(View v) {
-//                                infoshort321.dismiss();
-//                            }
-//                        });
-//                    }
-//                });
                 //instantiate popup window
                 tounpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
@@ -233,8 +208,7 @@ public class MainActivity extends AppCompatActivity {
                 tounpopupWindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
 
                 //join now the popup window on button click
-                joinnowbtn = customView.findViewById(R.id.joinnow);
-
+                joinnowbtn=customView.findViewById(R.id.joinnow);
                 joinnowbtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -242,10 +216,42 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
+
             }
         });
 
 
+
+
+//        // Popup for 321 how to play
+//        howtoplay321btn = (TextView) findViewById(R.id.howtoplay321btn);
+//        relativelayout321 = (RelativeLayout) findViewById(R.id.relativelayout321);
+//
+//        howtoplay321btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //instantiate the popup.xml layout file
+//                LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//                View customView = layoutInflater.inflate(R.layout.help_popup,null);
+//
+//                close321 = (ImageView) customView.findViewById(R.id.close321);
+//
+//                //instantiate popup window
+//                howto321popup = new PopupWindow(customView, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+//
+//                //display the popup window
+//                howto321popup.showAtLocation(relativelayout321, Gravity.TOP, 0, 0);
+//
+//                //close the popup window on button click
+//                close321.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        howto321popup.dismiss();
+//                    }
+//                });
+//
+//            }
+//        });
         // Animation of chips on main page
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.mainactivity_chips_rotate);
