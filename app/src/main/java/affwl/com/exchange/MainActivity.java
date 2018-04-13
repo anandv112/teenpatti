@@ -27,10 +27,16 @@ import android.app.DialogFragment;
 public class MainActivity extends AppCompatActivity {
 
 
-    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile,orangechipsbtn,close321;
-    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow,tounpopupWindow,howto321popup;
-    RelativeLayout RelativeLayoutloader,relativelayout321;
-    TextView loaderbuychips,joinnowbtn,howtoplay321btn;
+ ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile;
+    PopupWindow RateuspopupWindow;
+    PopupWindow HelpUspopupWindow;
+    PopupWindow TrophypopupWindo;
+    PopupWindow tounpopupWindow;
+    ImageView orangechipsbtn;
+    PopupWindow TrophypopupWindow;
+
+    RelativeLayout RelativeLayoutloader;
+    TextView loaderbuychips,joinnowbtn;
 
 
 

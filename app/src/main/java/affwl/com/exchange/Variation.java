@@ -19,21 +19,26 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class Variation extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
-    ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;;
+    ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn,pdealerbtn;
     TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond;
-    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow;
+    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow,selectvariationpopupWindow;
     Button msgbtn,blockbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
     DrawerLayout variationtble;
     NavigationView navigationView;
     public int counter=15;
+    public int counter2=15;
     int minteger = 0;
+    RadioGroup radioGroup;
+    RadioButton radiojokerbtn,radioakbtn,radioxbootbtn,radiohukumbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -167,11 +172,13 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
                 View customView = layoutInflater.inflate(R.layout.player_status_popup, null);
 
                 ustatusclosebtn = (ImageView) customView.findViewById(R.id.userstatusclose);
+
                 //instantiate popup window
                 ustatuspopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
                 //display the popup window
                 ustatuspopupWindow.showAtLocation(relativeLayout, Gravity.CENTER_HORIZONTAL, 0, 0);
+
 
                 //close the popup window on button click
                 ustatusclosebtn.setOnClickListener(new View.OnClickListener() {
@@ -184,6 +191,69 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
         });
 
 
+
+        // Onclick on playerdealer button
+        pdealerbtn=(ImageView)findViewById(R.id.playerdealervar);
+        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        pdealerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.select_variation, null);
+                //instantiate popup window
+                selectvariationpopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+                //display the popup window
+                selectvariationpopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
+
+
+                // countdown timer for selectvariation
+                final TextView txtsecondvar=customView.findViewById(R.id.timecountervar);
+                new CountDownTimer(16000, 1000){
+                    public void onTick(long millisUntilFinished){
+                        txtsecondvar.setText(String.valueOf(counter2));
+                        counter2--;
+                    }
+                    public  void onFinish(){
+                        selectvariationpopupWindow.dismiss();
+                    }
+                }.start();
+
+                radioGroup = (RadioGroup)customView.findViewById(R.id.radiogrp);
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                // find the radiobutton by returned id
+                radiojokerbtn = (RadioButton)customView.findViewById(selectedId);
+
+                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(final RadioGroup group, final int checkedId) {
+                        final boolean[] wantToCloseDialog = {false};
+                        group.getCheckedRadioButtonId();
+                        Toast.makeText(Variation.this,  String.valueOf(group.getCheckedRadioButtonId()), Toast.LENGTH_SHORT).show();
+                        group.check(checkedId);
+                        Thread thread=new Thread(){
+                            public void run()
+                            {
+                                try {
+                                    Thread.sleep(100);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                                wantToCloseDialog[0] =true;
+                            }
+                        };
+                        thread.start();
+                        if (wantToCloseDialog[0])
+                        selectvariationpopupWindow.dismiss();
+                    }
+                });
+
+
+
+
+            }
+        });
 
         //////////////// Popup for Otheruserstatus ///////////////////
 

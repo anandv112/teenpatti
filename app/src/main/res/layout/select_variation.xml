@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#86000000">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/colorRed"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/selectvariationbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yellow_buttons"
+            android:text="@string/selectvariation"
+            android:textSize="10dp"
+            android:padding="10dp"
+            android:textColor="@color/darkbrown"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"/>
+
+        <FrameLayout
+            android:id="@+id/variationlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/selectvariationbtn"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="3">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/joker"
+                android:textColor="@color/colorYellowGolden"
+                android:background="@drawable/themelistlabelback"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/ak"
+                android:textColor="@color/colorYellowGolden"
+                android:background="@drawable/themelistlabelback"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/xboot"
+                android:textColor="@color/colorYellowGolden"
+                android:background="@drawable/themelistlabelback"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/hukum"
+                android:textColor="@color/colorYellowGolden"
+                android:background="@drawable/themelistlabelback"
+                android:padding="10dp"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="right"
+                >
+
+                <RadioGroup
+                    android:id="@+id/radiogrp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-10dp">
+
+                    <RadioButton
+                        android:id="@+id/radiojoker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/radioxboot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"/>
+
+                    <RadioButton
+                        android:id="@+id/radiohukum"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"/>
+                </RadioGroup>
+            </RelativeLayout>
+        </FrameLayout>
+        <TextView
+            android:id="@+id/timecountervar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="15"
+            android:layout_marginBottom="50dp"
+            android:background="@color/colorWhite"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:padding="5dp"/>
+    </RelativeLayout>
+</RelativeLayout>
