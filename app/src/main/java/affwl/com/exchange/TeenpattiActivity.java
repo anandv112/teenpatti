@@ -150,10 +150,6 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
             }
         });
 
-        //////////////// Popup for ThemeButton ///////////////////
-
-
-
         //////////////// Popup for Userstatus ///////////////////
 
         myplayerbtn=(ImageView) findViewById(R.id.myplayer);
