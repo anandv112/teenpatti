@@ -97,7 +97,7 @@
                     android:textColor="@color/colorWhite"/>
 
                 <ImageView
-                    android:layout_width="400dp"
+                    android:layout_width="399dp"
                     android:layout_height="230dp"
                     android:src="@drawable/how_to_play"
                     android:layout_marginLeft="5dp"
