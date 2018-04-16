@@ -1,130 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#86000000">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/colorRed"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/selectvariationbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:background="@drawable/yellow_buttons"
-            android:text="@string/selectvariation"
-            android:textSize="10dp"
             android:padding="10dp"
+            android:text="@string/selectvariation"
             android:textColor="@color/darkbrown"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"/>
+            android:textSize="10dp" />
 
-        <FrameLayout
-            android:id="@+id/variationlayout"
+        <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/selectvariationbtn"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:weightSum="4">
-            <LinearLayout
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp">
+
+            <FrameLayout
+                android:id="@+id/variationlayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="3">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="@string/joker"
-                android:textColor="@color/colorYellowGolden"
-                android:background="@drawable/themelistlabelback"
-                android:padding="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="@string/ak"
-                android:textColor="@color/colorYellowGolden"
-                android:background="@drawable/themelistlabelback"
-                android:padding="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="@string/xboot"
-                android:textColor="@color/colorYellowGolden"
-                android:background="@drawable/themelistlabelback"
-                android:padding="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:text="@string/hukum"
-                android:textColor="@color/colorYellowGolden"
-                android:background="@drawable/themelistlabelback"
-                android:padding="10dp"/>
-            </LinearLayout>
+                android:layout_below="@+id/selectvariationbtn"
+                android:orientation="horizontal"
+                android:weightSum="4">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_gravity="right"
-                >
-
-                <RadioGroup
-                    android:id="@+id/radiogrp"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-10dp">
+                    android:layout_weight="3"
+                    android:orientation="vertical">
 
-                    <RadioButton
-                        android:id="@+id/radiojoker"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:background="@drawable/themelistlabelback"
+                        android:padding="10dp"
+                        android:text="@string/joker"
+                        android:textColor="@color/colorYellowGolden" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:background="@drawable/themelistlabelback"
+                        android:padding="10dp"
+                        android:text="@string/ak"
+                        android:textColor="@color/colorYellowGolden" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:background="@drawable/themelistlabelback"
+                        android:padding="10dp"
+                        android:text="@string/xboot"
+                        android:textColor="@color/colorYellowGolden" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:background="@drawable/themelistlabelback"
+                        android:padding="10dp"
+                        android:text="@string/hukum"
+                        android:textColor="@color/colorYellowGolden" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:background="@drawable/themelistlabelback"
+                        android:padding="10dp"
+                        android:text="@string/muflis"
+                        android:textColor="@color/colorYellowGolden" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:background="@drawable/themelistlabelback"
+                        android:padding="10dp"
+                        android:text="@string/faceoff"
+                        android:textColor="@color/colorYellowGolden" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:background="@drawable/themelistlabelback"
+                        android:padding="10dp"
+                        android:text="@string/lowestjoker"
+                        android:textColor="@color/colorYellowGolden" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:background="@drawable/themelistlabelback"
+                        android:padding="10dp"
+                        android:text="@string/nine"
+                        android:textColor="@color/colorYellowGolden" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/radiogrp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="-10dp">
 
-                        />
+                        <RadioButton
+                            android:id="@+id/radiojoker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
 
-                    <RadioButton
-                        android:id="@+id/radioak"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"/>
+                        <RadioButton
+                            android:id="@+id/radioak"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" />
 
-                    <RadioButton
-                        android:id="@+id/radioxboot"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"/>
+                        <RadioButton
+                            android:id="@+id/radioxboot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp" />
 
-                    <RadioButton
-                        android:id="@+id/radiohukum"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"/>
-                </RadioGroup>
-            </RelativeLayout>
-        </FrameLayout>
-        <TextView
-            android:id="@+id/timecountervar"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:text="15"
-            android:layout_marginBottom="50dp"
-            android:background="@color/colorWhite"
-            android:textAlignment="center"
-            android:textColor="@color/colorBlack"
-            android:padding="5dp"/>
-        <TextView
-            android:id="@+id/timecountervar2"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:textAlignment="center"
-            android:visibility="invisible"/>
-    </RelativeLayout>
+                        <RadioButton
+                            android:id="@+id/radiohukum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp" />
+                        <RadioButton
+                            android:id="@+id/radiomuflis"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp" />
+                        <RadioButton
+                            android:id="@+id/radiofaceoff"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp" />
+                        <RadioButton
+                            android:id="@+id/radiolowestj"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp" />
+                        <RadioButton
+                            android:id="@+id/radio999"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp" />
+                    </RadioGroup>
+                </LinearLayout>
+            </FrameLayout>
+        </ScrollView>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp">
+            <TextView
+
+                android:id="@+id/timecountervar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@color/colorWhite"
+                android:padding="5dp"
+                android:text="15"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack" />
+
+            <TextView
+                android:id="@+id/timecountervar2"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:textAlignment="center"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
 </RelativeLayout>

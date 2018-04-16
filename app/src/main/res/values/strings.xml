@@ -34,6 +34,10 @@
     <string name="ak">AK47</string>
     <string name="xboot">4x Boot</string>
     <string name="hukum">Hukum</string>
+    <string name="muflis">Muflis</string>
+    <string name="faceoff">FaceOff</string>
+    <string name="lowestjoker">Lowest Joker</string>
+    <string name="nine">999</string>
     <string-array name="count_array">
         <item>850Cr</item>
         <item>240Cr</item>
@@ -81,6 +85,8 @@
     <string name="play">Play</string>
     <string name="achive">Achievements : Yet to come...</string>
     <string name="edittxt">Input private chat here.</string>
+
+    <!--Instructions for 321-->
     <string name="game_prep">One deck used per round. 6 cards are dealt to each player on the table.</string>
     <string name="game_play1">• Select table level and click on "JOIN NOW" to enter the tournament.</string>
     <string name="game_play2">• 3 empty sets displayed on the bottom left side.</string>
@@ -99,5 +105,38 @@
     <string name="score5">• In case of tie, points will be divided equally amongst the players.</string>
     <string name="score6">• Click on "PLAY AGAIN" to enter the same level tournament.</string>
 
-
+    <!--instructions for sixpatti-->
+    <string name="firstpoint">• Click on "6 PATTI" Button</string>
+    <string name="g_play1">Set the Buy-in value using slider.Then Click on "Join Now " button.</string>
+    <string name="g_play2">• Once all the players have joined,game will start.</string>
+    <string name="g_play3">• Each player will get 6 cards</string>
+    <string name="g_play3_1">◦ Note:Each player will be assigned wwith their own deck of cards and cards will be randomly distributed from the same.</string>
+    <string name="g_play4">• Choose 3 out 6 cards to play your best suitable* chal.</string>
+    <string name="g_play4_1">◦ Tap on cards that you want to select.</string>
+    <string name="g_play4_2">◦ Then click on "GO" button to proceed.</string>
+    <string name="g_play4_3">◦ You will get 10 seconds to complete your chaal.</string>
+    <string name="g_play5">• After your chaal the selected 3 cards will be played on the table.\n
+                            Note You can also view selected cards other players after their respective chaal.</string>
+    <string name="g_play6">• Player with the higher hand wins.
+                            (Ranking of hands is the same as in the classic Teen Patti game,refer\n
+                            details at the end of the documentation) Winner will be declared after all the players have completed their chaal.</string>
+    <string name="g_play7">• Then next round will start within 5 second.\n
+                            3 new random cards will be distributed from your respective set.
+                            These 3 along with 3 remaining cards will be your 6 cards for this round.
+                            Repeat above steps to play your chaal.</string>
+    <string name="g_play8">Note: There will be 5 players and 15 rounds. Deck of 45 cards will be assigned to each player in which randomly 7 cards will be removed. But those randomly removed 7 cards will be same from every deck.</string>
+    <string name="g_play9">• Ranking of the players will be declared at the end of the tournament. Ranks will be given based on the number of rounds won by a player and winner takes it all.</string>
+    <string name="g_play9_1">* If its not your first chance then you can play smartly. You can decide your cards by looking at other players cards. If your best cards cant make you win that round, then better save it for next round and give away the worst ones. Hence, the best suitable chaal.</string>
+    <string name="g_play10">• Trail - three cards of the same rank.
+                            Three aces are the best trail and three twos are the lowest.</string>
+    <string name="g_play11">• Straight run - three consecutive cards of the same suit.
+                            A-2-3, which is the highest straight run. Next comes A-K-Q, K-Q-J and so on down to 4-3-2, which is the lowest.</string>
+    <string name="g_play12">• Normal run - three consecutive cards, not all of the same suit.
+                            A-2-3 is the best normal run, then A-K-Q, K-Q-J and so on down to 4-3-2.</string>
+    <string name="g_play13">• Color - any three cards of the same suit.</string>
+    <string name="g_play14">• Pair - two cards of the same rank.\n
+                            Between two such hands, compare the pair first, then the odd card if these are equal.
+                            The highest pair hand is therefore A-A-K and the lowest is 2-2-3. </string>
+    <string name="g_play15">• High card - three cards that do not belong to any of the above types. Compare the highest card first, then the second highest, then the lowest. The best hand of this type is A-K-J of mixed suits, and the worst is 5-3-2 </string>
+    <string name="g_play16">Any hand of a higher type beats any hand of a lower type </string>
 </resources>

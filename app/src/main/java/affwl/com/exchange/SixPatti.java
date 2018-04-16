@@ -10,7 +10,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -18,65 +17,53 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class Variation extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
-    ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn,pdealerbtn;
+public class SixPatti extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
+    ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;;
     TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond;
-    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow,selectvariationpopupWindow;
+    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow;
     Button msgbtn,blockbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
-    DrawerLayout variationtble;
+    DrawerLayout sixpattitble;
     NavigationView navigationView;
-    public int counter=15;
-    public int counter4=15;
-    public int counter5=15;
-
-    CountDownTimer countDownTimer;
-
     int minteger = 0;
-    RadioGroup radioGroup;
-    RadioButton radiojokerbtn,radioakbtn,radioxbootbtn,radiohukumbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_variation);
+        setContentView(R.layout.activity_six_patti);
 
         handle_right = findViewById(R.id.handle_right);
         handle_right.setOnClickListener(this);
 
 
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, variationtble, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        variationtble.addDrawerListener(toggle);
+        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, sixpattitble, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        sixpattitble.addDrawerListener(toggle);
         toggle.syncState();
 
         navigationView = (NavigationView) findViewById(R.id.teen_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        loadingPopup();
 
 
         //////////////// Popup for Backbutton ///////////////////
 
 
         backbtn=(ImageView) findViewById(R.id.back);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
                 closebtn = (TextView) customView.findViewById(R.id.close);
@@ -97,18 +84,16 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
             }
         });
 
-
-
         //////////////// Popup for InfoButton ///////////////////
 
         infobtn=(ImageView) findViewById(R.id.info);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
 
         infobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.infogame_popup, null);
 
                 infoclosebtn = (ImageView) customView.findViewById(R.id.infoclose);
@@ -130,18 +115,16 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
         });
 
 
-
-
         //////////////// Popup for ChatButton ///////////////////
 
         chatbtn=(ImageView) findViewById(R.id.chat);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
 
         chatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.chat_popup, null);
 
                 chatclosebtn = (ImageView) customView.findViewById(R.id.chatclose);
@@ -172,17 +155,16 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
         //////////////// Popup for Userstatus ///////////////////
 
         myplayerbtn=(ImageView) findViewById(R.id.myplayer);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
 
         myplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.player_status_popup, null);
 
                 ustatusclosebtn = (ImageView) customView.findViewById(R.id.userstatusclose);
-
                 //instantiate popup window
                 ustatuspopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
@@ -200,94 +182,25 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
         });
 
 
-        // Onclick on playerdealer button
-
-        pdealerbtn=(ImageView)findViewById(R.id.playerdealervar);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
-        pdealerbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                final View customView = layoutInflater.inflate(R.layout.select_variation, null);
-                //instantiate popup window
-                selectvariationpopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-
-                //display the popup window
-                selectvariationpopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
-                // countdown timer for selectvariation
-                final TextView txtsecondvar=customView.findViewById(R.id.timecountervar);
-
-                long millisInFuture = 15000; //25 seconds
-                long countDownInterval = 1000; //1 second
-
-                countDownTimer=new CountDownTimer(millisInFuture, countDownInterval){
-                    public void onTick(long millisUntilFinished){
-//                        txtsecondvar.setText(String.valueOf(counter2));
-                        txtsecondvar.setText(" "+millisUntilFinished/1000);
-//                        counter2--;
-                    }
-                    public  void onFinish(){
-                        selectvariationpopupWindow.dismiss();
-                    }
-                };
-                countDownTimer.start();
-
-                // Implementing onclick on radio button to select variation
-//                final RelativeLayout variation1 = customView.findViewById(R.id.variation);
-//                final RelativeLayout relativeLayout2 = customView.findViewById(R.id.svariationpopup);
-                final TextView txtsecondtimer=customView.findViewById(R.id.timecountervar2);
-                radioGroup = (RadioGroup)customView.findViewById(R.id.radiogrp);
-                int id= radioGroup.getCheckedRadioButtonId();
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(final RadioGroup group, final int checkedId) {
-                        group.check(checkedId);
-                        // countdown for radio button to dismiss popup
-                        long millisInFuture = 3000; //3 seconds
-                        long countDownInterval = 1000; //1 second
-                        new CountDownTimer(millisInFuture, countDownInterval){
-                            public void onTick(long millisUntilFinished){
-                                txtsecondtimer.setText(" "+millisUntilFinished/1000);
-//                                counter3--;
-                            }
-                            public  void onFinish(){
-                                selectvariationpopupWindow.dismiss();
-
-
-
-//                                if (variation1.getVisibility() == View.VISIBLE) {
-//                                    variation1.setVisibility(View.INVISIBLE);
-//                                }
-//                                if (relativeLayout2.getVisibility() == View.INVISIBLE) {
-//                                    relativeLayout2.setVisibility(View.VISIBLE);
-//                                }
-                            }
-                        }.start();
-
-                    }
-                });
-            }
-        });
-
 
         //////////////// Popup for Otheruserstatus ///////////////////
+
         oplayerbtn=(ImageView) findViewById(R.id.playerbg2);
-        relativeLayout= (RelativeLayout) findViewById(R.id.variationrecycler);
+        relativeLayout= (RelativeLayout) findViewById(R.id.sixpattirecycler);
 
         oplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.other_player_status, null);
 
-                msgbtn=customView.findViewById(R.id.msg);
+                msgbtn = customView.findViewById(R.id.msg);
 
                 // onclick event for message button
                 msgbtn.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View customView1 = layoutInflater.inflate(R.layout.send_message_popup, null);
                         msgclosebtn=customView1.findViewById(R.id.msgclose);
                         //instantiate popup window
@@ -329,12 +242,13 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
         //////////////// Popup for Dealer ///////////////////
 
         dealerbtn=(ImageView) findViewById(R.id.dealer);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+
         dealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.dealer_popup, null);
 
                 relativeLayout2=customView.findViewById(R.id.inctip_layout);
@@ -359,7 +273,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
                 // onclick event for change dealer button
                 chngdbtn.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View customView2 = layoutInflater.inflate(R.layout.change_dealer, null);
                         chngdealerclosebtn=customView2.findViewById(R.id.chngdealerclose);
                         //instantiate popup window
@@ -439,7 +353,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.handle_right:
-                variationtble.openDrawer(navigationView);
+                sixpattitble.openDrawer(navigationView);
                 break;
         }
     }
@@ -448,8 +362,8 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onBackPressed() {
 
-        if (variationtble.isDrawerOpen(GravityCompat.START)) {
-            variationtble.closeDrawer(GravityCompat.START);
+        if (sixpattitble.isDrawerOpen(GravityCompat.START)) {
+            sixpattitble.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
@@ -463,7 +377,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
 
     public void backtolobby(View view)
     {
-        Intent intent = new Intent(Variation.this, MainActivity.class);
+        Intent intent = new Intent(SixPatti.this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -474,91 +388,4 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
     }
 
 
-
-//    Implementing startup popup selecting variation
-
-    public void loadingPopup() {
-        final LayoutInflater inflater = this.getLayoutInflater();
-        final View layout = inflater.inflate(R.layout.select_variation_popup, null);
-        final PopupWindow windows = new PopupWindow(layout , RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-        windows.setFocusable(false);
-        windows.setTouchable(true);
-        windows.setOutsideTouchable(true);
-        layout.post(new Runnable() {
-            public void run() {
-                windows.showAtLocation(layout,Gravity.CENTER, 0, 0);
-            }
-        });
-
-        ImageView closeselectv=layout.findViewById(R.id.closeselectv);
-        closeselectv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                windows.dismiss();
-                final RelativeLayout variation1 = layout.findViewById(R.id.variation);
-                final RelativeLayout relativeLayout1 = layout.findViewById(R.id.svariationpopup);
-                if (variation1.getVisibility() == View.VISIBLE) {
-                    variation1.setVisibility(View.INVISIBLE);
-                }
-                if (relativeLayout1.getVisibility() == View.INVISIBLE) {
-                    relativeLayout1.setVisibility(View.VISIBLE);
-                    final TextView txtsecond=layout.findViewById(R.id.countdowntimer);
-                    new CountDownTimer(2000, 1000) {
-                        public void onTick(long millisUntilFinished) {
-                            txtsecond.setText(String.valueOf(counter5));
-                            counter5--;
-                        }
-
-                        @Override
-                        public void onFinish() {
-                            relativeLayout1.setVisibility(View.INVISIBLE);
-                        }
-                    }.start();
-                }
-            }
-        });
-
-
-        final TextView txtsecond=layout.findViewById(R.id.countdowntimer);
-        new CountDownTimer(16000, 1000){
-            public void onTick(long millisUntilFinished){
-                txtsecond.setText(String.valueOf(counter));
-                counter--;
-            }
-            public  void onFinish() {
-                //windows.dismiss();
-                final RelativeLayout variation = layout.findViewById(R.id.variation);
-                final RelativeLayout relativeLayout = layout.findViewById(R.id.svariationpopup);
-                if (variation.getVisibility() == View.VISIBLE) {
-                    variation.setVisibility(View.INVISIBLE);
-                }
-                if (relativeLayout.getVisibility() == View.INVISIBLE) {
-                    relativeLayout.setVisibility(View.VISIBLE);
-                    new CountDownTimer(2000, 1000) {
-                        public void onTick(long millisUntilFinished) {
-                            txtsecond.setText(String.valueOf(counter4));
-                            counter4--;
-                        }
-
-                        @Override
-                        public void onFinish() {
-                            relativeLayout.setVisibility(View.INVISIBLE);
-                        }
-                    }.start();
-                }
-            }
-        }.start();
-//        Animation animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(),
-//                R.anim.zoom_in);
-//        RelativeLayout vrelative=layout.findViewById(R.id.variation);
-//        vrelative.setVisibility(View.VISIBLE);
-//        vrelative.startAnimation(animZoomIn);
-//
-//
-//        Animation animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(),
-//                R.anim.zoom_out);
-//        vrelative.setVisibility(View.VISIBLE);
-//        vrelative.startAnimation(animZoomOut);
-//        windows.dismiss();
-    }
 }

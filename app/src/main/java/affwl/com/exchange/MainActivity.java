@@ -27,10 +27,10 @@ import android.app.DialogFragment;
 public class MainActivity extends AppCompatActivity {
 
 
-    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile,orangechipsbtn,close312help,close321tour,short321info,close321shortinfo;
-    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow, tounpopupWindow,howto321popup,threetwoonetour,infoshort321;
-    RelativeLayout RelativeLayoutloader,relativelayout321;
-    TextView loaderbuychips,joinnowbtn,howtoplay321btn;
+    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile,orangechipsbtn,close312help,closesixpattihelp,short321info,shortsixpattiinfo,bluechipsbtn;
+    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow, tounpopupWindow,howto321popup,sixpattipopup,howtosixpattipopup;
+    RelativeLayout RelativeLayoutloader,relativelayout321,relativeLayoutsixpatti;
+    TextView loaderbuychips,joinnowbtn,howtoplay321btn,howtoplaysixpattibtn,joinnowsixpattibtn;
 
 
 
@@ -145,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         //Buy Chips Popup
 
         loaderbuychips = (findViewById(R.id.buy_chips_loader));
@@ -157,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
                 frag.show(ft, "txn_tag");
             }
         });
+
 
 
         //////////////// Popup for 321 tournament ////////////////
@@ -244,6 +244,76 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
+
+
+
+
+
+
+
+        //////////////// Popup for six patti ////////////////
+        bluechipsbtn = findViewById(R.id.darkbluechips);
+        RelativeLayoutloader = findViewById(R.id.linearLayoutloader);
+        relativeLayoutsixpatti = findViewById(R.id.relativelayoutsixpatti);
+
+
+        bluechipsbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.activity_how_to_play_sixpatti,null);
+                shortsixpattiinfo = findViewById(R.id.shortsixpattiinfo);
+
+                howtoplaysixpattibtn = customView.findViewById(R.id.howtoplaysixpattibtn);
+
+
+
+                // onclick event
+                howtoplaysixpattibtn.setOnClickListener(new View.OnClickListener(){
+                    public void onClick(View v) {
+                        LayoutInflater layoutInflater1 = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View customView1 = layoutInflater1.inflate(R.layout.sixpatti_how_to_play_info,null);
+                        closesixpattihelp = customView1.findViewById(R.id.closesixpattihelp);
+
+                        //Instantiate the popup
+                        howtosixpattipopup = new PopupWindow(customView1, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                        //display the popup window
+                        howtosixpattipopup.showAtLocation(RelativeLayoutloader, Gravity.TOP, 0, 0);
+
+                        //closing the popup
+                        closesixpattihelp.setOnClickListener(new View.OnClickListener(){
+
+                            @Override
+                            public void onClick(View v) {
+                                howtosixpattipopup.dismiss();
+                            }
+                        });
+                        sixpattipopup.dismiss();
+                    }
+                });
+
+                //instantiate popup window
+                sixpattipopup = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                sixpattipopup.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
+
+                //join now the popup window on button click
+                joinnowsixpattibtn = customView.findViewById(R.id.joinnowsixpatti);
+
+                joinnowsixpattibtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, SixPatti.class);
+                        startActivity(intent);
+                    }
+                });
+            }
+        });
+
+
 
 
         // Animation of chips on main page
