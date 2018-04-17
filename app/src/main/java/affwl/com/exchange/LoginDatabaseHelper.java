@@ -4,9 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-/**
- * Created by user on 4/4/2018.
- */
 
 public class LoginDatabaseHelper {
     private static final int DATABASE_VERSION = 1;
@@ -14,7 +11,7 @@ public class LoginDatabaseHelper {
     private static final String DATABASE_NAME = "UserInfo";
     // Contacts table name
     private static final String TABLE_NAME = "User";
-    static String CREATE_TABLE="create table User (id integer primary key,image text,name text)";
+    static String CREATE_TABLE = "create table User (id integer primary key,image text,name text)";
     Context context;
     SQLiteDatabase db;
 

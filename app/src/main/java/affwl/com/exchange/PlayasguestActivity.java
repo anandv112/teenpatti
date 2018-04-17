@@ -51,8 +51,6 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
         session=new Session(this);
     }
 
-
-
 //    Implementation of selecting avatar
     @Override
     public void onClick(View v) {
