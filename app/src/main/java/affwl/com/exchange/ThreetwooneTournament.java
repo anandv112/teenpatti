@@ -51,6 +51,7 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
     DrawerLayout tournamenttble;
     NavigationView navigationView;
+    LinearLayout linearcardholder321;
     int minteger = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -374,6 +375,9 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
         cards321shifterbtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 cards321shifterbtn.setVisibility(View.GONE);
+                linearcardholder321 = findViewById(R.id.linearcardholder321);
+                linearcardholder321.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT));
+                linearcardholder321.setGravity(Gravity.CENTER);
             }
         });
 
@@ -559,7 +563,7 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
                 return true;
             case DragEvent.ACTION_DRAG_ENDED:
                 // Turns off any color tinting
-//                view.getBackground().clearColorFilter();
+                // view.getBackground().clearColorFilter();
 
                 // Invalidates the view to force a redraw
                 view.invalidate();
