@@ -178,6 +178,4 @@
             android:layout_margin="10dp"
             android:clickable="true"/>
     </RelativeLayout>
-
-
 </RelativeLayout>

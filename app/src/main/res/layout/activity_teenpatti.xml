@@ -15,12 +15,12 @@
 
         <ImageView
             android:id="@+id/handle_right"
-            android:clickable="true"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:clickable="true"
             android:src="@drawable/btn_handle_right" />
 
 
@@ -116,9 +116,9 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_alignTop="@+id/playerbg1"
-                    android:layout_marginTop="30dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
+                    android:layout_marginTop="30dp"
                     android:src="@drawable/playerinviteavatar" />
 
 
@@ -126,23 +126,23 @@
                     android:id="@+id/playerbg3"
                     android:layout_width="110dp"
                     android:layout_height="100dp"
-                    android:layout_alignTop="@+id/table"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/table"
                     android:layout_marginTop="70dp"
                     android:src="@drawable/myplayerbackground1"
-                    tools:ignore="NotSibling"
-                    android:layout_alignParentRight="true" />
+                    tools:ignore="NotSibling" />
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_alignTop="@+id/playerbg3"
-                    android:layout_marginTop="30dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/playerinviteavatar"
-                    android:layout_alignParentRight="true" />
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/playerinviteavatar" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -164,9 +164,9 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_alignTop="@+id/playerbg2"
-                    android:layout_marginTop="30dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
+                    android:layout_marginTop="30dp"
                     android:src="@drawable/playerinviteavatar" />
 
 
@@ -174,29 +174,29 @@
                     android:id="@+id/playerbg4"
                     android:layout_width="110dp"
                     android:layout_height="100dp"
-                    android:layout_alignTop="@+id/table"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/table"
                     android:layout_marginTop="35dp"
                     android:src="@drawable/myplayerbackground1"
-                    tools:ignore="NotSibling"
-                    android:layout_alignParentRight="true" />
+                    tools:ignore="NotSibling" />
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_alignTop="@+id/playerbg4"
-                    android:layout_marginTop="30dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/playerinviteavatar"
-                    android:layout_alignParentRight="true" />
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/playerinviteavatar" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_centerHorizontal="true">
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true">
 
                     <ImageView
                         android:id="@+id/myplayer"
@@ -209,8 +209,8 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_alignTop="@+id/myplayer"
-                        android:layout_marginTop="40dp"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="40dp"
                         android:src="@drawable/playerinviteavatar" />
                 </RelativeLayout>
 

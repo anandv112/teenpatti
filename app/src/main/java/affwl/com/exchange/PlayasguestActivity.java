@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
 
 public class PlayasguestActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView selectimage,avatarimage,avatar1,avatar2,avatar3,avatar4,avatar5,avatar6,avatar7,avatar8,camera,choosepic;
@@ -50,8 +49,6 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
         login.setOnClickListener(this);
         session=new Session(this);
     }
-
-
 
 //    Implementation of selecting avatar
     @Override
@@ -140,7 +137,6 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
         if (requestCode==6)
         {
 //            Implementaion of Gallary
-            Bitmap bitmap= null;
             if (resultcode==RESULT_OK)
             {
                 Uri selectedimageuri=data.getData();
