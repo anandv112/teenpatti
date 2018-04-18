@@ -24,7 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class Variation extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
+public class NewVariationActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
     ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn,pdealerbtn;
     TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond;
     PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow,selectvariationpopupWindow;
@@ -41,18 +41,18 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_variation);
+        setContentView(R.layout.activity_new_variation);
 
         handle_right = findViewById(R.id.handle_right);
         handle_right.setOnClickListener(this);
 
 
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        variationtble = findViewById(R.id.variationtble);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, variationtble, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         variationtble.addDrawerListener(toggle);
         toggle.syncState();
 
-        navigationView = (NavigationView) findViewById(R.id.teen_nav_view);
+        navigationView = findViewById(R.id.teen_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         loadingPopup();
@@ -61,17 +61,17 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
         //////////////// Popup for Backbutton ///////////////////
 
 
-        backbtn=(ImageView) findViewById(R.id.back);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        backbtn= findViewById(R.id.back);
+        variationtble = findViewById(R.id.variationtble);
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
-                closebtn = (TextView) customView.findViewById(R.id.close);
+                closebtn = customView.findViewById(R.id.close);
 
                 //instantiate popup window
                 popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -91,17 +91,17 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
 
         //////////////// Popup for InfoButton ///////////////////
 
-        infobtn=(ImageView) findViewById(R.id.info);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        infobtn= findViewById(R.id.info);
+        variationtble = findViewById(R.id.variationtble);
 
         infobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.infogame_popup, null);
 
-                infoclosebtn = (ImageView) customView.findViewById(R.id.infoclose);
+                infoclosebtn = customView.findViewById(R.id.infoclose);
 
                 //instantiate popup window
                 infopopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -122,18 +122,18 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
 
         //////////////// Popup for ChatButton ///////////////////
 
-        chatbtn=(ImageView) findViewById(R.id.chat);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        chatbtn= findViewById(R.id.chat);
+        variationtble = findViewById(R.id.variationtble);
 
         chatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.chat_popup, null);
 
-                chatclosebtn = (ImageView) customView.findViewById(R.id.chatclose);
-                chatclosebtn2 = (ImageView) customView.findViewById(R.id.chatclose2);
+                chatclosebtn = customView.findViewById(R.id.chatclose);
+                chatclosebtn2 = customView.findViewById(R.id.chatclose2);
                 //instantiate popup window
                 chatpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
@@ -159,17 +159,17 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
 
         //////////////// Popup for Userstatus ///////////////////
 
-        myplayerbtn=(ImageView) findViewById(R.id.myplayer);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        myplayerbtn= findViewById(R.id.myplayer);
+        variationtble = findViewById(R.id.variationtble);
 
         myplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.player_status_popup, null);
 
-                ustatusclosebtn = (ImageView) customView.findViewById(R.id.userstatusclose);
+                ustatusclosebtn = customView.findViewById(R.id.userstatusclose);
 
                 //instantiate popup window
                 ustatuspopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -191,12 +191,12 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
 
 
         // Onclick on playerdealer button
-        pdealerbtn=(ImageView)findViewById(R.id.playerdealervar);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        pdealerbtn= findViewById(R.id.playerdealervar);
+        variationtble = findViewById(R.id.variationtble);
         pdealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.select_variation, null);
                 //instantiate popup window
                 selectvariationpopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
@@ -217,18 +217,18 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
                     }
                 }.start();
 
-                radioGroup = (RadioGroup)customView.findViewById(R.id.radiogrp);
+                radioGroup = customView.findViewById(R.id.radiogrp);
                 int selectedId = radioGroup.getCheckedRadioButtonId();
 
                 // find the radiobutton by returned id
-                radiojokerbtn = (RadioButton)customView.findViewById(selectedId);
+                radiojokerbtn = customView.findViewById(selectedId);
 
                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(final RadioGroup group, final int checkedId) {
                         final boolean[] wantToCloseDialog = {false};
                         group.getCheckedRadioButtonId();
-                        Toast.makeText(Variation.this,  String.valueOf(group.getCheckedRadioButtonId()), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(NewVariationActivity.this,  String.valueOf(group.getCheckedRadioButtonId()), Toast.LENGTH_SHORT).show();
                         group.check(checkedId);
                         Thread thread=new Thread(){
                             public void run()
@@ -243,7 +243,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
                         };
                         thread.start();
                         if (wantToCloseDialog[0])
-                        selectvariationpopupWindow.dismiss();
+                            selectvariationpopupWindow.dismiss();
                     }
                 });
 
@@ -255,14 +255,14 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
 
         //////////////// Popup for Otheruserstatus ///////////////////
 
-        oplayerbtn=(ImageView) findViewById(R.id.playerbg2);
-        relativeLayout= (RelativeLayout) findViewById(R.id.variationrecycler);
+        oplayerbtn= findViewById(R.id.playerbg2);
+        relativeLayout= findViewById(R.id.variationrecycler);
 
         oplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.other_player_status, null);
 
                 msgbtn=customView.findViewById(R.id.msg);
@@ -270,7 +270,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
                 // onclick event for message button
                 msgbtn.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View customView1 = layoutInflater.inflate(R.layout.send_message_popup, null);
                         msgclosebtn=customView1.findViewById(R.id.msgclose);
                         //instantiate popup window
@@ -292,7 +292,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
 
                 });
 
-                oustatusclosebtn = (ImageView) customView.findViewById(R.id.ouserstatusclose);
+                oustatusclosebtn = customView.findViewById(R.id.ouserstatusclose);
                 //instantiate popup window
                 oustatuspopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
@@ -311,14 +311,14 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
 
         //////////////// Popup for Dealer ///////////////////
 
-        dealerbtn=(ImageView) findViewById(R.id.dealer);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        dealerbtn= findViewById(R.id.dealer);
+        variationtble = findViewById(R.id.variationtble);
 
         dealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.dealer_popup, null);
 
                 relativeLayout2=customView.findViewById(R.id.inctip_layout);
@@ -343,7 +343,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
                 // onclick event for change dealer button
                 chngdbtn.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View customView2 = layoutInflater.inflate(R.layout.change_dealer, null);
                         chngdealerclosebtn=customView2.findViewById(R.id.chngdealerclose);
                         //instantiate popup window
@@ -401,7 +401,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
                         displayInteger.setText("₹" + minteger);
                     }
                 });
-                dealerclsbtn = (ImageView) customView.findViewById(R.id.dealerclose);
+                dealerclsbtn = customView.findViewById(R.id.dealerclose);
                 //instantiate popup window
                 dealerpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
@@ -447,7 +447,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
 
     public void backtolobby(View view)
     {
-        Intent intent = new Intent(Variation.this, MainActivity.class);
+        Intent intent = new Intent(NewVariationActivity.this, MainActivity.class);
         startActivity(intent);
     }
 

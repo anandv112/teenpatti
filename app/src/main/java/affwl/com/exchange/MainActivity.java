@@ -278,7 +278,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //////////// Onclick method for teenpatti table
+    //////////// Onclick method for teenpatti table /////////////
     public void sendTeenpattiPage(View view)
     {
         Intent intent = new Intent(MainActivity.this, LoadingScreen_teenpatti.class);
@@ -288,6 +288,11 @@ public class MainActivity extends AppCompatActivity {
     public void sendVariationPage(View view)
     {
         Intent intent = new Intent(MainActivity.this, Variation.class);
+        startActivity(intent);
+    }
+
+    public void sendNewVariationPage(View view){
+        Intent intent = new Intent(MainActivity.this, NewVariationActivity.class);
         startActivity(intent);
     }
 }

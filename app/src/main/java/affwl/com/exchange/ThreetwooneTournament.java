@@ -65,12 +65,12 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
         handle_right.setOnClickListener(this);
 
 
-        tournamenttble = (DrawerLayout) findViewById(R.id.tournamenttble);
+        tournamenttble = findViewById(R.id.tournamenttble);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, tournamenttble, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         tournamenttble.addDrawerListener(toggle);
         toggle.syncState();
 
-        navigationView = (NavigationView) findViewById(R.id.teen_nav_view);
+        navigationView = findViewById(R.id.teen_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
 
@@ -78,8 +78,8 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
         //////////////// Popup for Backbutton ///////////////////
 
 
-        backbtn=(ImageView) findViewById(R.id.back);
-        tournamenttble = (DrawerLayout) findViewById(R.id.tournamenttble);
+        backbtn= findViewById(R.id.back);
+        tournamenttble = findViewById(R.id.tournamenttble);
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +88,7 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
                 LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
-                closebtn = (TextView) customView.findViewById(R.id.close);
+                closebtn = customView.findViewById(R.id.close);
 
                 //instantiate popup window
                 popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -108,8 +108,8 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
 
         //////////////// Popup for InfoButton ///////////////////
 
-        infobtn=(ImageView) findViewById(R.id.info);
-        tournamenttble = (DrawerLayout) findViewById(R.id.tournamenttble);
+        infobtn= findViewById(R.id.info);
+        tournamenttble = findViewById(R.id.tournamenttble);
 
         infobtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,7 +118,7 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
                 LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.infogame_popup, null);
 
-                infoclosebtn = (ImageView) customView.findViewById(R.id.infoclose);
+                infoclosebtn = customView.findViewById(R.id.infoclose);
 
                 //instantiate popup window
                 infopopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -139,8 +139,8 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
 
         //////////////// Popup for ChatButton ///////////////////
 
-        chatbtn=(ImageView) findViewById(R.id.chat);
-        tournamenttble = (DrawerLayout) findViewById(R.id.tournamenttble);
+        chatbtn= findViewById(R.id.chat);
+        tournamenttble = findViewById(R.id.tournamenttble);
 
         chatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,8 +149,8 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
                 LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.chat_popup, null);
 
-                chatclosebtn = (ImageView) customView.findViewById(R.id.chatclose);
-                chatclosebtn2 = (ImageView) customView.findViewById(R.id.chatclose2);
+                chatclosebtn = customView.findViewById(R.id.chatclose);
+                chatclosebtn2 = customView.findViewById(R.id.chatclose2);
                 //instantiate popup window
                 chatpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
@@ -176,8 +176,8 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
 
         //////////////// Popup for Userstatus ///////////////////
 
-        myplayerbtn=(ImageView) findViewById(R.id.myplayer);
-        tournamenttble = (DrawerLayout) findViewById(R.id.tournamenttble);
+        myplayerbtn= findViewById(R.id.myplayer);
+        tournamenttble = findViewById(R.id.tournamenttble);
 
         myplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,7 +186,7 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
                 LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.player_status_popup, null);
 
-                ustatusclosebtn = (ImageView) customView.findViewById(R.id.userstatusclose);
+                ustatusclosebtn = customView.findViewById(R.id.userstatusclose);
                 //instantiate popup window
                 ustatuspopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
@@ -207,8 +207,8 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
 
         //////////////// Popup for Otheruserstatus ///////////////////
 
-        oplayerbtn=(ImageView) findViewById(R.id.playerbg2);
-        relativeLayout= (RelativeLayout) findViewById(R.id.tournamentrecycler);
+        oplayerbtn= findViewById(R.id.playerbg2);
+        relativeLayout= findViewById(R.id.tournamentrecycler);
 
         oplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -244,7 +244,7 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
 
                 });
 
-                oustatusclosebtn = (ImageView) customView.findViewById(R.id.ouserstatusclose);
+                oustatusclosebtn = customView.findViewById(R.id.ouserstatusclose);
                 //instantiate popup window
                 oustatuspopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
@@ -263,8 +263,8 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
 
         //////////////// Popup for Dealer ///////////////////
 
-        dealerbtn=(ImageView) findViewById(R.id.dealer);
-        tournamenttble = (DrawerLayout) findViewById(R.id.tournamenttble);
+        dealerbtn= findViewById(R.id.dealer);
+        tournamenttble = findViewById(R.id.tournamenttble);
 
         dealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -353,7 +353,7 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
                         displayInteger.setText("₹" + minteger);
                     }
                 });
-                dealerclsbtn = (ImageView) customView.findViewById(R.id.dealerclose);
+                dealerclsbtn = customView.findViewById(R.id.dealerclose);
                 //instantiate popup window
                 dealerpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
@@ -371,7 +371,7 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
         });
 
         //Button hides the buttn slides the layout
-        cards321shifterbtn = (Button) findViewById(R.id.cards321shifterbtn);
+        cards321shifterbtn = findViewById(R.id.cards321shifterbtn);
         cards321shifterbtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 cards321shifterbtn.setVisibility(View.GONE);
@@ -385,17 +385,17 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
 
     //Finds all views and set Tag to all draggable views
     private void findViews() {
-        card321_1 = (ImageView) findViewById(R.id.card321_1);
+        card321_1 = findViewById(R.id.card321_1);
         card321_1.setTag(IMAGE_VIEW_TAG_1);
-        card321_2 = (ImageView) findViewById(R.id.card321_2);
+        card321_2 = findViewById(R.id.card321_2);
         card321_2.setTag(IMAGE_VIEW_TAG_2);
-        card321_3 = (ImageView) findViewById(R.id.card321_3);
+        card321_3 = findViewById(R.id.card321_3);
         card321_3.setTag(IMAGE_VIEW_TAG_3);
-        card321_4 = (ImageView) findViewById(R.id.card321_4);
+        card321_4 = findViewById(R.id.card321_4);
         card321_4.setTag(IMAGE_VIEW_TAG_4);
-        card321_5 = (ImageView) findViewById(R.id.card321_5);
+        card321_5 = findViewById(R.id.card321_5);
         card321_5.setTag(IMAGE_VIEW_TAG_5);
-        card321_6 = (ImageView) findViewById(R.id.card321_6);
+        card321_6 = findViewById(R.id.card321_6);
         card321_6.setTag(IMAGE_VIEW_TAG_6);
     }
 
@@ -435,9 +435,6 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
             super.onBackPressed();
         }
     }
-
-
-
 
 
     /////////// Onclick for Backtolobby /////////////
