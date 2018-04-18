@@ -10,11 +10,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
@@ -34,6 +36,12 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
     NavigationView navigationView;
     public int counter=15;
     public int counter2=15;
+    public int counter3=15;
+    public int counter4=15;
+    public int counter5=15;
+
+    CountDownTimer countDownTimer;
+
     int minteger = 0;
     RadioGroup radioGroup;
     RadioButton radiojokerbtn,radioakbtn,radioxbootbtn,radiohukumbtn;
@@ -189,72 +197,66 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
         });
 
 
-
         // Onclick on playerdealer button
         pdealerbtn=(ImageView)findViewById(R.id.playerdealervar);
         variationtble = (DrawerLayout) findViewById(R.id.variationtble);
         pdealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View customView = layoutInflater.inflate(R.layout.select_variation, null);
+                final View customView = layoutInflater.inflate(R.layout.select_variation, null);
                 //instantiate popup window
                 selectvariationpopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
                 //display the popup window
                 selectvariationpopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
-
-
                 // countdown timer for selectvariation
                 final TextView txtsecondvar=customView.findViewById(R.id.timecountervar);
-                new CountDownTimer(16000, 1000){
+
+                long millisInFuture = 15000; //25 seconds
+                long countDownInterval = 1000; //1 second
+
+                countDownTimer=new CountDownTimer(millisInFuture, countDownInterval){
                     public void onTick(long millisUntilFinished){
-                        txtsecondvar.setText(String.valueOf(counter2));
-                        counter2--;
+//                        txtsecondvar.setText(String.valueOf(counter2));
+                        txtsecondvar.setText(" "+millisUntilFinished/1000);
+//                        counter2--;
                     }
                     public  void onFinish(){
                         selectvariationpopupWindow.dismiss();
                     }
-                }.start();
+                };
+                countDownTimer.start();
 
+                // Implementing onclick on radio button to select variation
+                final TextView txtsecondtimer=customView.findViewById(R.id.timecountervar2);
                 radioGroup = (RadioGroup)customView.findViewById(R.id.radiogrp);
-                int selectedId = radioGroup.getCheckedRadioButtonId();
-
-                // find the radiobutton by returned id
-                radiojokerbtn = (RadioButton)customView.findViewById(selectedId);
-
+                int id= radioGroup.getCheckedRadioButtonId();
                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(final RadioGroup group, final int checkedId) {
-                        final boolean[] wantToCloseDialog = {false};
-                        group.getCheckedRadioButtonId();
-                        Toast.makeText(Variation.this,  String.valueOf(group.getCheckedRadioButtonId()), Toast.LENGTH_SHORT).show();
                         group.check(checkedId);
-                        Thread thread=new Thread(){
-                            public void run()
-                            {
-                                try {
-                                    Thread.sleep(100);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                                wantToCloseDialog[0] =true;
+                        // countdown for radio button to dismiss popup
+                        long millisInFuture = 3000; //3 seconds
+                        long countDownInterval = 1000; //1 second
+                        new CountDownTimer(millisInFuture, countDownInterval){
+                            public void onTick(long millisUntilFinished){
+                                txtsecondtimer.setText(" "+millisUntilFinished/1000);
+//                                counter3--;
                             }
-                        };
-                        thread.start();
-                        if (wantToCloseDialog[0])
-                        selectvariationpopupWindow.dismiss();
+                            public  void onFinish(){
+                                selectvariationpopupWindow.dismiss();
+                            }
+                        }.start();
+
                     }
                 });
-
-
-
-
             }
         });
 
-        //////////////// Popup for Otheruserstatus ///////////////////
 
+        //////////////// Popup for Otheruserstatus ///////////////////
         oplayerbtn=(ImageView) findViewById(R.id.playerbg2);
         relativeLayout= (RelativeLayout) findViewById(R.id.variationrecycler);
 
@@ -462,7 +464,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
 //    Implementing startup popup selecting variation
 
     public void loadingPopup() {
-        LayoutInflater inflater = this.getLayoutInflater();
+        final LayoutInflater inflater = this.getLayoutInflater();
         final View layout = inflater.inflate(R.layout.select_variation_popup, null);
         final PopupWindow windows = new PopupWindow(layout , RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         windows.setFocusable(false);
@@ -478,9 +480,30 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
         closeselectv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                windows.dismiss();
+//                windows.dismiss();
+                final RelativeLayout variation1 = layout.findViewById(R.id.variation);
+                final RelativeLayout relativeLayout1 = layout.findViewById(R.id.svariationpopup);
+                if (variation1.getVisibility() == View.VISIBLE) {
+                    variation1.setVisibility(View.INVISIBLE);
+                }
+                if (relativeLayout1.getVisibility() == View.INVISIBLE) {
+                    relativeLayout1.setVisibility(View.VISIBLE);
+                    final TextView txtsecond=layout.findViewById(R.id.countdowntimer);
+                    new CountDownTimer(2000, 1000) {
+                        public void onTick(long millisUntilFinished) {
+                            txtsecond.setText(String.valueOf(counter5));
+                            counter5--;
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            relativeLayout1.setVisibility(View.INVISIBLE);
+                        }
+                    }.start();
+                }
             }
         });
+
 
         final TextView txtsecond=layout.findViewById(R.id.countdowntimer);
         new CountDownTimer(16000, 1000){
@@ -488,9 +511,27 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
                 txtsecond.setText(String.valueOf(counter));
                 counter--;
             }
-            public  void onFinish(){
-//                txtsecond.setText("FINISH!!");
-                windows.dismiss();
+            public  void onFinish() {
+                //windows.dismiss();
+                final RelativeLayout variation = layout.findViewById(R.id.variation);
+                final RelativeLayout relativeLayout = layout.findViewById(R.id.svariationpopup);
+                if (variation.getVisibility() == View.VISIBLE) {
+                    variation.setVisibility(View.INVISIBLE);
+                }
+                if (relativeLayout.getVisibility() == View.INVISIBLE) {
+                    relativeLayout.setVisibility(View.VISIBLE);
+                    new CountDownTimer(2000, 1000) {
+                        public void onTick(long millisUntilFinished) {
+                            txtsecond.setText(String.valueOf(counter4));
+                            counter4--;
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            relativeLayout.setVisibility(View.INVISIBLE);
+                        }
+                    }.start();
+                }
             }
         }.start();
 //        Animation animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(),

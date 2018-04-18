@@ -99,7 +99,7 @@
                 android:gravity="center"
                 android:src="@drawable/teenpattitableimage" />
 
-
+            <!--Upper user layout-->
             <RelativeLayout
                 android:id="@+id/playerbg1relativeLayout"
                 android:layout_width="match_parent"
@@ -152,6 +152,7 @@
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
 
+            <!--Lower user layout-->
             <RelativeLayout
                 android:id="@+id/playerbg2relativeLayout"
                 android:layout_width="match_parent"
@@ -238,7 +239,7 @@
 
             </RelativeLayout>
 
-
+            <!--Dealer layout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -256,9 +257,9 @@
 
 
         </RelativeLayout>
-
     </RelativeLayout>
 
+    <!--Drawer layout-->
     <android.support.design.widget.NavigationView
         android:id="@+id/teen_nav_view"
         android:layout_width="match_parent"
