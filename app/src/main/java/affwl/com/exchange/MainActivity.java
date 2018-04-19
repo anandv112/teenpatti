@@ -306,7 +306,7 @@ public class MainActivity extends AppCompatActivity {
                 joinnowsixpattibtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(MainActivity.this, SixPatti.class);
+                        Intent intent = new Intent(MainActivity.this, LoadingScreen_sixpatti.class);
                         startActivity(intent);
                     }
                 });
@@ -381,7 +381,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendVariationPage(View view)
     {
-        Intent intent = new Intent(MainActivity.this, Variation.class);
+        Intent intent = new Intent(MainActivity.this, LoadingScreen_variation.class);
         startActivity(intent);
     }
 }

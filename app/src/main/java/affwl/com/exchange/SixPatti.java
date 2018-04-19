@@ -1,5 +1,6 @@
 package affwl.com.exchange;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.CountDownTimer;
@@ -16,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -23,16 +25,22 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class SixPatti extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
-    ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;;
-    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond;
-    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow;
+    ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,closebtnsixpattileadboard,leaderboardsixpattibtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;;
+    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond,sortbtn;
+    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow,sixpattileadboardpopupWindow;
     Button msgbtn,blockbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
     DrawerLayout sixpattitble;
     NavigationView navigationView;
     int minteger = 0;
+    ImageView card1,card2,card3,card4,card5,card6;
+    ArrayList<Integer> cards;
+    int value=0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -42,7 +50,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         handle_right = findViewById(R.id.handle_right);
         handle_right.setOnClickListener(this);
 
-
+//        Toggle drawer
         sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, sixpattitble, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         sixpattitble.addDrawerListener(toggle);
@@ -52,9 +60,207 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         navigationView.setNavigationItemSelectedListener(this);
 
 
+//        Implementation of cards
+        sortbtn=findViewById(R.id.sort);
+        card1=findViewById(R.id.card1);
+        card2=findViewById(R.id.card2);
+        card3=findViewById(R.id.card3);
+        card4=findViewById(R.id.card4);
+        card5=findViewById(R.id.card5);
+        card6=findViewById(R.id.card6);
+
+
+        cards=new ArrayList<>();
+        cards.add(106);// six of clubs
+        cards.add(209);// nine of diamond
+        cards.add(111);// ace of clubs
+        cards.add(312);// jack of hearts
+        cards.add(413);// queen of spades
+        cards.add(214);// king of diamond
+
+
+        // deal the firts 6 cards
+
+
+        card1.setVisibility(View.VISIBLE);
+        card2.setVisibility(View.VISIBLE);
+        card3.setVisibility(View.VISIBLE);
+        card4.setVisibility(View.VISIBLE);
+        card5.setVisibility(View.VISIBLE);
+        card6.setVisibility(View.VISIBLE);
+
+
+        // Implementaion of six cards onclick and translate animation
+
+        card1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (value==0) {
+                    Animation animation = new TranslateAnimation(0, 0, 0, -10);
+                    animation.setDuration(100);
+                    animation.setFillAfter(true);
+                    card1.startAnimation(animation);
+                    value = 1;
+                    return;
+                }
+                if (value==1)
+                {
+                    Animation animation1 = new TranslateAnimation(0, 0,0, 0);
+                    animation1.setDuration(100);
+                    animation1.setFillAfter(true);
+                    card1.startAnimation(animation1);
+                    value=0;
+                    return;
+                }
+            }
+        });
+
+        card2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (value==0) {
+                    Animation animation2 = new TranslateAnimation(0, 0, 0, -10);
+                    animation2.setDuration(100);
+                    animation2.setFillAfter(true);
+                    card2.startAnimation(animation2);
+                    value = 1;
+                    return;
+                }
+                if (value==1)
+                {card2.clearAnimation();
+                    Animation animation3 = new TranslateAnimation(0, 0,0, 0);
+                    animation3.setDuration(100);
+                    animation3.setFillAfter(true);
+                    card2.startAnimation(animation3);
+                    value=0;
+                    return;
+                }
+            }
+        });
+
+        card3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (value==0) {
+                    Animation animation4 = new TranslateAnimation(0, 0, 0, -10);
+                    animation4.setDuration(100);
+                    animation4.setFillAfter(true);
+                    card3.startAnimation(animation4);
+                    value = 1;
+                    return;
+                }
+                if (value==1)
+                {card3.clearAnimation();
+                    Animation animation5 = new TranslateAnimation(0, 0,0, 0);
+                    animation5.setDuration(100);
+                    animation5.setFillAfter(true);
+                    card3.startAnimation(animation5);
+                    value=0;
+                    return;
+                }
+            }
+        });
+
+        card4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (value==0) {
+                    Animation animation6 = new TranslateAnimation(0, 0, 0, -10);
+                    animation6.setDuration(100);
+                    animation6.setFillAfter(true);
+                    card4.startAnimation(animation6);
+                    value = 1;
+                    return;
+                }
+                if (value==1)
+                {card4.clearAnimation();
+                    Animation animation7 = new TranslateAnimation(0, 0,0, 0);
+                    animation7.setDuration(100);
+                    animation7.setFillAfter(true);
+                    card4.startAnimation(animation7);
+                    value=0;
+                    return;
+                }
+            }
+        });
+
+        card5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (value==0) {
+                    Animation animation8 = new TranslateAnimation(0, 0, 0, -10);
+                    animation8.setDuration(100);
+                    animation8.setFillAfter(true);
+                    card5.startAnimation(animation8);
+                    value = 1;
+                    return;
+                }
+                if (value==1)
+                {card5.clearAnimation();
+                    Animation animation9 = new TranslateAnimation(0, 0,0, 0);
+                    animation9.setDuration(100);
+                    animation9.setFillAfter(true);
+                    card5.startAnimation(animation9);
+                    value=0;
+                    return;
+                }
+            }
+        });
+
+        card6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (value==0) {
+                    Animation animation10 = new TranslateAnimation(0, 0, 0, -10);
+                    animation10.setDuration(100);
+                    animation10.setFillAfter(true);
+                    card6.startAnimation(animation10);
+                    value = 1;
+                    return;
+                }
+                if (value==1)
+                {card6.clearAnimation();
+                    Animation animation11 = new TranslateAnimation(0, 0,0, 0);
+                    animation11.setDuration(100);
+                    animation11.setFillAfter(true);
+                    card6.startAnimation(animation11);
+                    value=0;
+                    return;
+                }
+            }
+        });
+
+
+
+
+        // Click on Sort button
+        sortbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Collections.sort(cards);
+
+
+                // deal the firts 6 cards
+
+                assignImages(cards.get(0),card1);
+                assignImages(cards.get(1),card2);
+                assignImages(cards.get(2),card3);
+                assignImages(cards.get(3),card4);
+                assignImages(cards.get(4),card5);
+                assignImages(cards.get(5),card6);
+
+            }
+        });
+
 
         //////////////// Popup for Backbutton ///////////////////
-
 
         backbtn=(ImageView) findViewById(R.id.back);
         sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
@@ -94,7 +300,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
                 //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View customView = layoutInflater.inflate(R.layout.infogame_popup, null);
+                View customView = layoutInflater.inflate(R.layout.six_patti_infogame_popup, null);
 
                 infoclosebtn = (ImageView) customView.findViewById(R.id.infoclose);
 
@@ -347,6 +553,37 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                 });
             }
         });
+
+
+        //////////////// Popup for Leaderboard ///////////////////
+
+        leaderboardsixpattibtn=(ImageView) findViewById(R.id.leaderboardsixpatti);
+        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+
+        leaderboardsixpattibtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.six_patti_leaderboard, null);
+
+                closebtnsixpattileadboard = (ImageView) customView.findViewById(R.id.closeleadsix);
+
+                //instantiate popup window
+                sixpattileadboardpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                sixpattileadboardpopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
+
+                //close the popup window on button click
+                closebtnsixpattileadboard.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        sixpattileadboardpopupWindow.dismiss();
+                    }
+                });
+            }
+        });
     }
 
     /////////// Slider /////////////
@@ -387,5 +624,35 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         return false;
     }
 
+    public void assignImages(int card, ImageView image){
+        switch (card)
+        {
+            case 106:
+                image.setImageResource(R.drawable.sixc);
+                break;
+            case 111:
+                image.setImageResource(R.drawable.acec);
+                break;
+
+
+            case 209:
+                image.setImageResource(R.drawable.nined);
+                break;
+            case 214:
+                image.setImageResource(R.drawable.kingd);
+                break;
+
+
+            case 312:
+                image.setImageResource(R.drawable.jackh);
+                break;
+
+
+            case 413:
+                image.setImageResource(R.drawable.queens);
+                break;
+
+        }
+    }
 
 }

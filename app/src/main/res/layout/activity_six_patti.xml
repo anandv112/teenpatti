@@ -23,6 +23,7 @@
             android:layout_centerVertical="true"
             android:src="@drawable/btn_handle_right" />
 
+        <!--Sort Button-->
         <TextView
             android:id="@+id/sort"
             android:layout_width="wrap_content"
@@ -30,27 +31,55 @@
             android:background="@drawable/yellow_buttons"
             android:text="SORT"
             android:textAlignment="center"
+            android:padding="10dp"
             android:textColor="@color/darkbrown"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="1dp"/>
+
+        <!--Layouts for cards-->
         <LinearLayout
             android:id="@+id/cardlayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_alignParentBottom="true"
-            android:weightSum="6"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_above="@+id/myplayer"
+            tools:ignore="NotSibling,UnknownId">
             <ImageView
                 android:id="@+id/card1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_width="45dp"
+                android:layout_height="70dp"
+                android:src="@drawable/acec"/>
+            <ImageView
+                android:id="@+id/card2"
+                android:layout_width="45dp"
+                android:layout_height="70dp"
+                android:src="@drawable/kingd"/>
+            <ImageView
+                android:id="@+id/card3"
+                android:layout_width="45dp"
+                android:layout_height="70dp"
+                android:src="@drawable/queens"/>
+            <ImageView
+                android:id="@+id/card4"
+                android:layout_width="45dp"
+                android:layout_height="70dp"
+                android:src="@drawable/nined"/>
+            <ImageView
+                android:id="@+id/card5"
+                android:layout_width="45dp"
+                android:layout_height="70dp"
+                android:src="@drawable/sixc"/>
+            <ImageView
+                android:id="@+id/card6"
+                android:layout_width="45dp"
+                android:layout_height="70dp"
+                android:src="@drawable/jackh"/>
         </LinearLayout>
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-
 
             <!--Left side icon layout-->
             <RelativeLayout
@@ -94,12 +123,12 @@
                     android:clickable="true"
                     android:src="@drawable/chatgame" />
                 <ImageView
-                    android:id="@+id/getchips"
+                    android:id="@+id/leaderboardsixpatti"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/getchips" />
+                    android:src="@drawable/leaderboardgame" />
 
 
             </RelativeLayout>
@@ -134,8 +163,7 @@
                     android:layout_height="100dp"
                     android:layout_alignTop="@+id/table"
                     android:layout_marginTop="70dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="20dp"
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling" />
 
@@ -156,8 +184,7 @@
                     android:layout_alignTop="@+id/table"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="70dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="20dp"
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling"
                     android:layout_alignParentRight="true" />
@@ -180,6 +207,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+                android:layout_marginBottom="50dp"
                 android:layout_below="@+id/playerbg1relativeLayout">
 
                 <ImageView
@@ -187,8 +215,7 @@
                     android:layout_width="110dp"
                     android:layout_height="100dp"
                     android:layout_below="@+id/relativeLayout2"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_margin="20dp"
                     android:layout_marginTop="35dp"
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling,UnknownId" />
@@ -210,8 +237,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignTop="@+id/table"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                   android:layout_margin="20dp"
                     android:layout_marginTop="35dp"
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling" />
@@ -234,9 +260,9 @@
 
                     <ImageView
                         android:id="@+id/myplayer"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_marginTop="40dp"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_margin="0dp"
                         android:src="@drawable/myplayerbackground1" />
 
                     <ImageView
