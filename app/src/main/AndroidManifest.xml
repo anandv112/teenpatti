@@ -18,6 +18,8 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"></activity>
+
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="landscape">
@@ -49,6 +51,7 @@
         <activity
             android:name=".ThreetwooneTournament"
             android:screenOrientation="landscape" />
+
         <activity
             android:name=".SixPatti"
             android:screenOrientation="landscape" />
@@ -56,6 +59,9 @@
             android:screenOrientation="landscape"/>
         <activity android:name=".LoadingScreen_variation"
             android:screenOrientation="landscape"></activity>
+
+        <activity android:name=".NewVariationActivity"></activity>
+
     </application>
 
 </manifest>

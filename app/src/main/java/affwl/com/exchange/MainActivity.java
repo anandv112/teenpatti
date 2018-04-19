@@ -202,30 +202,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-//                short321info.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        LayoutInflater layoutInflater = (LayoutInflater)MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//                        View customView2 = layoutInflater.inflate(R.layout.three_two_one_short_info,null);
-//
-//                        close321shortinfo = customView2.findViewById(R.id.close321shortinfo);
-//
-//                        //Instantiate
-//                        infoshort321 = new PopupWindow(customView2,RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT);
-//
-//                        //Display
-//                        infoshort321.showAtLocation(RelativeLayoutloader,Gravity.TOP,0,0);
-//
-//                        //close
-//                        close321shortinfo.setOnClickListener(new View.OnClickListener(){
-//
-//                            @Override
-//                            public void onClick(View v) {
-//                                infoshort321.dismiss();
-//                            }
-//                        });
-//                    }
-//                });
                 //instantiate popup window
                 tounpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
@@ -372,7 +348,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //////////// Onclick method for teenpatti table
+    //////////// Onclick method for teenpatti table /////////////
     public void sendTeenpattiPage(View view)
     {
         Intent intent = new Intent(MainActivity.this, LoadingScreen_teenpatti.class);
@@ -384,4 +360,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, LoadingScreen_variation.class);
         startActivity(intent);
     }
+
+    public void sendNewVariationPage(View view){
+        Intent intent = new Intent(MainActivity.this, NewVariationActivity.class);
+        startActivity(intent);
+    }
 }
+

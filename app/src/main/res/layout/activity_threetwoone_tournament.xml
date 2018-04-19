@@ -15,12 +15,12 @@
 
         <ImageView
             android:id="@+id/handle_right"
-            android:clickable="true"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:clickable="true"
             android:src="@drawable/btn_handle_right" />
 
 
@@ -56,9 +56,9 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
                 android:layout_marginBottom="211dp">
 
 
@@ -70,6 +70,7 @@
                     android:layout_marginTop="10dp"
                     android:clickable="true"
                     android:src="@drawable/chatgame" />
+
                 <ImageView
                     android:id="@+id/getchips"
                     android:layout_width="40dp"
@@ -120,9 +121,9 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_alignTop="@+id/playerbg1"
-                    android:layout_marginTop="30dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
+                    android:layout_marginTop="30dp"
                     android:src="@drawable/playerinviteavatar" />
 
 
@@ -130,25 +131,25 @@
                     android:id="@+id/playerbg3"
                     android:layout_width="110dp"
                     android:layout_height="100dp"
-                    android:layout_alignTop="@+id/table"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/table"
                     android:layout_marginTop="70dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
                     android:src="@drawable/myplayerbackground1"
-                    tools:ignore="NotSibling"
-                    android:layout_alignParentRight="true" />
+                    tools:ignore="NotSibling" />
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_alignTop="@+id/playerbg3"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/playerinviteavatar"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="30dp"
+                    android:layout_alignTop="@+id/playerbg3"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"/>
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/playerinviteavatar" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -157,7 +158,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/playerbg1relativeLayout">
+                android:layout_below="@+id/playerbg1relativeLayout"
+                android:layout_marginBottom="60dp">
 
                 <ImageView
                     android:id="@+id/playerbg2"
@@ -174,9 +176,9 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_alignTop="@+id/playerbg2"
-                    android:layout_marginTop="30dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
+                    android:layout_marginTop="30dp"
                     android:src="@drawable/playerinviteavatar" />
 
 
@@ -184,25 +186,27 @@
                     android:id="@+id/playerbg4"
                     android:layout_width="110dp"
                     android:layout_height="100dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_alignTop="@+id/table"
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="5dp"
                     android:layout_alignParentEnd="true"
+                    android:layout_marginLeft="30dp"
                     android:layout_marginTop="35dp"
                     android:src="@drawable/myplayerbackground1"
-                    tools:ignore="NotSibling"
-                    android:layout_alignParentRight="true" />
+                    tools:ignore="NotSibling" />
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_alignTop="@+id/playerbg4"
-                    android:layout_marginTop="30dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/playerinviteavatar"
-                    android:layout_alignParentRight="true" />
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/playerinviteavatar" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -213,17 +217,121 @@
                         android:id="@+id/myplayer"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        android:layout_marginTop="40dp"
+                        android:layout_marginTop="35dp"
                         android:src="@drawable/myplayerbackground1" />
 
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_alignTop="@+id/myplayer"
-                        android:layout_marginTop="40dp"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="40dp"
                         android:src="@drawable/playerinviteavatar" />
                 </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linearcardholder321"
+                        android:layout_width="240dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/greencardholder"
+                            android:gravity="bottom"
+                            android:layout_width="120dp"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal"
+                            android:background="@color/colorGreen">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/bluecardholder"
+                            android:layout_gravity="bottom"
+                            android:layout_width="80dp"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal"
+                            android:background="@color/colorPrimaryBlue">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/cyancardholder"
+                            android:layout_gravity="bottom"
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal"
+                            android:background="@color/colorCyan">
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GO"
+                        android:layout_gravity="center"
+                        android:id="@+id/cards321shifterbtn"/>
+
+                    <LinearLayout
+                        android:id="@+id/default321layout"
+                        android:layout_width="240dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/card321_1"
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/spade_ace" />
+
+                        <ImageView
+                            android:id="@+id/card321_2"
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/spade_ace" />
+
+                        <ImageView
+                            android:id="@+id/card321_3"
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/spade_ace" />
+
+                        <ImageView
+                            android:id="@+id/card321_4"
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/spade_ace" />
+
+                        <ImageView
+                            android:id="@+id/card321_5"
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/spade_ace" />
+
+                        <ImageView
+                            android:id="@+id/card321_6"
+                            android:layout_width="40dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/spade_ace" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </RelativeLayout>
 
@@ -245,6 +353,7 @@
 
 
         </RelativeLayout>
+
 
     </RelativeLayout>
 
