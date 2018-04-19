@@ -112,6 +112,8 @@
                     android:layout_height="100dp"
                     android:layout_alignTop="@+id/table"
                     android:layout_marginTop="70dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling" />
 
@@ -133,6 +135,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignTop="@+id/table"
                     android:layout_marginTop="70dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling" />
 
@@ -163,6 +167,8 @@
                     android:layout_height="100dp"
                     android:layout_below="@+id/relativeLayout2"
                     android:layout_marginTop="35dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling,UnknownId" />
 
@@ -183,6 +189,9 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignTop="@+id/table"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="35dp"
                     android:src="@drawable/myplayerbackground1"

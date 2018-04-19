@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_border_bg"
+    android:id="@+id/sixpatti_infogamelayout">
+
+
+    <ImageView
+        android:id="@+id/infoclose"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/cross"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+
+    <!--Boot value layout-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/numofplayer"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:id="@+id/numplayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO. OF PLAYERS"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/group"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/grouptxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
+            />
+
+
+    </RelativeLayout>
+
+    <!--Maximum blind layout-->
+    <RelativeLayout
+        android:id="@+id/rank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/numofplayer"
+        android:layout_marginTop="40dp"
+        >
+
+        <TextView
+            android:id="@+id/ranknum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 RANK"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/rankcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/maxblinds"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/card" />
+
+        <TextView
+            android:id="@+id/ranktxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹ 50,000"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorYellowDark"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/ranktxt"
+            />
+
+    </RelativeLayout>
+
+    <!--Footer layout-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rank"
+        android:layout_alignParentBottom="true"
+        >
+        <TextView
+            android:id="@+id/infotxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sixpatti_infogame"
+            android:textColor="@color/colorYellowDark"
+            android:layout_above="@+id/sixpatti_cardlayout"
+           />
+        <LinearLayout
+            android:id="@+id/sixpatti_cardlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:id="@+id/card1"
+                android:layout_width="45dp"
+                android:layout_height="70dp"
+                android:src="@drawable/acec"/>
+            <ImageView
+                android:id="@+id/card2"
+                android:layout_width="45dp"
+                android:layout_height="70dp"
+                android:src="@drawable/kingd"/>
+            <ImageView
+                android:id="@+id/card3"
+                android:layout_width="45dp"
+                android:layout_height="70dp"
+                android:src="@drawable/queens"/>
+            <ImageView
+                android:id="@+id/card4"
+                android:layout_width="45dp"
+                android:layout_height="70dp"
+                android:src="@drawable/nined"/>
+            <ImageView
+                android:id="@+id/card5"
+                android:layout_width="45dp"
+                android:layout_height="70dp"
+                android:src="@drawable/sixc"/>
+            <ImageView
+                android:id="@+id/card6"
+                android:layout_width="45dp"
+                android:layout_height="70dp"
+                android:src="@drawable/jackh"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
