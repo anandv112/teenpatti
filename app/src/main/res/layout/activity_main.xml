@@ -107,6 +107,13 @@
                     android:layout_height="120dp"
                     android:layout_margin="20dp"
                     android:src="@drawable/darkbluechips"/>
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/sixpatti_outer" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -121,6 +128,12 @@
                     android:layout_margin="20dp"
                     android:src="@drawable/blackchips"
                     android:onClick="sendNewVariationPage"/>
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/newvariation" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -135,6 +148,12 @@
                     android:layout_height="120dp"
                     android:layout_margin="20dp"
                     android:src="@drawable/cyanchips"/>
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/tourney" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -168,7 +187,10 @@
         <TextView
             android:layout_width="70dp"
             android:layout_height="30dp"
-            android:background="@drawable/chip_balance" />
+            android:background="@drawable/chip_balance"
+            android:id="@+id/nametext"
+            android:textColor="@color/colorWhite"
+            android:textAlignment="center"/>
 
         <ImageView
             android:layout_width="30dp"
@@ -180,11 +202,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/linearLayout"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp">
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:id="@+id/share_icons_loader"
@@ -199,10 +219,6 @@
                 android:layout_height="60dp"
                 android:src="@drawable/loader_share" />
 
-            <TextView
-                android:layout_width="70dp"
-                android:layout_height="30dp"
-                android:background="@drawable/chip_balance" />
         </LinearLayout>
 
 
@@ -214,11 +230,11 @@
             android:layout_centerHorizontal="true"
             android:layout_margin="5dp"
             android:background="@drawable/buy_chips"
+            android:clickable="true"
+            android:focusable="true"
             android:paddingLeft="43dp"
             android:paddingStart="43dp"
             android:paddingTop="10dp"
-            android:clickable="true"
-            android:focusable="true"
             android:text="BUY CHIPS"
             android:textColor="#FFFF00"
             android:textSize="13sp" />

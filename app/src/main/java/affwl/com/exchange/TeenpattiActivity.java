@@ -359,12 +359,24 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onBackPressed() {
+        LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
-        if (teenpattitble.isDrawerOpen(GravityCompat.START)) {
-            teenpattitble.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+        closebtn = (TextView) customView.findViewById(R.id.close);
+
+        //instantiate popup window
+        popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+        //display the popup window
+        popupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
+
+        //close the popup window on button click
+        closebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
     }
 
 

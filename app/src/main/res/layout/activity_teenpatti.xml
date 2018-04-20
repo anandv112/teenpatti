@@ -208,9 +208,9 @@
 
                     <ImageView
                         android:id="@+id/myplayer"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
-                        android:layout_marginTop="40dp"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="30dp"
                         android:src="@drawable/myplayerbackground1" />
 
                     <ImageView

@@ -1,17 +1,22 @@
 package affwl.com.exchange;
 
+import android.annotation.SuppressLint;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
@@ -27,11 +32,11 @@ import android.app.DialogFragment;
 public class MainActivity extends AppCompatActivity {
 
 
-    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile,orangechipsbtn,close312help,closesixpattihelp,short321info,shortsixpattiinfo,bluechipsbtn;
-    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow, tounpopupWindow,howto321popup,sixpattipopup,howtosixpattipopup;
-    RelativeLayout RelativeLayoutloader,relativelayout321,relativeLayoutsixpatti;
-    TextView loaderbuychips,joinnowbtn,howtoplay321btn,howtoplaysixpattibtn,joinnowsixpattibtn;
-
+    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile,orangechipsbtn,close312help,closesixpattihelp,short321info,tourney_shortinfo_closebtn,shortsixpattiinfo,bluechipsbtn,cyanchipsbtn,shortinfo_tourney,tourney_join_closebtn,share_loader,facebook,whatsapp,general;
+    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow, tounpopupWindow,howto321popup,sixpattipopup,howtosixpattipopup,join_tourney_popupWindow,shortinfo_tourney_popupwindow;
+    RelativeLayout RelativeLayoutloader,relativelayout321,relativeLayoutsixpatti,relativeLayout_tourney;
+    TextView loaderbuychips,joinnowbtn,howtoplay321btn,howtoplaysixpattibtn,joinnowsixpattibtn,join_tourneybtn,nametext,code;
+    Session session;
 
 
     @Override
@@ -43,15 +48,29 @@ public class MainActivity extends AppCompatActivity {
 //        ListView listView = (ListView) findViewById(R.id.ll);
 //        listView.setAdapter(adapter);
 
+        profile=findViewById(R.id.profile);
+        nametext=findViewById(R.id.nametext);
+        share_loader=findViewById(R.id.share_loader);
+        code=findViewById(R.id.code);
+        session=new Session(this);
+        String encodedimage=session.getImage();
+        if (!encodedimage.equalsIgnoreCase(""))
+        {
+            byte[] b= Base64.decode(encodedimage,Base64.DEFAULT);
+            Bitmap bmp= BitmapFactory.decodeByteArray(b,0,b.length);
+            profile.setImageBitmap(bmp);
+        }
+        String name=session.getName();
+        nametext.setText(name);
 
         // Popup for RateUS
         showPopupBtn = findViewById(R.id.rateus_btn_loader);
         RelativeLayoutloader = findViewById(R.id.linearLayoutloader);
-        profile=findViewById(R.id.profile);
-        Intent intent=getIntent();
-        Bitmap bmp=intent.getParcelableExtra("img");
+//        profile=findViewById(R.id.profile);
+//        Intent intent=getIntent();
+//        Bitmap bmp=intent.getParcelableExtra("img");
         //Toast.makeText(this, String.valueOf(bmp), Toast.LENGTH_SHORT).show();
-        profile.setImageBitmap(bmp);
+//        profile.setImageBitmap(bmp);
         showPopupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -290,7 +309,128 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        //////////////// Popup for Tourney ////////////////
+        cyanchipsbtn = findViewById(R.id.cyanchips);
+        RelativeLayoutloader = findViewById(R.id.linearLayoutloader);
+        relativeLayout_tourney = findViewById(R.id.relativelayout_tourney);
 
+
+        cyanchipsbtn.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("WrongViewCast")
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.tourney_join_tournament_popup,null);
+                shortinfo_tourney =customView.findViewById(R.id.short_tourney_info);
+
+                tourney_join_closebtn = customView.findViewById(R.id.join_tourney_close);
+
+
+
+                // onclick event
+                shortinfo_tourney.setOnClickListener(new View.OnClickListener(){
+                    public void onClick(View v) {
+                        LayoutInflater layoutInflater1 = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View customView1 = layoutInflater1.inflate(R.layout.tourney_info,null);
+                        tourney_shortinfo_closebtn = customView1.findViewById(R.id.close_tourney_info);
+
+                        //Instantiate the popup
+                        shortinfo_tourney_popupwindow = new PopupWindow(customView1, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                        //display the popup window
+                        shortinfo_tourney_popupwindow.showAtLocation(RelativeLayoutloader, Gravity.TOP, 0, 0);
+
+                        //closing the popup
+                        tourney_shortinfo_closebtn.setOnClickListener(new View.OnClickListener(){
+
+                            @Override
+                            public void onClick(View v) {
+                                shortinfo_tourney_popupwindow.dismiss();
+                            }
+                        });
+//                        sixpattipopup.dismiss();
+                    }
+                });
+
+                //instantiate popup window
+                join_tourney_popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                join_tourney_popupWindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
+
+                //join now the popup window on button click
+                join_tourneybtn = customView.findViewById(R.id.joinnow_tourney);
+
+                join_tourneybtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, LoadingScreen_tourney.class);
+                        startActivity(intent);
+                    }
+                });
+            }
+        });
+
+//        Implementation of share
+
+        share_loader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(v.getContext());
+                LayoutInflater inflater=getLayoutInflater();
+                View view= inflater.inflate(R.layout.share_dialog,null);
+                builder.setView(view);
+                facebook=view.findViewById(R.id.facebook);
+                whatsapp=view.findViewById(R.id.whatsapp);
+                general=view.findViewById(R.id.general);
+                facebook.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                        sharingIntent.setType("text/plain");
+                        sharingIntent.putExtra(Intent.EXTRA_TEXT, "http://www.facebook.com");
+                        startActivity(Intent.createChooser(sharingIntent, "Share via"));
+                    }
+                });
+                whatsapp.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
+                        whatsappIntent.setType("text/plain");
+                        whatsappIntent.setPackage("com.whatsapp");
+                        whatsappIntent.putExtra(Intent.EXTRA_TEXT, "The text you wanted to share");
+                        try {
+                            startActivity(whatsappIntent);
+                        } catch (android.content.ActivityNotFoundException ex) {
+                            Toast.makeText(MainActivity.this, "whatsapp not installed", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                general.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Uri pictureUri = Uri.parse("https://lifeclearance.com/androidImages/0.png");
+                        Intent shareIntent = new Intent();
+                        shareIntent.setAction(Intent.ACTION_SEND);
+                        shareIntent.putExtra(Intent.EXTRA_STREAM, "hi");
+                        shareIntent.setType("text/plain");
+                        //shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                        startActivity(Intent.createChooser(shareIntent, "Share images..."));
+                    }
+                });
+                AlertDialog alert= builder.create();
+                WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+                lp.copyFrom(alert.getWindow().getAttributes());
+                lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+                alert.show();
+                alert.getWindow().setAttributes(lp);
+                // builder.show();
+
+
+            }
+        });
 
         // Animation of chips on main page
 
