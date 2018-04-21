@@ -14,6 +14,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.Gravity;
@@ -44,11 +46,11 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
     private static final String IMAGE_VIEW_TAG_6 = "CARD SIX";
 
 
-    ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;
+    ImageView closeTrophyBtn,handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;
     TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond;
-    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow;
+    PopupWindow TrophypopupWindow,popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow;
     Button msgbtn,blockbtn,cards321shifterbtn;
-    RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
+    RelativeLayout relativeLayout,relativeLayout2,relativeLayout3,RelativeLayoutloader;
     DrawerLayout tournamenttble;
     NavigationView navigationView;
     LinearLayout linearcardholder321;
@@ -62,9 +64,6 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
         implementEvents();
 
         handle_right = findViewById(R.id.handle_right);
-        handle_right.setOnClickListener(this);
-
-
         tournamenttble = findViewById(R.id.tournamenttble);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, tournamenttble, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         tournamenttble.addDrawerListener(toggle);
@@ -72,6 +71,31 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
 
         navigationView = findViewById(R.id.teen_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        handle_right.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //instantiate the popup.xml layout file
+            LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View customView = layoutInflater.inflate(R.layout.leaderboard_popup,null);
+
+
+            closeTrophyBtn = customView.findViewById(R.id.leaderboardclose);
+
+            //close the popup window on button click
+            closeTrophyBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    TrophypopupWindow.dismiss();
+                }
+            });
+
+            RecyclerView playerList = customView.findViewById(R.id.leaderboardlist);
+            playerList.setLayoutManager(new LinearLayoutManager(ThreetwooneTournament.this));
+            String[] values = {"Anand","Tejas","Anirudh","Ravi","Rohit","Francis"};
+            playerList.setAdapter(new LeaderboardListAdapter(values));
+        }
+    });
+
 
 
 
@@ -380,6 +404,8 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnC
                 linearcardholder321.setGravity(Gravity.CENTER);
             }
         });
+
+
 
     }
 

@@ -73,13 +73,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!--<CheckBox-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:button="@drawable/checkbox_selector"-->
-            <!--android:text="CheckBox"-->
-            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
-            <!--android:textColor="@color/Black" />-->
 
         </LinearLayout>
 
