@@ -18,8 +18,6 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="landscape" />
-            android:screenOrientation="landscape"></activity>
-
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="landscape">
@@ -51,17 +49,23 @@
         <activity
             android:name=".ThreetwooneTournament"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".SixPatti"
             android:screenOrientation="landscape" />
-        <activity android:name=".LoadingScreen_sixpatti"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".LoadingScreen_variation"
-            android:screenOrientation="landscape"></activity>
-
-        <activity android:name=".NewVariationActivity"></activity>
-
+        <activity
+            android:name=".LoadingScreen_sixpatti"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".LoadingScreen_variation"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".NewVariationActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".LoadingScreen_three_two_one_tournament"
+            android:screenOrientation="landscape" />
+        <activity android:name=".TourneyActivity" />
+        <activity android:name=".LoadingScreen_tourney"></activity>
     </application>
 
 </manifest>

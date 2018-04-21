@@ -446,11 +446,24 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onBackPressed() {
 
-        if (variationtble.isDrawerOpen(GravityCompat.START)) {
-            variationtble.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+        LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
+
+        closebtn = (TextView) customView.findViewById(R.id.close);
+
+        //instantiate popup window
+        popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+        //display the popup window
+        popupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
+
+        //close the popup window on button click
+        closebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
     }
 
 

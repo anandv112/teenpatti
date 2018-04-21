@@ -3,6 +3,9 @@ package affwl.com.exchange;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+/**
+ * Created by user on 4/4/2018.
+ */
 
 public class Session {
     Context context;
@@ -12,16 +15,21 @@ public class Session {
     {
         preferences=context.getSharedPreferences("pref",Context.MODE_PRIVATE);
     }
-    public String get()
+    public String getName()
         {
-            String name=preferences.getString("url","");
+            String name=preferences.getString("name","");
             return name;
         }
-    public void put()
+    public void put(String image,String name)
     {
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("url","");
-        editor.putString("name","");
+        editor.putString("image",image);
+        editor.putString("name",name);
         editor.commit();
+    }
+    public String getImage()
+    {
+        String image=preferences.getString("image","");
+        return image;
     }
 }

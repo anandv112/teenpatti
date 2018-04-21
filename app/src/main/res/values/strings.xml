@@ -142,4 +142,6 @@
 
 
     <string name="sixpatti_infogame">This cards have been discarded for this tournament : </string>
+
+    <string name="tourney_info">This is a high stakes knock-out tournament where you can win 5 times your buy in amount. All players start with the same number of chips. Players get knocked out when their balance chips become less than 10 times the boot value for the next round. The boot value will increase after every 2 rounds. There is a Force Show if any player does not have enough chips to place the next bet. In this case the dealer lends the player the balance chips. In case the player wins the round, 2 times the borrowed chips are returned to the dealer. </string>
 </resources>

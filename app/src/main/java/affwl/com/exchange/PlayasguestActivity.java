@@ -1,24 +1,38 @@
 package affwl.com.exchange;
 
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 public class PlayasguestActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView selectimage,avatarimage,avatar1,avatar2,avatar3,avatar4,avatar5,avatar6,avatar7,avatar8,camera,choosepic;
     Session session;
     TextView login;
+    EditText nametext;
+    LoginDatabaseHelper loginDatabaseHelper;
+    DBHandler dbHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +49,7 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
         avatar8=findViewById(R.id.avatar8);
         camera=findViewById(R.id.camera);
         choosepic=findViewById(R.id.choosepic);
+        nametext=findViewById(R.id.nametext);
         login=findViewById(R.id.login);
         avatar1.setOnClickListener(this);
         avatar2.setOnClickListener(this);
@@ -48,9 +63,22 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
         choosepic.setOnClickListener(this);
         login.setOnClickListener(this);
         session=new Session(this);
+        loginDatabaseHelper=new LoginDatabaseHelper(this);
+        dbHandler=new DBHandler(this,"UserInfo",null,1);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)== PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED)
+        {
+            Toast.makeText(this, "permission granted", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(this, "not", Toast.LENGTH_SHORT).show();
+            requestPermission();
+        }
     }
 
-//    Implementation of selecting avatar
+
+
+    //    Implementation of selecting avatar
     @Override
     public void onClick(View v) {
         ImageView image;
@@ -116,27 +144,37 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
         }
         if (id==R.id.login)
         {
+            //SQLiteDatabase db=dbHandler.getWritableDatabase();
             Bitmap bmp=((BitmapDrawable)avatarimage.getDrawable()).getBitmap();
             Intent intent=new Intent(PlayasguestActivity.this,MainActivity.class);
-            intent.putExtra("img",bmp);
+            ByteArrayOutputStream baos=new ByteArrayOutputStream();
+            bmp.compress(Bitmap.CompressFormat.JPEG,100,baos);
+            byte[] b=baos.toByteArray();
+            String encodeimage= Base64.encodeToString(b,Base64.DEFAULT);
+            session.put(encodeimage,String.valueOf(nametext.getText()));
+            long result= loginDatabaseHelper.add(encodeimage,String.valueOf(nametext.getText()));
+            Toast.makeText(this, String.valueOf(result), Toast.LENGTH_SHORT).show();
+            //intent.putExtra("img",bmp);
+            //db.execSQL("insert into User id,image,name values " + "(" + 1 +"," + "" + ","  + String.valueOf(nametext.getText()) + ")");
             startActivity(intent);
             Toast.makeText(this, String.valueOf(bmp), Toast.LENGTH_SHORT).show();
         }
     }
 
-//    Implementation of camera
+    //    Implementation of camera
     @Override
     protected void onActivityResult(int requestCode,int resultcode,Intent data)
     {
         if (requestCode==1)
         {
-           Bitmap bitmap=(Bitmap) data .getExtras().get("data");
-           avatarimage.setImageBitmap(bitmap);
+            Bitmap bitmap=(Bitmap) data .getExtras().get("data");
+            avatarimage.setImageBitmap(bitmap);
 
         }
         if (requestCode==6)
         {
 //            Implementaion of Gallary
+            Bitmap bitmap= null;
             if (resultcode==RESULT_OK)
             {
                 Uri selectedimageuri=data.getData();
@@ -155,5 +193,31 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
         int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
         cursor.moveToFirst();
         return cursor.getString(column_index);
+    }
+    public void requestPermission()
+    {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.CAMERA))
+        {
+            new AlertDialog.Builder(this)
+                    .setTitle("")
+                    .setMessage("This permission is required for camera and gallery")
+                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            ActivityCompat.requestPermissions(PlayasguestActivity.this,new String[]{Manifest.permission.CAMERA},1);
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    })
+                    .create().show();
+        }
+        else
+        {
+            ActivityCompat.requestPermissions(PlayasguestActivity.this,new String[]{Manifest.permission.CAMERA},1);
+        }
     }
 }
