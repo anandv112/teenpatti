@@ -88,13 +88,12 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:src="@drawable/heart_jack"/>
-
         </LinearLayout>
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <!--Left side ithree_two_one_leaderboardyout-->
+            <!--Left side icon layout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -117,7 +116,7 @@
                     android:src="@drawable/infogame" />
             </RelativeLayout>
 
-            <!--Right side ithree_two_one_leaderboardyout-->
+            <!--Right side icon layout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -140,14 +139,15 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="60dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/leaderboardgame" />
 
 
             </RelativeLayout>
         </RelativeLayout>
 
 
-        <!--Tathree_two_one_leaderboardyout-->
+        <!--Table layout-->
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="wrap_content"

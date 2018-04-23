@@ -3,6 +3,9 @@ package affwl.com.exchange;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+/**
+ * Created by user on 4/4/2018.
+ */
 
 public class Session {
     Context context;

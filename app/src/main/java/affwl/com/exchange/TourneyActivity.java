@@ -65,7 +65,7 @@ public class TourneyActivity extends AppCompatActivity implements View.OnClickLi
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml three_two_one_leaderboard file
+                //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
@@ -95,7 +95,7 @@ public class TourneyActivity extends AppCompatActivity implements View.OnClickLi
         infobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml three_two_one_leaderboard file
+                //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.tourney_info_game_popup, null);
 
@@ -126,7 +126,7 @@ public class TourneyActivity extends AppCompatActivity implements View.OnClickLi
         chatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml three_two_one_leaderboard file
+                //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.chat_popup, null);
 
@@ -163,7 +163,7 @@ public class TourneyActivity extends AppCompatActivity implements View.OnClickLi
         myplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml three_two_one_leaderboard file
+                //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.player_status_popup, null);
 
@@ -194,7 +194,7 @@ public class TourneyActivity extends AppCompatActivity implements View.OnClickLi
         oplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml three_two_one_leaderboard file
+                //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.other_player_status, null);
 
@@ -250,7 +250,7 @@ public class TourneyActivity extends AppCompatActivity implements View.OnClickLi
         dealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml three_two_one_leaderboard file
+                //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.dealer_popup, null);
 
@@ -259,7 +259,7 @@ public class TourneyActivity extends AppCompatActivity implements View.OnClickLi
                 tipsbtn=customView.findViewById(R.id.tipbtn);
                 canceltipbtn=customView.findViewById(R.id.canceltip);
                 chngdbtn=customView.findViewById(R.id.chngdealer);
-                // onclick event for tip button to hide and show three_two_one_leaderboard
+                // onclick event for tip button to hide and show layout
                 tipsbtn.setOnClickListener(new View.OnClickListener() {
 
                     public void onClick(View v) {
@@ -360,7 +360,7 @@ public class TourneyActivity extends AppCompatActivity implements View.OnClickLi
         leaderboard_tourneybtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml three_two_one_leaderboard file
+                //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.tourney_leaderboard, null);
 

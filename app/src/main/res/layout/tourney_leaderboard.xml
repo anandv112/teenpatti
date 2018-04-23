@@ -14,6 +14,7 @@
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:src="@drawable/leaderboardgame"
             android:layout_weight="0.5"
             android:layout_marginTop="5dp"
             />
@@ -72,7 +73,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:stretchColumns="1">
-                <TableRow>
+                <TableRow
+                    android:background="@drawable/playerinfo_bg"
+                    >
                     <ImageView
                         android:id="@+id/tourney_player1"
                         android:layout_width="35dp"
@@ -90,7 +93,8 @@
                         android:textColor="@color/colorBlack"
                         />
                 </TableRow>
-                <TableRow>
+                <TableRow
+                    android:background="@drawable/playerinfo_bg">
                     <ImageView
                         android:id="@+id/tourney_player2"
                         android:layout_width="35dp"
@@ -108,7 +112,8 @@
                         android:textColor="@color/colorBlack"
                         />
                 </TableRow>
-                <TableRow>
+                <TableRow
+                    android:background="@drawable/playerinfo_bg">
                     <ImageView
                         android:id="@+id/tourney_player3"
                         android:layout_width="35dp"
@@ -126,7 +131,8 @@
                         android:textColor="@color/colorBlack"
                         />
                 </TableRow>
-                <TableRow>
+                <TableRow
+                    android:background="@drawable/playerinfo_bg">
                     <ImageView
                         android:id="@+id/tourney_player4"
                         android:layout_width="35dp"
@@ -144,7 +150,8 @@
                         android:textColor="@color/colorBlack"
                         />
                 </TableRow>
-                <TableRow>
+                <TableRow
+                    android:background="@drawable/playerinfo_bg">
                     <ImageView
                         android:id="@+id/tourney_player5"
                         android:layout_width="35dp"
