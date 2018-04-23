@@ -64,8 +64,20 @@
         <activity
             android:name=".LoadingScreen_three_two_one_tournament"
             android:screenOrientation="landscape" />
-        <activity android:name=".TourneyActivity" />
-        <activity android:name=".LoadingScreen_tourney"></activity>
+        <activity
+            android:name=".TourneyActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".LoadingScreen_tourney"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PrivateActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".LoadingScreen_private"
+            android:screenOrientation="landscape" />
+        <activity android:name=".LoadingScreen_new_variation"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

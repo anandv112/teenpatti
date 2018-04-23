@@ -32,10 +32,10 @@ import android.app.DialogFragment;
 public class MainActivity extends AppCompatActivity {
 
 
-    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile,orangechipsbtn,close312help,closesixpattihelp,short321info,tourney_shortinfo_closebtn,shortsixpattiinfo,bluechipsbtn,cyanchipsbtn,shortinfo_tourney,tourney_join_closebtn,share_loader,facebook,whatsapp,general;
-    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow, tounpopupWindow,howto321popup,sixpattipopup,howtosixpattipopup,join_tourney_popupWindow,shortinfo_tourney_popupwindow;
+    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile,orangechipsbtn,close312help,closesixpattihelp,short321info,tourney_shortinfo_closebtn,shortsixpattiinfo,bluechipsbtn,cyanchipsbtn,shortinfo_tourney,tourney_join_closebtn,ygreenchipsbtn,closebtn_create_table,share_loader,facebook,whatsapp,general;
+    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow, tounpopupWindow,howto321popup,sixpattipopup,howtosixpattipopup,join_tourney_popupWindow,shortinfo_tourney_popupwindow,create_table_private_popupwindow;
     RelativeLayout RelativeLayoutloader,relativelayout321,relativeLayoutsixpatti,relativeLayout_tourney;
-    TextView loaderbuychips,joinnowbtn,howtoplay321btn,howtoplaysixpattibtn,joinnowsixpattibtn,join_tourneybtn,nametext,code;
+    TextView loaderbuychips,joinnowbtn,howtoplay321btn,howtoplaysixpattibtn,joinnowsixpattibtn,join_tourneybtn,create_table_btn,nametext,code;
     Session session;
 
 
@@ -372,6 +372,47 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+        //////////////// Popup for Private ////////////////
+        ygreenchipsbtn = findViewById(R.id.ygreenchips);
+        RelativeLayoutloader = findViewById(R.id.linearLayoutloader);
+
+        ygreenchipsbtn.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("WrongViewCast")
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.private_create_table_popup,null);
+                closebtn_create_table =customView.findViewById(R.id.close_create_table);
+                //instantiate popup window
+                create_table_private_popupwindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                create_table_private_popupwindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
+
+                //join now the popup window on button click
+                create_table_btn = customView.findViewById(R.id.create_table);
+
+                closebtn_create_table.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        create_table_private_popupwindow.dismiss();
+                    }
+                });
+                create_table_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, LoadingScreen_private.class);
+                        startActivity(intent);
+                    }
+                });
+            }
+        });
+
+
 //        Implementation of share
 
         share_loader.setOnClickListener(new View.OnClickListener() {
@@ -495,14 +536,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //////////// Onclick method for variation table /////////////1
     public void sendVariationPage(View view)
     {
         Intent intent = new Intent(MainActivity.this, LoadingScreen_variation.class);
         startActivity(intent);
     }
 
+    //////////// Onclick method for new variation table /////////////1
     public void sendNewVariationPage(View view){
-        Intent intent = new Intent(MainActivity.this, NewVariationActivity.class);
+        Intent intent = new Intent(MainActivity.this, LoadingScreen_new_variation.class);
         startActivity(intent);
     }
 }
