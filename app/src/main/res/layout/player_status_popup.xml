@@ -18,7 +18,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true" />
 
-        <!--User status layout-->
+        <!--User stathree_two_one_leaderboardyout-->
         <RelativeLayout
             android:id="@+id/userstatuslayout"
             android:layout_width="wrap_content"
@@ -182,7 +182,7 @@
             </LinearLayout>
 
         </RelativeLayout>
-        <!--Achievement layout-->
+        <!--Achievemthree_two_one_leaderboardyout-->
         <LinearLayout
             android:id="@+id/achievelayout"
             android:layout_width="match_parent"
@@ -203,7 +203,7 @@
         </LinearLayout>
 
 
-        <!--Footer layout-->
+        <!--Foothree_two_one_leaderboardyout-->
         <LinearLayout
             android:id="@+id/footerlayout"
             android:layout_width="match_parent"

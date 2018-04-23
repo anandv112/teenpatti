@@ -16,7 +16,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true" />
 
-    <!--Boot value layout-->
+    <!--Boot vathree_two_one_leaderboardyout-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,7 +40,6 @@
             android:id="@+id/group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/group"
             android:layout_centerInParent="true"/>
 
         <TextView
@@ -60,7 +59,7 @@
 
     </RelativeLayout>
 
-    <!--Maximum blind layout-->
+    <!--Maximum blthree_two_one_leaderboardyout-->
     <RelativeLayout
         android:id="@+id/rank"
         android:layout_width="match_parent"
@@ -112,7 +111,7 @@
 
     </RelativeLayout>
 
-    <!--Footer layout-->
+    <!--Foothree_two_one_leaderboardyout-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -139,32 +138,32 @@
                 android:id="@+id/card1"
                 android:layout_width="45dp"
                 android:layout_height="70dp"
-                android:src="@drawable/acec"/>
+                android:src="@drawable/club_ace"/>
             <ImageView
                 android:id="@+id/card2"
                 android:layout_width="45dp"
                 android:layout_height="70dp"
-                android:src="@drawable/kingd"/>
+                android:src="@drawable/diamond_king"/>
             <ImageView
                 android:id="@+id/card3"
                 android:layout_width="45dp"
                 android:layout_height="70dp"
-                android:src="@drawable/queens"/>
+                android:src="@drawable/spade_queen"/>
             <ImageView
                 android:id="@+id/card4"
                 android:layout_width="45dp"
                 android:layout_height="70dp"
-                android:src="@drawable/nined"/>
+                android:src="@drawable/diamond_9"/>
             <ImageView
                 android:id="@+id/card5"
                 android:layout_width="45dp"
                 android:layout_height="70dp"
-                android:src="@drawable/sixc"/>
+                android:src="@drawable/club_6"/>
             <ImageView
                 android:id="@+id/card6"
                 android:layout_width="45dp"
                 android:layout_height="70dp"
-                android:src="@drawable/jackh"/>
+                android:src="@drawable/heart_jack"/>
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>

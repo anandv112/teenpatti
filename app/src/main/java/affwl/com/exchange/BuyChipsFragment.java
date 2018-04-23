@@ -118,7 +118,7 @@ public class BuyChipsFragment extends DialogFragment {
 //        public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle
 //        savedInstanceState)
 //        {
-//            View root = inflater.inflate(R.layout.fragment_buy_chips, container, false);
+//            View root = inflater.inflate(R.three_two_one_leaderboard.fragment_buy_chips, container, false);
 //            TabHost tabHost = root.findViewById(R.id.tabhost);
 //            tabHost.setup();
 //            TabHost.TabSpec spec = tabHost.newTabSpec("");

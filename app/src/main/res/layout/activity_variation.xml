@@ -29,7 +29,7 @@
             android:layout_height="wrap_content">
 
 
-            <!--Left side icon layout-->
+            <!--Left side ithree_two_one_leaderboardyout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -52,7 +52,7 @@
                     android:src="@drawable/infogame" />
             </RelativeLayout>
 
-            <!--Right side icon layout-->
+            <!--Right side ithree_two_one_leaderboardyout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
         </RelativeLayout>
 
 
-        <!--Table layout-->
+        <!--Tathree_two_one_leaderboardyout-->
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="wrap_content"
@@ -99,7 +99,7 @@
                 android:gravity="center"
                 android:src="@drawable/teenpattitableimage" />
 
-            <!--Upper user layout-->
+            <!--Upper uthree_two_one_leaderboardyout-->
             <RelativeLayout
                 android:id="@+id/playerbg1relativeLayout"
                 android:layout_width="match_parent"
@@ -155,7 +155,7 @@
                     android:layout_alignParentRight="true" />
             </RelativeLayout>
 
-            <!--Lower user layout-->
+            <!--Lower uthree_two_one_leaderboardyout-->
             <RelativeLayout
                 android:id="@+id/playerbg2relativeLayout"
                 android:layout_width="match_parent"
@@ -216,10 +216,10 @@
 
                     <ImageView
                         android:id="@+id/myplayer"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="40dp"
+                        android:layout_marginTop="35dp"
                         android:src="@drawable/myplayerbackground1" />
 
                     <ImageView
@@ -246,7 +246,7 @@
 
             </RelativeLayout>
 
-            <!--Dealer layout-->
+            <!--Deathree_two_one_leaderboardyout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -266,7 +266,7 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <!--Drawer layout-->
+    <!--Drathree_two_one_leaderboardyout-->
     <android.support.design.widget.NavigationView
         android:id="@+id/teen_nav_view"
         android:layout_width="match_parent"

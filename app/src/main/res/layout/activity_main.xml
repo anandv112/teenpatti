@@ -107,6 +107,13 @@
                     android:layout_height="120dp"
                     android:layout_margin="20dp"
                     android:src="@drawable/darkbluechips"/>
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/sixpatti_outer" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -121,6 +128,13 @@
                     android:layout_margin="20dp"
                     android:src="@drawable/blackchips"
                     android:onClick="sendNewVariationPage"/>
+                    android:src="@drawable/blackchips"/>
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/newvariation" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -135,6 +149,12 @@
                     android:layout_height="120dp"
                     android:layout_margin="20dp"
                     android:src="@drawable/cyanchips"/>
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/tourney" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -166,6 +186,7 @@
             android:id="@+id/profile"/>
 
         <TextView
+            android:id="@+id/nametext"
             android:layout_width="70dp"
             android:layout_height="30dp"
             android:background="@drawable/chip_balance" />
@@ -214,11 +235,11 @@
             android:layout_centerHorizontal="true"
             android:layout_margin="5dp"
             android:background="@drawable/buy_chips"
+            android:clickable="true"
+            android:focusable="true"
             android:paddingLeft="43dp"
             android:paddingStart="43dp"
             android:paddingTop="10dp"
-            android:clickable="true"
-            android:focusable="true"
             android:text="BUY CHIPS"
             android:textColor="#FFFF00"
             android:textSize="13sp" />

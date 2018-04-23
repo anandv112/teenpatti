@@ -31,7 +31,7 @@ import java.util.Collections;
 
 public class SixPatti extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
     ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,closebtnsixpattileadboard,leaderboardsixpattibtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;;
-    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond,sortbtn;
+    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond,sortbtn,gobtn;
     PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow,sixpattileadboardpopupWindow;
     Button msgbtn,blockbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
@@ -41,6 +41,11 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
     ImageView card1,card2,card3,card4,card5,card6;
     ArrayList<Integer> cards;
     int value=0;
+    int value1=0;
+    int value2=0;
+    int value3=0;
+    int value4=0;
+    int value5=0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -61,6 +66,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
 
 
 //        Implementation of cards
+        gobtn=findViewById(R.id.sixpatti_go);
         sortbtn=findViewById(R.id.sort);
         card1=findViewById(R.id.card1);
         card2=findViewById(R.id.card2);
@@ -120,21 +126,21 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             @Override
             public void onClick(View v) {
 
-                if (value==0) {
+                if (value1==0) {
                     Animation animation2 = new TranslateAnimation(0, 0, 0, -10);
                     animation2.setDuration(100);
                     animation2.setFillAfter(true);
                     card2.startAnimation(animation2);
-                    value = 1;
+                    value1 = 1;
                     return;
                 }
-                if (value==1)
+                if (value1==1)
                 {card2.clearAnimation();
                     Animation animation3 = new TranslateAnimation(0, 0,0, 0);
                     animation3.setDuration(100);
                     animation3.setFillAfter(true);
                     card2.startAnimation(animation3);
-                    value=0;
+                    value1=0;
                     return;
                 }
             }
@@ -144,21 +150,21 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             @Override
             public void onClick(View v) {
 
-                if (value==0) {
+                if (value2==0) {
                     Animation animation4 = new TranslateAnimation(0, 0, 0, -10);
                     animation4.setDuration(100);
                     animation4.setFillAfter(true);
                     card3.startAnimation(animation4);
-                    value = 1;
+                    value2= 1;
                     return;
                 }
-                if (value==1)
+                if (value2==1)
                 {card3.clearAnimation();
                     Animation animation5 = new TranslateAnimation(0, 0,0, 0);
                     animation5.setDuration(100);
                     animation5.setFillAfter(true);
                     card3.startAnimation(animation5);
-                    value=0;
+                    value2=0;
                     return;
                 }
             }
@@ -168,21 +174,21 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             @Override
             public void onClick(View v) {
 
-                if (value==0) {
+                if (value3==0) {
                     Animation animation6 = new TranslateAnimation(0, 0, 0, -10);
                     animation6.setDuration(100);
                     animation6.setFillAfter(true);
                     card4.startAnimation(animation6);
-                    value = 1;
+                    value3= 1;
                     return;
                 }
-                if (value==1)
+                if (value3==1)
                 {card4.clearAnimation();
                     Animation animation7 = new TranslateAnimation(0, 0,0, 0);
                     animation7.setDuration(100);
                     animation7.setFillAfter(true);
                     card4.startAnimation(animation7);
-                    value=0;
+                    value3=0;
                     return;
                 }
             }
@@ -192,21 +198,21 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             @Override
             public void onClick(View v) {
 
-                if (value==0) {
+                if (value4==0) {
                     Animation animation8 = new TranslateAnimation(0, 0, 0, -10);
                     animation8.setDuration(100);
                     animation8.setFillAfter(true);
                     card5.startAnimation(animation8);
-                    value = 1;
+                    value4= 1;
                     return;
                 }
-                if (value==1)
+                if (value4==1)
                 {card5.clearAnimation();
                     Animation animation9 = new TranslateAnimation(0, 0,0, 0);
                     animation9.setDuration(100);
                     animation9.setFillAfter(true);
                     card5.startAnimation(animation9);
-                    value=0;
+                    value4=0;
                     return;
                 }
             }
@@ -216,21 +222,21 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             @Override
             public void onClick(View v) {
 
-                if (value==0) {
+                if (value5==0) {
                     Animation animation10 = new TranslateAnimation(0, 0, 0, -10);
                     animation10.setDuration(100);
                     animation10.setFillAfter(true);
                     card6.startAnimation(animation10);
-                    value = 1;
+                    value5= 1;
                     return;
                 }
-                if (value==1)
+                if (value5==1)
                 {card6.clearAnimation();
                     Animation animation11 = new TranslateAnimation(0, 0,0, 0);
                     animation11.setDuration(100);
                     animation11.setFillAfter(true);
                     card6.startAnimation(animation11);
-                    value=0;
+                    value5=0;
                     return;
                 }
             }
@@ -259,7 +265,19 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             }
         });
 
-
+    gobtn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            TranslateAnimation animations = new TranslateAnimation(0.0f, 0.0f,
+                    0.0f, -100.0f);          //  new TranslateAnimation(xFrom,xTo, yFrom,yTo)
+            animations.setDuration(100);  // animation duration
+            animations.setFillAfter(true);
+            //animation.setFillAfter(true);
+            card1.startAnimation(animations);
+            card2.startAnimation(animations);
+            card3.startAnimation(animations);
+        }
+    });
         //////////////// Popup for Backbutton ///////////////////
 
         backbtn=(ImageView) findViewById(R.id.back);
@@ -268,7 +286,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
@@ -298,7 +316,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         infobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.six_patti_infogame_popup, null);
 
@@ -329,7 +347,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         chatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.chat_popup, null);
 
@@ -366,7 +384,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         myplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.player_status_popup, null);
 
@@ -397,7 +415,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         oplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.other_player_status, null);
 
@@ -453,7 +471,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         dealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.dealer_popup, null);
 
@@ -462,7 +480,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                 tipsbtn=customView.findViewById(R.id.tipbtn);
                 canceltipbtn=customView.findViewById(R.id.canceltip);
                 chngdbtn=customView.findViewById(R.id.chngdealer);
-                // onclick event for tip button to hide and show layout
+                // onclick event for tip button to hide and show three_two_one_leaderboard
                 tipsbtn.setOnClickListener(new View.OnClickListener() {
 
                     public void onClick(View v) {
@@ -563,7 +581,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         leaderboardsixpattibtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.six_patti_leaderboard, null);
 
@@ -599,11 +617,25 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
     @Override
     public void onBackPressed() {
 
-        if (sixpattitble.isDrawerOpen(GravityCompat.START)) {
-            sixpattitble.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+        LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
+
+        closebtn = (TextView) customView.findViewById(R.id.close);
+
+        //instantiate popup window
+        popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+        //display the popup window
+        popupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
+
+        //close the popup window on button click
+        closebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
+
     }
 
 
@@ -628,28 +660,28 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         switch (card)
         {
             case 106:
-                image.setImageResource(R.drawable.sixc);
+                image.setImageResource(R.drawable.club_6);
                 break;
             case 111:
-                image.setImageResource(R.drawable.acec);
+                image.setImageResource(R.drawable.club_ace);
                 break;
 
 
             case 209:
-                image.setImageResource(R.drawable.nined);
+                image.setImageResource(R.drawable.diamond_9);
                 break;
             case 214:
-                image.setImageResource(R.drawable.kingd);
+                image.setImageResource(R.drawable.diamond_king);
                 break;
 
 
             case 312:
-                image.setImageResource(R.drawable.jackh);
+                image.setImageResource(R.drawable.heart_jack);
                 break;
 
 
             case 413:
-                image.setImageResource(R.drawable.queens);
+                image.setImageResource(R.drawable.spade_queen);
                 break;
 
         }

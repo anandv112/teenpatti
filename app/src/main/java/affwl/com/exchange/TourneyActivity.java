@@ -1,5 +1,6 @@
 package affwl.com.exchange;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.CountDownTimer;
@@ -10,71 +11,62 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Collections;
 
-public class Variation extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
-    ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn,pdealerbtn;
-    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond;
-    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow,selectvariationpopupWindow;
+
+public class TourneyActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
+    ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,closebtn_tourney_leadboard,leaderboard_tourneybtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;
+    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn;
+    PopupWindow popupWindow,infopopupWindow,chatpopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow,tourney_leadboardpopupWindow;
     Button msgbtn,blockbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
-    DrawerLayout variationtble;
-    NavigationView navigationView;
-    public int counter=15;
-    public int counter4=15;
-    public int counter5=15;
-
-    CountDownTimer countDownTimer;
-
+    DrawerLayout tourneytble;
     int minteger = 0;
-    RadioGroup radioGroup;
-    RadioButton radiojokerbtn,radioakbtn,radioxbootbtn,radiohukumbtn;
+    NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_variation);
+        setContentView(R.layout.activity_tourney);
 
         handle_right = findViewById(R.id.handle_right);
         handle_right.setOnClickListener(this);
 
-
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, variationtble, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        variationtble.addDrawerListener(toggle);
+//        Toggle drawer
+        tourneytble = (DrawerLayout) findViewById(R.id.tourneytble);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, tourneytble, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        tourneytble.addDrawerListener(toggle);
         toggle.syncState();
 
         navigationView = (NavigationView) findViewById(R.id.teen_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        loadingPopup();
-
 
         //////////////// Popup for Backbutton ///////////////////
 
-
         backbtn=(ImageView) findViewById(R.id.back);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        tourneytble = (DrawerLayout) findViewById(R.id.tourneytble);
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml three_two_one_leaderboard file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
                 closebtn = (TextView) customView.findViewById(R.id.close);
@@ -95,19 +87,17 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
             }
         });
 
-
-
         //////////////// Popup for InfoButton ///////////////////
 
         infobtn=(ImageView) findViewById(R.id.info);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        tourneytble = (DrawerLayout) findViewById(R.id.tourneytble);
 
         infobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml three_two_one_leaderboard file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View customView = layoutInflater.inflate(R.layout.infogame_popup, null);
+                LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.tourney_info_game_popup, null);
 
                 infoclosebtn = (ImageView) customView.findViewById(R.id.infoclose);
 
@@ -128,18 +118,16 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
         });
 
 
-
-
         //////////////// Popup for ChatButton ///////////////////
 
         chatbtn=(ImageView) findViewById(R.id.chat);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        tourneytble = (DrawerLayout) findViewById(R.id.tourneytble);
 
         chatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml three_two_one_leaderboard file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.chat_popup, null);
 
                 chatclosebtn = (ImageView) customView.findViewById(R.id.chatclose);
@@ -170,17 +158,16 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
         //////////////// Popup for Userstatus ///////////////////
 
         myplayerbtn=(ImageView) findViewById(R.id.myplayer);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        tourneytble = (DrawerLayout) findViewById(R.id.tourneytble);
 
         myplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml three_two_one_leaderboard file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.player_status_popup, null);
 
                 ustatusclosebtn = (ImageView) customView.findViewById(R.id.userstatusclose);
-
                 //instantiate popup window
                 ustatuspopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
@@ -198,94 +185,25 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
         });
 
 
-        // Onclick on playerdealer button
-
-        pdealerbtn=(ImageView)findViewById(R.id.playerdealervar);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
-        pdealerbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                final View customView = layoutInflater.inflate(R.layout.select_variation, null);
-                //instantiate popup window
-                selectvariationpopupWindow = new PopupWindow(customView,RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-
-                //display the popup window
-                selectvariationpopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
-                // countdown timer for selectvariation
-                final TextView txtsecondvar=customView.findViewById(R.id.timecountervar);
-
-                long millisInFuture = 15000; //25 seconds
-                long countDownInterval = 1000; //1 second
-
-                countDownTimer=new CountDownTimer(millisInFuture, countDownInterval){
-                    public void onTick(long millisUntilFinished){
-//                        txtsecondvar.setText(String.valueOf(counter2));
-                        txtsecondvar.setText(" "+millisUntilFinished/1000);
-//                        counter2--;
-                    }
-                    public  void onFinish(){
-                        selectvariationpopupWindow.dismiss();
-                    }
-                };
-                countDownTimer.start();
-
-                // Implementing onclick on radio button to select variation
-//                final RelativeLayout variation1 = customView.findViewById(R.id.variation);
-//                final RelativeLayout relativeLayout2 = customView.findViewById(R.id.svariationpopup);
-                final TextView txtsecondtimer=customView.findViewById(R.id.timecountervar2);
-                radioGroup = (RadioGroup)customView.findViewById(R.id.radiogrp);
-                int id= radioGroup.getCheckedRadioButtonId();
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(final RadioGroup group, final int checkedId) {
-                        group.check(checkedId);
-                        // countdown for radio button to dismiss popup
-                        long millisInFuture = 3000; //3 seconds
-                        long countDownInterval = 1000; //1 second
-                        new CountDownTimer(millisInFuture, countDownInterval){
-                            public void onTick(long millisUntilFinished){
-                                txtsecondtimer.setText(" "+millisUntilFinished/1000);
-//                                counter3--;
-                            }
-                            public  void onFinish(){
-                                selectvariationpopupWindow.dismiss();
-
-
-
-//                                if (variation1.getVisibility() == View.VISIBLE) {
-//                                    variation1.setVisibility(View.INVISIBLE);
-//                                }
-//                                if (relativeLayout2.getVisibility() == View.INVISIBLE) {
-//                                    relativeLayout2.setVisibility(View.VISIBLE);
-//                                }
-                            }
-                        }.start();
-
-                    }
-                });
-            }
-        });
-
 
         //////////////// Popup for Otheruserstatus ///////////////////
+
         oplayerbtn=(ImageView) findViewById(R.id.playerbg2);
-        relativeLayout= (RelativeLayout) findViewById(R.id.variationrecycler);
+        relativeLayout= (RelativeLayout) findViewById(R.id.tourneyrecycler);
 
         oplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml three_two_one_leaderboard file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.other_player_status, null);
 
-                msgbtn=customView.findViewById(R.id.msg);
+                msgbtn = customView.findViewById(R.id.msg);
 
                 // onclick event for message button
                 msgbtn.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View customView1 = layoutInflater.inflate(R.layout.send_message_popup, null);
                         msgclosebtn=customView1.findViewById(R.id.msgclose);
                         //instantiate popup window
@@ -327,12 +245,13 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
         //////////////// Popup for Dealer ///////////////////
 
         dealerbtn=(ImageView) findViewById(R.id.dealer);
-        variationtble = (DrawerLayout) findViewById(R.id.variationtble);
+        tourneytble = (DrawerLayout) findViewById(R.id.tourneytble);
+
         dealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml three_two_one_leaderboard file
-                LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.dealer_popup, null);
 
                 relativeLayout2=customView.findViewById(R.id.inctip_layout);
@@ -357,7 +276,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
                 // onclick event for change dealer button
                 chngdbtn.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
-                        LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         View customView2 = layoutInflater.inflate(R.layout.change_dealer, null);
                         chngdealerclosebtn=customView2.findViewById(R.id.chngdealerclose);
                         //instantiate popup window
@@ -431,13 +350,44 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
                 });
             }
         });
+
+
+        //////////////// Popup for Leaderboard ///////////////////
+
+        leaderboard_tourneybtn=(ImageView) findViewById(R.id.leaderboardtourney);
+        tourneytble = (DrawerLayout) findViewById(R.id.tourneytble);
+
+        leaderboard_tourneybtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml three_two_one_leaderboard file
+                LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.tourney_leaderboard, null);
+
+                closebtn_tourney_leadboard = (ImageView) customView.findViewById(R.id.closeleadtourney);
+
+                //instantiate popup window
+                tourney_leadboardpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                tourney_leadboardpopupWindow.showAtLocation(relativeLayout, Gravity.CENTER, 0, 0);
+
+                //close the popup window on button click
+                closebtn_tourney_leadboard.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        tourney_leadboardpopupWindow.dismiss();
+                    }
+                });
+            }
+        });
     }
 
     /////////// Slider /////////////
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.handle_right:
-                variationtble.openDrawer(navigationView);
+                tourneytble.openDrawer(navigationView);
                 break;
         }
     }
@@ -446,7 +396,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onBackPressed() {
 
-        LayoutInflater layoutInflater = (LayoutInflater) Variation.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater layoutInflater = (LayoutInflater) TourneyActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
         closebtn = (TextView) customView.findViewById(R.id.close);
@@ -464,6 +414,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
                 popupWindow.dismiss();
             }
         });
+
     }
 
 
@@ -474,7 +425,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
 
     public void backtolobby(View view)
     {
-        Intent intent = new Intent(Variation.this, MainActivity.class);
+        Intent intent = new Intent(TourneyActivity.this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -485,91 +436,6 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
     }
 
 
-
-//    Implementing startup popup selecting variation
-
-    public void loadingPopup() {
-        final LayoutInflater inflater = this.getLayoutInflater();
-        final View layout = inflater.inflate(R.layout.select_variation_popup, null);
-        final PopupWindow windows = new PopupWindow(layout , RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-        windows.setFocusable(false);
-        windows.setTouchable(true);
-        windows.setOutsideTouchable(true);
-        layout.post(new Runnable() {
-            public void run() {
-                windows.showAtLocation(layout,Gravity.CENTER, 0, 0);
-            }
-        });
-
-        ImageView closeselectv=layout.findViewById(R.id.closeselectv);
-        closeselectv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                windows.dismiss();
-                final RelativeLayout variation1 = layout.findViewById(R.id.variation);
-                final RelativeLayout relativeLayout1 = layout.findViewById(R.id.svariationpopup);
-                if (variation1.getVisibility() == View.VISIBLE) {
-                    variation1.setVisibility(View.INVISIBLE);
-                }
-                if (relativeLayout1.getVisibility() == View.INVISIBLE) {
-                    relativeLayout1.setVisibility(View.VISIBLE);
-                    final TextView txtsecond=layout.findViewById(R.id.countdowntimer);
-                    new CountDownTimer(2000, 1000) {
-                        public void onTick(long millisUntilFinished) {
-                            txtsecond.setText(String.valueOf(counter5));
-                            counter5--;
-                        }
-
-                        @Override
-                        public void onFinish() {
-                            relativeLayout1.setVisibility(View.INVISIBLE);
-                        }
-                    }.start();
-                }
-            }
-        });
-
-
-        final TextView txtsecond=layout.findViewById(R.id.countdowntimer);
-        new CountDownTimer(16000, 1000){
-            public void onTick(long millisUntilFinished){
-                txtsecond.setText(String.valueOf(counter));
-                counter--;
-            }
-            public  void onFinish() {
-                //windows.dismiss();
-                final RelativeLayout variation = layout.findViewById(R.id.variation);
-                final RelativeLayout relativeLayout = layout.findViewById(R.id.svariationpopup);
-                if (variation.getVisibility() == View.VISIBLE) {
-                    variation.setVisibility(View.INVISIBLE);
-                }
-                if (relativeLayout.getVisibility() == View.INVISIBLE) {
-                    relativeLayout.setVisibility(View.VISIBLE);
-                    new CountDownTimer(2000, 1000) {
-                        public void onTick(long millisUntilFinished) {
-                            txtsecond.setText(String.valueOf(counter4));
-                            counter4--;
-                        }
-
-                        @Override
-                        public void onFinish() {
-                            relativeLayout.setVisibility(View.INVISIBLE);
-                        }
-                    }.start();
-                }
-            }
-        }.start();
-//        Animation animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(),
-//                R.anim.zoom_in);
-//        RelativeLayout vrelative=three_two_one_leaderboard.findViewById(R.id.variation);
-//        vrelative.setVisibility(View.VISIBLE);
-//        vrelative.startAnimation(animZoomIn);
-//
-//
-//        Animation animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(),
-//                R.anim.zoom_out);
-//        vrelative.setVisibility(View.VISIBLE);
-//        vrelative.startAnimation(animZoomOut);
-//        windows.dismiss();
-    }
 }
+
+

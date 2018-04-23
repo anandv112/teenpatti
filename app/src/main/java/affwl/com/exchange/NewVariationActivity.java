@@ -67,7 +67,7 @@ public class NewVariationActivity extends AppCompatActivity implements View.OnCl
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
@@ -97,7 +97,7 @@ public class NewVariationActivity extends AppCompatActivity implements View.OnCl
         infobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.infogame_popup, null);
 
@@ -128,7 +128,7 @@ public class NewVariationActivity extends AppCompatActivity implements View.OnCl
         chatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.chat_popup, null);
 
@@ -165,7 +165,7 @@ public class NewVariationActivity extends AppCompatActivity implements View.OnCl
         myplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.player_status_popup, null);
 
@@ -261,7 +261,7 @@ public class NewVariationActivity extends AppCompatActivity implements View.OnCl
         oplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.other_player_status, null);
 
@@ -317,7 +317,7 @@ public class NewVariationActivity extends AppCompatActivity implements View.OnCl
         dealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) NewVariationActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.dealer_popup, null);
 
@@ -326,7 +326,7 @@ public class NewVariationActivity extends AppCompatActivity implements View.OnCl
                 tipsbtn=customView.findViewById(R.id.tipbtn);
                 canceltipbtn=customView.findViewById(R.id.canceltip);
                 chngdbtn=customView.findViewById(R.id.chngdealer);
-                // onclick event for tip button to hide and show layout
+                // onclick event for tip button to hide and show three_two_one_leaderboard
                 tipsbtn.setOnClickListener(new View.OnClickListener() {
 
                     public void onClick(View v) {
@@ -495,7 +495,7 @@ public class NewVariationActivity extends AppCompatActivity implements View.OnCl
         }.start();
 //        Animation animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(),
 //                R.anim.zoom_in);
-//        RelativeLayout vrelative=layout.findViewById(R.id.variation);
+//        RelativeLayout vrelative=three_two_one_leaderboard.findViewById(R.id.variation);
 //        vrelative.setVisibility(View.VISIBLE);
 //        vrelative.startAnimation(animZoomIn);
 //

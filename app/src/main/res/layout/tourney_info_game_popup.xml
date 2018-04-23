@@ -23,44 +23,44 @@
         android:id="@+id/bootvaluelayout"
         >
 
-            <TextView
-                android:id="@+id/bootvalue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BOOT VALUE"
-                android:textColor="@color/colorYellowDark"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
-                />
-
-            <ImageView
-                android:id="@+id/bootvalueimg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/playerinfosinglechip"
-                android:layout_centerInParent="true"/>
-
-            <TextView
-                android:id="@+id/bootvaluetxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="₹70/-"
-                android:textColor="@color/colorYellowDark"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                android:layout_marginTop="20dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
+        <TextView
+            android:id="@+id/bootvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BOOT VALUE"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
             />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorYellowDark"
-                android:layout_marginTop="20dp"
-                android:layout_below="@id/bootvaluetxt"
+
+        <ImageView
+            android:id="@+id/bootvalueimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/playerinfosinglechip"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/bootvaluetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹2"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginTop="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorYellowDark"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/bootvaluetxt"
             />
 
     </RelativeLayout>
@@ -148,7 +148,7 @@
             android:id="@+id/chaaltxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="₹8960"
+            android:text="₹256"
             android:textColor="@color/colorYellowDark"
             android:textSize="20sp"
             android:layout_weight="1"
@@ -199,7 +199,7 @@
             android:id="@+id/pottxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="₹71,680"
+            android:text="₹4,096"
             android:textColor="@color/colorYellowDark"
             android:textSize="20sp"
             android:layout_weight="1"
@@ -225,19 +225,28 @@
         android:layout_marginTop="10dp"
         >
         <TextView
-            android:id="@+id/publictbl"
+            android:id="@+id/tournamenttble"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PUBLIC TABLE"
-          android:textColor="@color/colorYellowDark"
+            android:text="TOURNAMENT TABLE"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="15sp"
             android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/buyin_infogame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fcfbae"
+            android:text="Buy-in value : ₹10,000"
+            android:layout_below="@id/tournamenttble"
+            android:layout_centerHorizontal="true"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorLightYellow"
-            android:text="GOOD LUCK WITH YOUR CARDS"
-            android:layout_below="@id/publictbl"
-            android:textSize="20dp"
+            android:textColor="#fcfbae"
+            android:text="Win Amount : ₹50,000"
+            android:layout_below="@id/buyin_infogame"
             android:layout_centerHorizontal="true"
             />
     </RelativeLayout>
