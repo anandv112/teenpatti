@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:id="@+id/chatlayout">
 
-    <!--Header layout-->
+    <!--Heathree_two_one_leaderboardyout-->
     <LinearLayout
         android:id="@+id/llchat_popup_header"
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
             android:src="@drawable/cancelchatmsg" />
     </LinearLayout>
 
-    <!--Middle layout-->
+    <!--Midthree_two_one_leaderboardyout-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
         android:background="#d6000000"
         android:orientation="horizontal">
 
-        <!--Chat list layout-->
+        <!--Chat lthree_two_one_leaderboardyout-->
         <LinearLayout
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -136,7 +136,7 @@
 
     </RelativeLayout>
 
-    <!--Footer Buttons layout-->
+    <!--Footer Buttthree_two_one_leaderboardyout-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

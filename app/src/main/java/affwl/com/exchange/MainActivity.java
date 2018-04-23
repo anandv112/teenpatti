@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         String encodedimage=session.getImage();
         if (!encodedimage.equalsIgnoreCase(""))
         {
-            byte[] b= Base64.decode(encodedimage,Base64.DEFAULT);
+            byte[] b= Base64.decode(encodedimage, Base64.DEFAULT);
             Bitmap bmp= BitmapFactory.decodeByteArray(b,0,b.length);
             profile.setImageBitmap(bmp);
         }
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         showPopupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.rateus_popup,null);
 
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         showPopupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.help_popup,null);
 
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
         showPopupBtnTropy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.leaderboard_popup,null);
 
@@ -164,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         //Buy Chips Popup
 
         loaderbuychips = (findViewById(R.id.buy_chips_loader));
@@ -187,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
         orangechipsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.activity_how_to_play_three_two_one,null);
                 short321info = findViewById(R.id.short312info);
@@ -255,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
         bluechipsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.activity_how_to_play_sixpatti,null);
                 shortsixpattiinfo = findViewById(R.id.shortsixpattiinfo);
@@ -305,6 +306,129 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
+            }
+        });
+
+        //////////////// Popup for Tourney ////////////////
+        cyanchipsbtn = findViewById(R.id.cyanchips);
+        RelativeLayoutloader = findViewById(R.id.linearLayoutloader);
+        relativeLayout_tourney = findViewById(R.id.relativelayout_tourney);
+
+
+        cyanchipsbtn.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("WrongViewCast")
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml three_two_one_leaderboard file
+                LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.tourney_join_tournament_popup,null);
+                shortinfo_tourney =customView.findViewById(R.id.short_tourney_info);
+
+                tourney_join_closebtn = customView.findViewById(R.id.join_tourney_close);
+
+
+
+                // onclick event
+                shortinfo_tourney.setOnClickListener(new View.OnClickListener(){
+                    public void onClick(View v) {
+                        LayoutInflater layoutInflater1 = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View customView1 = layoutInflater1.inflate(R.layout.tourney_info,null);
+                        tourney_shortinfo_closebtn = customView1.findViewById(R.id.close_tourney_info);
+
+                        //Instantiate the popup
+                        shortinfo_tourney_popupwindow = new PopupWindow(customView1, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                        //display the popup window
+                        shortinfo_tourney_popupwindow.showAtLocation(RelativeLayoutloader, Gravity.TOP, 0, 0);
+
+                        //closing the popup
+                        tourney_shortinfo_closebtn.setOnClickListener(new View.OnClickListener(){
+
+                            @Override
+                            public void onClick(View v) {
+                                shortinfo_tourney_popupwindow.dismiss();
+                            }
+                        });
+//                        sixpattipopup.dismiss();
+                    }
+                });
+
+                //instantiate popup window
+                join_tourney_popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                join_tourney_popupWindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
+
+                //join now the popup window on button click
+                join_tourneybtn = customView.findViewById(R.id.joinnow_tourney);
+
+                join_tourneybtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, LoadingScreen_tourney.class);
+                        startActivity(intent);
+                    }
+                });
+            }
+        });
+
+//        Implementation of share
+
+        share_loader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(v.getContext());
+                LayoutInflater inflater=getLayoutInflater();
+                View view= inflater.inflate(R.layout.share_dialog,null);
+                builder.setView(view);
+                facebook=view.findViewById(R.id.facebook);
+                whatsapp=view.findViewById(R.id.whatsapp);
+                general=view.findViewById(R.id.general);
+                facebook.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                        sharingIntent.setType("text/plain");
+                        sharingIntent.putExtra(Intent.EXTRA_TEXT, "http://www.facebook.com");
+                        startActivity(Intent.createChooser(sharingIntent, "Share via"));
+                    }
+                });
+                whatsapp.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
+                        whatsappIntent.setType("text/plain");
+                        whatsappIntent.setPackage("com.whatsapp");
+                        whatsappIntent.putExtra(Intent.EXTRA_TEXT, "The text you wanted to share");
+                        try {
+                            startActivity(whatsappIntent);
+                        } catch (android.content.ActivityNotFoundException ex) {
+                            Toast.makeText(MainActivity.this, "whatsapp not installed", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                general.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Uri pictureUri = Uri.parse("https://lifeclearance.com/androidImages/0.png");
+                        Intent shareIntent = new Intent();
+                        shareIntent.setAction(Intent.ACTION_SEND);
+                        shareIntent.putExtra(Intent.EXTRA_STREAM, "hi");
+                        shareIntent.setType("text/plain");
+                        //shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                        startActivity(Intent.createChooser(shareIntent, "Share images..."));
+                    }
+                });
+                AlertDialog alert= builder.create();
+                WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+                lp.copyFrom(alert.getWindow().getAttributes());
+                lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+                alert.show();
+                alert.getWindow().setAttributes(lp);
+                // builder.show();
+
+
             }
         });
 
@@ -497,7 +621,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendVariationPage(View view)
     {
-        Intent intent = new Intent(MainActivity.this, LoadingScreen_variation.class);
+        Intent intent = new Intent(MainActivity.this, Variation.class);
         startActivity(intent);
     }
 

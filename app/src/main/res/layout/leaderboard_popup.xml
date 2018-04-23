@@ -1,43 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg3">
+    android:background="#00ffffff"
+    android:orientation="horizontal">
 
-    <RelativeLayout
-        android:id="@+id/leaderboardheader"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/leaderboard_icon"
-            android:paddingTop="10dp"
-            android:text="LEADERBOARD"
-            android:textAlignment="center"
-            android:textColor="@color/colorBlack" />
+        android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/leaderboardclose"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/cross" />
+            android:layout_gravity="center_horizontal"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:src="@drawable/btn_handle_right"/>
 
-    </RelativeLayout>
-
-    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/leaderboardlist"
-        android:layout_width="match_parent"
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/leaderboardheader">
-    </android.support.v7.widget.RecyclerView>
-</RelativeLayout>
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+<!--<LinearLayout-->
+<!--android:id="@+id/leaderboardheader"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:gravity="center"-->
+<!--android:orientation="horizontal">-->
+
+<!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="40dp"-->
+    <!--android:background="@drawable/leaderboard_icon"-->
+    <!--android:paddingTop="10dp"-->
+    <!--android:text="LEADERBOARD"-->
+    <!--android:textAlignment="center"-->
+    <!--android:textColor="@color/colorBlack" />-->
+
+
+<!--</LinearLayout>-->
+
+<!--<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:id="@+id/leaderboardlist"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content">-->
+
+<!--</android.support.v7.widget.RecyclerView>-->
