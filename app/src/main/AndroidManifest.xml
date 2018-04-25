@@ -17,10 +17,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="landscape" >
-
-        </activity>
-
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="landscape">
@@ -29,7 +26,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Splash2Activity"
@@ -53,7 +49,6 @@
         <activity
             android:name=".ThreetwooneTournament"
             android:screenOrientation="landscape" />
-
         <activity
             android:name=".SixPatti"
             android:screenOrientation="landscape" />
@@ -71,10 +66,18 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".TourneyActivity"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".LoadingScreen_tourney"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PrivateActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".LoadingScreen_private"
+            android:screenOrientation="landscape" />
+        <activity android:name=".LoadingScreen_new_variation"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

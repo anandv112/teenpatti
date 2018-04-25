@@ -1,21 +1,17 @@
 package affwl.com.exchange;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 
-public class LoadingScreen_teenpatti extends AppCompatActivity {
+public class LoadingScreen_private extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loading_screen_teenpatti);
+        setContentView(R.layout.activity_loading_screen_private);
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
 
@@ -30,7 +26,7 @@ public class LoadingScreen_teenpatti extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 finish();
-                startActivity(new Intent(LoadingScreen_teenpatti.this, TeenpattiActivity.class));
+                startActivity(new Intent(LoadingScreen_private.this, PrivateActivity.class));
 
             }
 
@@ -52,7 +48,7 @@ public class LoadingScreen_teenpatti extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation myanim) {
                 finish();
-                startActivity(new Intent(LoadingScreen_teenpatti.this, TeenpattiActivity.class));
+                startActivity(new Intent(LoadingScreen_private.this, PrivateActivity.class));
             }
 
             @Override
