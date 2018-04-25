@@ -29,7 +29,7 @@
             android:layout_height="wrap_content">
 
 
-            <!--Left side icon layout-->
+            <!--Left side ithree_two_one_leaderboardyout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -52,7 +52,7 @@
                     android:src="@drawable/infogame" />
             </RelativeLayout>
 
-            <!--Right side icon layout-->
+            <!--Right side ithree_two_one_leaderboardyout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
         </RelativeLayout>
 
 
-        <!--Table layout-->
+        <!--Tathree_two_one_leaderboardyout-->
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="wrap_content"

@@ -29,7 +29,7 @@
             android:layout_height="wrap_content">
 
 
-            <!--Left side icon layout-->
+            <!--Left side ithree_two_one_leaderboardyout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -47,13 +47,13 @@
                     android:id="@+id/info"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="70dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/infogame" />
 
             </RelativeLayout>
 
-            <!--Right side icon layout-->
+            <!--Right side ithree_two_one_leaderboardyout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,25 +63,26 @@
                     android:id="@+id/chat"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="0dp"
                     android:layout_marginTop="10dp"
                     android:clickable="true"
-                    android:src="@drawable/chatgame" />
+                    android:src="@drawable/chatgame"
+                    android:focusable="true" />
 
                 <ImageView
                     android:id="@+id/getchips"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/getchips" />
+                    android:src="@drawable/getchips"
+                    android:layout_marginStart="40dp" />
 
 
             </RelativeLayout>
         </RelativeLayout>
 
 
-        <!--Table layout-->
+        <!--Tathree_two_one_leaderboardyout-->
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="wrap_content"
@@ -243,7 +244,7 @@
 
         </RelativeLayout>
 
-        <!--Bottom info layout-->
+        <!--Bottom ithree_two_one_leaderboardyout-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

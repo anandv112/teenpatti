@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--Header layout-->
+    <!--Heathree_two_one_leaderboardyout-->
     <LinearLayout
         android:id="@+id/themeheader"
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!--Buttons layout-->
+            <!--Buttthree_two_one_leaderboardyout-->
             <LinearLayout
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
@@ -121,7 +121,7 @@
                     android:textSize="25dp" />
             </LinearLayout>
 
-            <!--Theme layout-->
+            <!--Ththree_two_one_leaderboardyout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

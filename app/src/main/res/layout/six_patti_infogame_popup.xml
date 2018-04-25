@@ -16,7 +16,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true" />
 
-    <!--Boot value layout-->
+    <!--Boot vathree_two_one_leaderboardyout-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,7 +40,6 @@
             android:id="@+id/group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/group"
             android:layout_centerInParent="true"/>
 
         <TextView
@@ -60,7 +59,7 @@
 
     </RelativeLayout>
 
-    <!--Maximum blind layout-->
+    <!--Maximum blthree_two_one_leaderboardyout-->
     <RelativeLayout
         android:id="@+id/rank"
         android:layout_width="match_parent"
@@ -112,7 +111,7 @@
 
     </RelativeLayout>
 
-    <!--Footer layout-->
+    <!--Foothree_two_one_leaderboardyout-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
