@@ -109,7 +109,7 @@
                 android:src="@drawable/infogame" />
         </RelativeLayout>
 
-        <!--Right side ithree_two_one_leaderboardyout-->
+        <!--Right side three_two_one_leaderboardyout-->
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
