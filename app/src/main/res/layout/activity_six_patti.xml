@@ -8,85 +8,22 @@
     android:background="@drawable/bg3">
 
 
-    <!--Sort Button-->
-    <TextView
-        android:id="@+id/sort"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="1dp"
-        android:background="@drawable/yellow_buttons"
-        android:padding="10dp"
-        android:text="SORT"
-        android:textAlignment="center"
-        android:textColor="@color/darkbrown" />
-
-    <!--Sixpatti Go buttons-->
-    <TextView
-        android:id="@+id/sixpatti_go"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+    <ImageView
+        android:id="@+id/handle_right"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="1dp"
-        android:background="@drawable/yellow_buttons"
-        android:padding="10dp"
-        android:text="GO"
-        android:textAlignment="center"
-        android:textColor="@color/darkbrown" />
-    <!--Layouts for cards-->
-    <LinearLayout
-        android:id="@+id/cardlayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:orientation="horizontal">
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:src="@drawable/btn_handle_right" />
 
-        <ImageView
-            android:id="@+id/card1"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:src="@drawable/club_ace" />
-
-        <ImageView
-            android:id="@+id/card2"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:src="@drawable/diamond_king" />
-
-        <ImageView
-            android:id="@+id/card3"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:src="@drawable/spade_queen" />
-
-        <ImageView
-            android:id="@+id/card4"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:src="@drawable/diamond_9" />
-
-        <ImageView
-            android:id="@+id/card5"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:src="@drawable/club_6" />
-
-        <ImageView
-            android:id="@+id/card6"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:src="@drawable/heart_jack" />
-
-    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <!--Left side ithree_two_one_leaderboardyout-->
+        <!--Left side icon layout-->
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -109,7 +46,7 @@
                 android:src="@drawable/infogame" />
         </RelativeLayout>
 
-        <!--Right side three_two_one_leaderboardyout-->
+        <!--Right side icon layout-->
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -133,14 +70,15 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="60dp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:src="@drawable/leaderboardgame" />
 
 
         </RelativeLayout>
     </RelativeLayout>
 
 
-    <!--Tathree_two_one_leaderboardyout-->
+    <!--Table layout-->
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
@@ -155,6 +93,7 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:src="@drawable/teenpattitableimage" />
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -230,19 +169,117 @@
         </RelativeLayout>
 
 
-        <RelativeLayout
+    </RelativeLayout>
+
+    <!--Sort Button-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/sort"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true">
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/yellow_buttons"
+            android:padding="10dp"
+            android:text="SORTt"
+            android:textAlignment="center"
+            android:textColor="@color/darkbrown" />
 
-            <ImageView
-                android:id="@+id/dealer"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_alignTop="@+id/table"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/dealer"
-                tools:ignore="NotSibling" />
-        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/card1"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="150dp"
+            android:layout_toRightOf="@+id/sort"
+            android:src="@drawable/club_ace" />
+
+        <ImageView
+            android:id="@+id/card2"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="170dp"
+            android:layout_toRightOf="@+id/sort"
+            android:src="@drawable/diamond_king" />
+
+        <ImageView
+            android:id="@+id/card3"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="190dp"
+            android:layout_toRightOf="@+id/sort"
+            android:src="@drawable/spade_queen" />
+
+        <ImageView
+            android:id="@+id/card4"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="210dp"
+            android:layout_toRightOf="@+id/sort"
+            android:src="@drawable/diamond_9" />
+
+        <ImageView
+            android:id="@+id/card5"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="230dp"
+            android:layout_toRightOf="@+id/sort"
+            android:src="@drawable/club_6" />
+
+        <ImageView
+            android:id="@+id/card6"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="250dp"
+            android:layout_toRightOf="@+id/sort"
+            android:src="@drawable/heart_jack" />
+        <!--</RelativeLayout>-->
+
+        <!--Sixpatti Go buttons-->
+        <TextView
+            android:id="@+id/sixpatti_go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/yellow_buttons"
+            android:padding="10dp"
+            android:text="GO"
+            android:textAlignment="center"
+            android:textColor="@color/darkbrown" />
     </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/dealer"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignTop="@+id/table"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/dealer"
+            tools:ignore="NotSibling" />
+    </RelativeLayout>
+
 </RelativeLayout>
