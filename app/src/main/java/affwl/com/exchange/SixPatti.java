@@ -55,18 +55,6 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_six_patti);
 
-        handle_right = findViewById(R.id.handle_right);
-        handle_right.setOnClickListener(this);
-
-//        Toggle drawer
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, sixpattitble, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        sixpattitble.addDrawerListener(toggle);
-        toggle.syncState();
-
-        navigationView = (NavigationView) findViewById(R.id.teen_nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
 
 //        Implementation of cards
         gobtn=findViewById(R.id.sixpatti_go);
@@ -310,7 +298,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         //////////////// Popup for Backbutton ///////////////////
 
         backbtn=(ImageView) findViewById(R.id.back);
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.sixpattirecycler);
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -340,7 +328,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         //////////////// Popup for InfoButton ///////////////////
 
         infobtn=(ImageView) findViewById(R.id.info);
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.sixpattirecycler);
 
         infobtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -371,7 +359,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         //////////////// Popup for ChatButton ///////////////////
 
         chatbtn=(ImageView) findViewById(R.id.chat);
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.sixpattirecycler);
 
         chatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -408,7 +396,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         //////////////// Popup for Userstatus ///////////////////
 
         myplayerbtn=(ImageView) findViewById(R.id.myplayer);
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.sixpattirecycler);
 
         myplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -495,7 +483,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         //////////////// Popup for Dealer ///////////////////
 
         dealerbtn=(ImageView) findViewById(R.id.dealer);
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.sixpattirecycler);
 
         dealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -605,7 +593,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         //////////////// Popup for Leaderboard ///////////////////
 
         leaderboardsixpattibtn=(ImageView) findViewById(R.id.leaderboardsixpatti);
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.sixpattirecycler);
 
         leaderboardsixpattibtn.setOnClickListener(new View.OnClickListener() {
             @Override
