@@ -235,7 +235,7 @@
             android:paddingLeft="43dp"
             android:paddingStart="43dp"
             android:paddingTop="10dp"
-            android:text="BUY CHIPpS"
+            android:text="BUY CHIPS"
             android:textColor="#FFFF00"
             android:textSize="13sp" />
 

@@ -46,6 +46,9 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
     int value3=0;
     int value4=0;
     int value5=0;
+
+    RelativeLayout playerbg2relativeLayout,rl_myplayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -95,7 +98,8 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         card5.setVisibility(View.VISIBLE);
         card6.setVisibility(View.VISIBLE);
 
-
+        playerbg2relativeLayout=findViewById(R.id.playerbg2relativeLayout);
+        rl_myplayer=findViewById(R.id.rl_myplayer);
         // Implementaion of six cards onclick and translate animation
 
         card1.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +107,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
 
                 if (value==0) {
-                    Animation animation = new TranslateAnimation(0, 0, 0, -10);
+                    Animation animation = new TranslateAnimation(0, 0, 0, -20);
                     animation.setDuration(100);
                     animation.setFillAfter(true);
                     card1.startAnimation(animation);
@@ -127,7 +131,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
 
                 if (value1==0) {
-                    Animation animation2 = new TranslateAnimation(0, 0, 0, -10);
+                    Animation animation2 = new TranslateAnimation(0, 0, 0, -20);
                     animation2.setDuration(100);
                     animation2.setFillAfter(true);
                     card2.startAnimation(animation2);
@@ -151,7 +155,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
 
                 if (value2==0) {
-                    Animation animation4 = new TranslateAnimation(0, 0, 0, -10);
+                    Animation animation4 = new TranslateAnimation(0, 0, 0, -20);
                     animation4.setDuration(100);
                     animation4.setFillAfter(true);
                     card3.startAnimation(animation4);
@@ -175,7 +179,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
 
                 if (value3==0) {
-                    Animation animation6 = new TranslateAnimation(0, 0, 0, -10);
+                    Animation animation6 = new TranslateAnimation(0, 0, 0, -20);
                     animation6.setDuration(100);
                     animation6.setFillAfter(true);
                     card4.startAnimation(animation6);
@@ -199,7 +203,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
 
                 if (value4==0) {
-                    Animation animation8 = new TranslateAnimation(0, 0, 0, -10);
+                    Animation animation8 = new TranslateAnimation(0, 0, 0, -20);
                     animation8.setDuration(100);
                     animation8.setFillAfter(true);
                     card5.startAnimation(animation8);
@@ -223,7 +227,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
 
                 if (value5==0) {
-                    Animation animation10 = new TranslateAnimation(0, 0, 0, -10);
+                    Animation animation10 = new TranslateAnimation(0, 0, 0, -20);
                     animation10.setDuration(100);
                     animation10.setFillAfter(true);
                     card6.startAnimation(animation10);
@@ -265,19 +269,44 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             }
         });
 
-    gobtn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            TranslateAnimation animations = new TranslateAnimation(0.0f, 0.0f,
-                    0.0f, -100.0f);          //  new TranslateAnimation(xFrom,xTo, yFrom,yTo)
-            animations.setDuration(100);  // animation duration
-            animations.setFillAfter(true);
-            //animation.setFillAfter(true);
-            card1.startAnimation(animations);
-            card2.startAnimation(animations);
-            card3.startAnimation(animations);
-        }
-    });
+        gobtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TranslateAnimation animations = new TranslateAnimation(0.0f, 0.0f,
+                        -20.0f, -50.0f);          //  new TranslateAnimation(xFrom,xTo, yFrom,yTo)
+                animations.setDuration(100);  // animation duration
+                animations.setFillAfter(true);
+                //animation.setFillAfter(true);
+                card1.startAnimation(animations);
+                card2.startAnimation(animations);
+                card3.startAnimation(animations);
+
+                if(gobtn.getVisibility()==View.VISIBLE) {
+                    gobtn.setVisibility(View.GONE);
+
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card1.getLayoutParams();
+                    params.setMargins(-100, 0, 0, 50);
+                    params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card1.setLayoutParams(params);
+                    card1.setRotation(-30.0f);
+
+                    RelativeLayout.LayoutParams params2 = (RelativeLayout.LayoutParams) card2.getLayoutParams();
+                    params2.setMargins(-80, 0, 0, 50);
+                    params2.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params2.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card2.setLayoutParams(params2);
+                    card2.setRotation(-10.0f);
+
+                    RelativeLayout.LayoutParams params3 = (RelativeLayout.LayoutParams) card3.getLayoutParams();
+                    params3.setMargins(-60, 0, 0, 30);
+                    params3.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params3.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card3.setLayoutParams(params2);
+                    card3.setRotation(10.0f);
+                }
+            }
+        });
         //////////////// Popup for Backbutton ///////////////////
 
         backbtn=(ImageView) findViewById(R.id.back);
