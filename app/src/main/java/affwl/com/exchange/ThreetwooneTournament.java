@@ -34,7 +34,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class ThreetwooneTournament extends AppCompatActivity implements  View.OnDragListener, View.OnLongClickListener{
+public class ThreetwooneTournament extends AppCompatActivity implements View.OnDragListener, View.OnLongClickListener{
 
     private static final String TAG = ThreetwooneTournament.class.getSimpleName();
     private ImageView card321_1,card321_2,card321_3,card321_4,card321_5,card321_6;
@@ -46,9 +46,9 @@ public class ThreetwooneTournament extends AppCompatActivity implements  View.On
     private static final String IMAGE_VIEW_TAG_6 = "CARD SIX";
 
 
-    ImageView closeTrophyBtn,handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;
+    ImageView closeleadleader321,leaderboard321,closeTrophyBtn,handle_right, backbtn,infobtn,infoclosebtn,chat321,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;
     TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond;
-    PopupWindow TrophypopupWindow,popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow;
+    PopupWindow threetwooneleadboardpopupWindow,TrophypopupWindow,popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow;
     Button msgbtn,blockbtn,cards321shifterbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3,RelativeLayoutloader;
     DrawerLayout tournamenttble;
@@ -152,10 +152,10 @@ public class ThreetwooneTournament extends AppCompatActivity implements  View.On
 
         //////////////// Popup for ChatButton ///////////////////
 
-        chatbtn= findViewById(R.id.chat);
+        chat321= findViewById(R.id.chat321);
         tournamenttble = findViewById(R.id.tournamenttble);
 
-        chatbtn.setOnClickListener(new View.OnClickListener() {
+        chat321.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //instantiate the popup.xml three_two_one_leaderboard file
@@ -274,6 +274,8 @@ public class ThreetwooneTournament extends AppCompatActivity implements  View.On
             }
         });
 
+
+
         //////////////// Popup for Dealer ///////////////////
 
         dealerbtn= findViewById(R.id.dealer);
@@ -391,6 +393,37 @@ public class ThreetwooneTournament extends AppCompatActivity implements  View.On
                 linearcardholder321 = findViewById(R.id.linearcardholder321);
                 linearcardholder321.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT));
                 linearcardholder321.setGravity(Gravity.CENTER);
+            }
+        });
+
+
+        //////////////// Popup for Leaderboard ///////////////////
+
+        leaderboard321=(ImageView) findViewById(R.id.leaderboard321);
+        tournamenttble = (DrawerLayout) findViewById(R.id.tournamenttble);
+
+        leaderboard321.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml three_two_one_leaderboard file
+                LayoutInflater layoutInflater = (LayoutInflater) ThreetwooneTournament.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.three_two_one_leaderboard, null);
+
+                closeleadleader321 = (ImageView) customView.findViewById(R.id.closeleadleader321);
+
+                //instantiate popup window
+                threetwooneleadboardpopupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                threetwooneleadboardpopupWindow.showAtLocation(tournamenttble, Gravity.CENTER, 0, 0);
+
+                //close the popup window on button click
+                closeleadleader321.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        threetwooneleadboardpopupWindow.dismiss();
+                    }
+                });
             }
         });
 

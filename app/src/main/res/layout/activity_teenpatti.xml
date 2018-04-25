@@ -47,7 +47,7 @@
                     android:id="@+id/info"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="70dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/infogame" />
 
@@ -63,18 +63,19 @@
                     android:id="@+id/chat"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="0dp"
                     android:layout_marginTop="10dp"
                     android:clickable="true"
-                    android:src="@drawable/chatgame" />
+                    android:src="@drawable/chatgame"
+                    android:focusable="true" />
 
                 <ImageView
                     android:id="@+id/getchips"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/getchips" />
+                    android:src="@drawable/getchips"
+                    android:layout_marginStart="40dp" />
 
 
             </RelativeLayout>
