@@ -143,4 +143,5 @@
                             The highest pair hand is therefore A-A-K and the lowest is 2-2-3. </string>
     <string name="g_play15">• High card - three cards that do not belong to any of the above types. Compare the highest card first, then the second highest, then the lowest. The best hand of this type is A-K-J of mixed suits, and the worst is 5-3-2 </string>
     <string name="g_play16">Any hand of a higher type beats any hand of a lower type </string>
+    <string name="round_won_tourney">Rounds Won</string>
 </resources>

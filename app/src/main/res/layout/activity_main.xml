@@ -189,7 +189,6 @@
             android:layout_width="70dp"
             android:layout_height="30dp"
             android:background="@drawable/chip_balance"
-            android:id="@+id/nametext"
             android:textColor="@color/colorWhite"
             android:textAlignment="center"/>
 
@@ -236,7 +235,7 @@
             android:paddingLeft="43dp"
             android:paddingStart="43dp"
             android:paddingTop="10dp"
-            android:text="BUY CHIPS"
+            android:text="BUY CHIPpS"
             android:textColor="#FFFF00"
             android:textSize="13sp" />
 
