@@ -2,12 +2,12 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/sixpattitble"
+    android:id="@+id/privatetble"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/sixpattirecycler"
+        android:id="@+id/privaterecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg3">
@@ -15,18 +15,19 @@
 
         <ImageView
             android:id="@+id/handle_right"
-            android:clickable="true"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:clickable="true"
             android:src="@drawable/btn_handle_right" />
 
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
 
             <!--Left side icon layout-->
             <RelativeLayout
@@ -49,17 +50,14 @@
                     android:layout_marginLeft="70dp"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/infogame" />
+
             </RelativeLayout>
 
             <!--Right side icon layout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginBottom="211dp">
-
+                android:layout_alignParentRight="true">
 
                 <ImageView
                     android:id="@+id/chat"
@@ -69,13 +67,14 @@
                     android:layout_marginTop="10dp"
                     android:clickable="true"
                     android:src="@drawable/chatgame" />
+
                 <ImageView
-                    android:id="@+id/leaderboardsixpatti"
+                    android:id="@+id/getchips"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/leaderboardgame" />
+                    android:src="@drawable/getchips" />
 
 
             </RelativeLayout>
@@ -101,7 +100,7 @@
 
             <RelativeLayout
                 android:id="@+id/playerbg1relativeLayout"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -110,7 +109,8 @@
                     android:layout_height="100dp"
                     android:layout_alignTop="@+id/table"
                     android:layout_marginTop="70dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling" />
 
@@ -118,9 +118,9 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_alignTop="@+id/playerbg1"
-                    android:layout_marginTop="30dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
+                    android:layout_marginTop="30dp"
                     android:src="@drawable/playerinviteavatar" />
 
 
@@ -128,33 +128,31 @@
                     android:id="@+id/playerbg3"
                     android:layout_width="110dp"
                     android:layout_height="100dp"
-                    android:layout_alignTop="@+id/table"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/table"
                     android:layout_marginTop="70dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
                     android:src="@drawable/myplayerbackground1"
-                    tools:ignore="NotSibling"
-                    android:layout_alignParentRight="true" />
+                    tools:ignore="NotSibling" />
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_alignTop="@+id/playerbg3"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/playerinviteavatar"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="30dp"
+                    android:layout_alignTop="@+id/playerbg3"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"/>
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/playerinviteavatar" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/playerbg2relativeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="50dp"
                 android:layout_below="@+id/playerbg1relativeLayout">
 
                 <ImageView
@@ -162,8 +160,9 @@
                     android:layout_width="110dp"
                     android:layout_height="100dp"
                     android:layout_below="@+id/relativeLayout2"
-                    android:layout_margin="20dp"
                     android:layout_marginTop="35dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling,UnknownId" />
 
@@ -184,8 +183,9 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignTop="@+id/table"
-                    android:layout_margin="20dp"
                     android:layout_marginTop="35dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling" />
 
@@ -203,6 +203,7 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
                     android:layout_centerInParent="true">
 
                     <ImageView
@@ -238,78 +239,59 @@
                     android:src="@drawable/dealer"
                     tools:ignore="NotSibling" />
             </RelativeLayout>
+
+
         </RelativeLayout>
 
+        <!--Bottom info layout-->
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <!--Sort Button-->
-            <TextView
-                android:id="@+id/sort"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/yellow_buttons"
-                android:text="SORT"
-                android:textAlignment="center"
-                android:padding="10dp"
-                android:textColor="@color/darkbrown"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="1dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#250400"
+            android:orientation="horizontal"
+            android:padding="5dp">
 
-            <!--Sixpatti Go buttons-->
-            <TextView
-                android:id="@+id/sixpatti_go"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/yellow_buttons"
-                android:text="GO"
-                android:textAlignment="center"
-                android:padding="10dp"
-                android:textColor="@color/darkbrown"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginBottom="1dp"
-                android:layout_alignParentRight="true" />
-            <!--Layouts for cards-->
             <LinearLayout
-                android:id="@+id/cardlayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:orientation="horizontal"
                 android:layout_centerHorizontal="true">
-                <ImageView
-                    android:id="@+id/card1"
-                    android:layout_width="40dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/club_ace"/>
-                <ImageView
-                    android:id="@+id/card2"
-                    android:layout_width="40dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/diamond_king"/>
-                <ImageView
-                    android:id="@+id/card3"
-                    android:layout_width="40dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/spade_queen"/>
-                <ImageView
-                    android:id="@+id/card4"
-                    android:layout_width="40dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/diamond_9"/>
-                <ImageView
-                    android:id="@+id/card5"
-                    android:layout_width="40dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/club_6"/>
-                <ImageView
-                    android:id="@+id/card6"
-                    android:layout_width="40dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/heart_jack"/>
+
+                <TextView
+                    android:id="@+id/boot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/table_boot"
+                    android:textColor="@color/colorYellowDark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/pot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/table_pot"
+                    android:textColor="@color/colorYellowDark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/max"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/table_max"
+                    android:textColor="@color/colorYellowDark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
         </RelativeLayout>
+
     </RelativeLayout>
 
     <android.support.design.widget.NavigationView
