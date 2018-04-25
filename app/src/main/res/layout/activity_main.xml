@@ -128,7 +128,6 @@
                     android:layout_margin="20dp"
                     android:src="@drawable/blackchips"
                     android:onClick="sendNewVariationPage"/>
-                    android:src="@drawable/blackchips"/>
                 <ImageView
                     android:layout_width="140dp"
                     android:layout_height="120dp"
@@ -189,7 +188,10 @@
             android:id="@+id/nametext"
             android:layout_width="70dp"
             android:layout_height="30dp"
-            android:background="@drawable/chip_balance" />
+            android:background="@drawable/chip_balance"
+            android:id="@+id/nametext"
+            android:textColor="@color/colorWhite"
+            android:textAlignment="center"/>
 
         <ImageView
             android:layout_width="30dp"
@@ -201,11 +203,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/linearLayout"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp">
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:id="@+id/share_icons_loader"
@@ -220,10 +220,6 @@
                 android:layout_height="60dp"
                 android:src="@drawable/loader_share" />
 
-            <TextView
-                android:layout_width="70dp"
-                android:layout_height="30dp"
-                android:background="@drawable/chip_balance" />
         </LinearLayout>
 
 

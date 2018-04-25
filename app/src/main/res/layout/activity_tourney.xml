@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <!--Left side ithree_two_one_leaderboardyout-->
+            <!--Left side icon layout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -49,7 +49,7 @@
                     android:src="@drawable/infogame" />
             </RelativeLayout>
 
-            <!--Right side ithree_two_one_leaderboardyout-->
+            <!--Right side icon layout-->
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,14 +72,15 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="60dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/leaderboardgame" />
 
 
             </RelativeLayout>
         </RelativeLayout>
 
 
-        <!--Tathree_two_one_leaderboardyout-->
+        <!--Table layout-->
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="wrap_content"
@@ -235,6 +236,57 @@
                     android:src="@drawable/dealer"
                     tools:ignore="NotSibling" />
             </RelativeLayout>
+        </RelativeLayout>
+
+
+
+        <!--Bottom info layout-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#250400"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/boot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/table_boot"
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/pot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/table_pot"
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/roundwon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/round_won_tourney"
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>
 
