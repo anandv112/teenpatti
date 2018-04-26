@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_border_bg"
+    android:id="@+id/infogamelayout">
+
+
+    <ImageView
+        android:id="@+id/infoclose"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/cross"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+
+    <!--Boot value layout-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bootvaluelayout"
+        >
+
+        <TextView
+            android:id="@+id/bootvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BOOT VALUE"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/bootvalueimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/playerinfosinglechip"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/bootvaluetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹2"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorYellowDark"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/bootvaluetxt"
+            />
+
+    </RelativeLayout>
+
+    <!--Maximum blind layout-->
+    <RelativeLayout
+        android:id="@+id/maxblind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bootvaluelayout"
+        >
+
+        <TextView
+            android:id="@+id/maxblinds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MAXIMUM BLINDS"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/maxcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/maxblinds"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/card" />
+
+        <TextView
+            android:id="@+id/maxtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorYellowDark"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/maxtxt"
+            />
+
+    </RelativeLayout>
+
+    <!--Chaal limit layout-->
+    <RelativeLayout
+        android:id="@+id/chaallimit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/maxblind"
+        >
+
+        <TextView
+            android:id="@+id/chaallmt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHAAL LIMIT"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/chaalcoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/playerinfosinglechip" />
+
+        <TextView
+            android:id="@+id/chaaltxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹256"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorYellowDark"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/chaaltxt"
+            />
+
+    </RelativeLayout>
+
+    <!--Potlimit layout-->
+    <RelativeLayout
+        android:id="@+id/potlimit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chaallimit"
+        >
+
+        <TextView
+            android:id="@+id/potlmt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POT LIMIT"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/potcoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/playerinfostackchips" />
+
+        <TextView
+            android:id="@+id/pottxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹2,048"
+            android:textColor="@color/colorYellowDark"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorYellowDark"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/pottxt"
+            />
+    </RelativeLayout>
+
+    <!--Footer layout-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/potlimit"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/publictbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRIVATE TABLE"
+            android:textColor="@color/colorYellowDark"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fcfbae"
+            android:text="INVITE FRIENDS AND ENJOY TEEN PATTI."
+            android:layout_below="@id/publictbl"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+</RelativeLayout>

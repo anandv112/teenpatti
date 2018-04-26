@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dark_red_transparent_bg">
+    <ImageView
+        android:id="@+id/close_create_table"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/cross"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You have ₹1,06,200 chips."
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Variation Table"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp"
+            android:theme="@style/Mycheckbox"
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="10dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹2"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:layout_weight="2"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹15,00,000"
+            android:textSize="15sp"
+            android:textColor="@color/colorWhite"
+            android:gravity="right"
+            android:layout_weight="2"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="5dp">
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Boot ammount : ₹2"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of Blinds : 4"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:layout_weight="3"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pot limit : ₹2,048"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max bet value : ₹256"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:layout_weight="3"/>
+    </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        >
+        <TextView
+            android:id="@+id/create_table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/create_table_btn"
+            android:text="CREATE TABLE"
+            android:textSize="15sp"
+            android:textColor="@color/darkbrown"
+            android:layout_marginBottom="30dp"/>
+    </RelativeLayout>
+</RelativeLayout>
