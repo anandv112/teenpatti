@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class TeenpattiActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
@@ -61,7 +59,7 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
@@ -91,7 +89,7 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
         infobtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            //instantiate the popup.xml layout file
+            //instantiate the popup.xml three_two_one_leaderboard file
             LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View customView = layoutInflater.inflate(R.layout.infogame_popup, null);
 
@@ -122,7 +120,7 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
         chatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.chat_popup, null);
 
@@ -158,7 +156,7 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
         myplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.player_status_popup, null);
 
@@ -189,7 +187,7 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
        oplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.other_player_status, null);
 
@@ -245,7 +243,7 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
         dealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) TeenpattiActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.dealer_popup, null);
 
@@ -254,7 +252,7 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
                     tipsbtn=customView.findViewById(R.id.tipbtn);
                     canceltipbtn=customView.findViewById(R.id.canceltip);
                     chngdbtn=customView.findViewById(R.id.chngdealer);
-                        // onclick event for tip button to hide and show layout
+                        // onclick event for tip button to hide and show three_two_one_leaderboard
                         tipsbtn.setOnClickListener(new View.OnClickListener() {
 
                             public void onClick(View v) {

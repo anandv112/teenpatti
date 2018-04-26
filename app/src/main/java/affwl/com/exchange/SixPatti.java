@@ -46,23 +46,14 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
     int value3=0;
     int value4=0;
     int value5=0;
+
+    RelativeLayout playerbg2relativeLayout,rl_myplayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_six_patti);
-
-        handle_right = findViewById(R.id.handle_right);
-        handle_right.setOnClickListener(this);
-
-//        Toggle drawer
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, sixpattitble, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        sixpattitble.addDrawerListener(toggle);
-        toggle.syncState();
-
-        navigationView = (NavigationView) findViewById(R.id.teen_nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
 
 //        Implementation of cards
@@ -95,7 +86,8 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         card5.setVisibility(View.VISIBLE);
         card6.setVisibility(View.VISIBLE);
 
-
+        playerbg2relativeLayout=findViewById(R.id.playerbg2relativeLayout);
+        rl_myplayer=findViewById(R.id.rl_myplayer);
         // Implementaion of six cards onclick and translate animation
 
         card1.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +95,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
 
                 if (value==0) {
-                    Animation animation = new TranslateAnimation(0, 0, 0, -10);
+                    Animation animation = new TranslateAnimation(0, 0, 0, -20);
                     animation.setDuration(100);
                     animation.setFillAfter(true);
                     card1.startAnimation(animation);
@@ -127,7 +119,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
 
                 if (value1==0) {
-                    Animation animation2 = new TranslateAnimation(0, 0, 0, -10);
+                    Animation animation2 = new TranslateAnimation(0, 0, 0, -20);
                     animation2.setDuration(100);
                     animation2.setFillAfter(true);
                     card2.startAnimation(animation2);
@@ -151,7 +143,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
 
                 if (value2==0) {
-                    Animation animation4 = new TranslateAnimation(0, 0, 0, -10);
+                    Animation animation4 = new TranslateAnimation(0, 0, 0, -20);
                     animation4.setDuration(100);
                     animation4.setFillAfter(true);
                     card3.startAnimation(animation4);
@@ -175,7 +167,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
 
                 if (value3==0) {
-                    Animation animation6 = new TranslateAnimation(0, 0, 0, -10);
+                    Animation animation6 = new TranslateAnimation(0, 0, 0, -20);
                     animation6.setDuration(100);
                     animation6.setFillAfter(true);
                     card4.startAnimation(animation6);
@@ -199,7 +191,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
 
                 if (value4==0) {
-                    Animation animation8 = new TranslateAnimation(0, 0, 0, -10);
+                    Animation animation8 = new TranslateAnimation(0, 0, 0, -20);
                     animation8.setDuration(100);
                     animation8.setFillAfter(true);
                     card5.startAnimation(animation8);
@@ -223,7 +215,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             public void onClick(View v) {
 
                 if (value5==0) {
-                    Animation animation10 = new TranslateAnimation(0, 0, 0, -10);
+                    Animation animation10 = new TranslateAnimation(0, 0, 0, -20);
                     animation10.setDuration(100);
                     animation10.setFillAfter(true);
                     card6.startAnimation(animation10);
@@ -265,28 +257,53 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             }
         });
 
-    gobtn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            TranslateAnimation animations = new TranslateAnimation(0.0f, 0.0f,
-                    0.0f, -100.0f);          //  new TranslateAnimation(xFrom,xTo, yFrom,yTo)
-            animations.setDuration(100);  // animation duration
-            animations.setFillAfter(true);
-            //animation.setFillAfter(true);
-            card1.startAnimation(animations);
-            card2.startAnimation(animations);
-            card3.startAnimation(animations);
-        }
-    });
+        gobtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TranslateAnimation animations = new TranslateAnimation(0.0f, 0.0f,
+                        -20.0f, -50.0f);          //  new TranslateAnimation(xFrom,xTo, yFrom,yTo)
+                animations.setDuration(100);  // animation duration
+                animations.setFillAfter(true);
+                //animation.setFillAfter(true);
+                card1.startAnimation(animations);
+                card2.startAnimation(animations);
+                card3.startAnimation(animations);
+
+                if(gobtn.getVisibility()==View.VISIBLE) {
+                    gobtn.setVisibility(View.GONE);
+
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card1.getLayoutParams();
+                    params.setMargins(-100, 0, 0, 50);
+                    params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card1.setLayoutParams(params);
+                    card1.setRotation(-30.0f);
+
+                    RelativeLayout.LayoutParams params2 = (RelativeLayout.LayoutParams) card2.getLayoutParams();
+                    params2.setMargins(-80, 0, 0, 50);
+                    params2.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params2.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card2.setLayoutParams(params2);
+                    card2.setRotation(-10.0f);
+
+                    RelativeLayout.LayoutParams params3 = (RelativeLayout.LayoutParams) card3.getLayoutParams();
+                    params3.setMargins(-60, 0, 0, 30);
+                    params3.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params3.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card3.setLayoutParams(params2);
+                    card3.setRotation(10.0f);
+                }
+            }
+        });
         //////////////// Popup for Backbutton ///////////////////
 
         backbtn=(ImageView) findViewById(R.id.back);
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.sixpattirecycler);
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
@@ -311,12 +328,12 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         //////////////// Popup for InfoButton ///////////////////
 
         infobtn=(ImageView) findViewById(R.id.info);
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.sixpattirecycler);
 
         infobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.six_patti_infogame_popup, null);
 
@@ -342,12 +359,12 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         //////////////// Popup for ChatButton ///////////////////
 
         chatbtn=(ImageView) findViewById(R.id.chat);
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.sixpattirecycler);
 
         chatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.chat_popup, null);
 
@@ -379,12 +396,12 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         //////////////// Popup for Userstatus ///////////////////
 
         myplayerbtn=(ImageView) findViewById(R.id.myplayer);
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.sixpattirecycler);
 
         myplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.player_status_popup, null);
 
@@ -415,7 +432,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         oplayerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.other_player_status, null);
 
@@ -466,12 +483,12 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         //////////////// Popup for Dealer ///////////////////
 
         dealerbtn=(ImageView) findViewById(R.id.dealer);
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.sixpattirecycler);
 
         dealerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.dealer_popup, null);
 
@@ -480,7 +497,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                 tipsbtn=customView.findViewById(R.id.tipbtn);
                 canceltipbtn=customView.findViewById(R.id.canceltip);
                 chngdbtn=customView.findViewById(R.id.chngdealer);
-                // onclick event for tip button to hide and show layout
+                // onclick event for tip button to hide and show three_two_one_leaderboard
                 tipsbtn.setOnClickListener(new View.OnClickListener() {
 
                     public void onClick(View v) {
@@ -576,12 +593,12 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         //////////////// Popup for Leaderboard ///////////////////
 
         leaderboardsixpattibtn=(ImageView) findViewById(R.id.leaderboardsixpatti);
-        sixpattitble = (DrawerLayout) findViewById(R.id.sixpattitble);
+        relativeLayout= (RelativeLayout) findViewById(R.id.sixpattirecycler);
 
         leaderboardsixpattibtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //instantiate the popup.xml layout file
+                //instantiate the popup.xml three_two_one_leaderboard file
                 LayoutInflater layoutInflater = (LayoutInflater) SixPatti.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView = layoutInflater.inflate(R.layout.six_patti_leaderboard, null);
 
