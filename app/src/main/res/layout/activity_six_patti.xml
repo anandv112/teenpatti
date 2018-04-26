@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/sixpattitble"
+    android:id="@+id/sixpattirecycler"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg3">
 
-    <RelativeLayout
-        android:id="@+id/sixpattirecycler"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg3">
+
+
 
 
         <ImageView
@@ -112,17 +110,8 @@
                     android:layout_alignTop="@+id/table"
                     android:layout_marginTop="70dp"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/myplayerbackground1"
+                    android:src="@drawable/player_bg"
                     tools:ignore="NotSibling" />
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_alignTop="@+id/playerbg1"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
-                    android:src="@drawable/playerinviteavatar" />
 
 
                 <ImageView
@@ -133,20 +122,9 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="70dp"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/myplayerbackground1"
+                    android:src="@drawable/player_bg"
                     tools:ignore="NotSibling"
                     android:layout_alignParentRight="true" />
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_alignTop="@+id/playerbg3"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/playerinviteavatar"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -164,17 +142,7 @@
                     android:layout_below="@+id/relativeLayout2"
                     android:layout_margin="20dp"
                     android:layout_marginTop="35dp"
-                    android:src="@drawable/myplayerbackground1"
-                    tools:ignore="NotSibling,UnknownId" />
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_alignTop="@+id/playerbg2"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginTop="30dp"
-                    android:src="@drawable/playerinviteavatar" />
+                    android:src="@drawable/player_bg" />
 
 
                 <ImageView
@@ -186,19 +154,8 @@
                     android:layout_alignTop="@+id/table"
                     android:layout_margin="20dp"
                     android:layout_marginTop="35dp"
-                    android:src="@drawable/myplayerbackground1"
+                    android:src="@drawable/player_bg"
                     tools:ignore="NotSibling" />
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/playerbg4"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginTop="30dp"
-                    android:src="@drawable/playerinviteavatar" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -210,15 +167,7 @@
                         android:id="@+id/myplayer"
                         android:layout_width="110dp"
                         android:layout_height="110dp"
-                        android:src="@drawable/myplayerbackground1" />
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_alignTop="@+id/myplayer"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="40dp"
-                        android:src="@drawable/playerinviteavatar" />
+                        android:src="@drawable/player_bg" />
                 </RelativeLayout>
 
                 <!--Sort Button-->
@@ -332,14 +281,4 @@
                 tools:ignore="NotSibling" />
         </RelativeLayout>
 
-    </RelativeLayout>
-
-    <android.support.design.widget.NavigationView
-        android:id="@+id/teen_nav_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="end"
-        android:fitsSystemWindows="false"
-        app:headerLayout="@layout/leaderboard_popup" />
-
-</android.support.v4.widget.DrawerLayout>
+</RelativeLayout>
