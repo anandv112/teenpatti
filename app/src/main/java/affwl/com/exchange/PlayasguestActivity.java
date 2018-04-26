@@ -1,6 +1,7 @@
 package affwl.com.exchange;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -9,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
@@ -18,6 +20,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -142,23 +145,69 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
             Intent intent=new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(intent,6);
         }
-        if (id==R.id.login)
-        {
+        if (id==R.id.login) {
             //SQLiteDatabase db=dbHandler.getWritableDatabase();
-            Bitmap bmp=((BitmapDrawable)avatarimage.getDrawable()).getBitmap();
-            Intent intent=new Intent(PlayasguestActivity.this,MainActivity.class);
-            ByteArrayOutputStream baos=new ByteArrayOutputStream();
-            bmp.compress(Bitmap.CompressFormat.JPEG,100,baos);
-            byte[] b=baos.toByteArray();
-            String encodeimage= Base64.encodeToString(b,Base64.DEFAULT);
-            session.put(encodeimage,String.valueOf(nametext.getText()));
-            long result= loginDatabaseHelper.add(encodeimage,String.valueOf(nametext.getText()));
-            Toast.makeText(this, String.valueOf(result), Toast.LENGTH_SHORT).show();
-            //intent.putExtra("img",bmp);
-            //db.execSQL("insert into User id,image,name values " + "(" + 1 +"," + "" + ","  + String.valueOf(nametext.getText()) + ")");
-            startActivity(intent);
-            Toast.makeText(this, String.valueOf(bmp), Toast.LENGTH_SHORT).show();
+
+            if (avatarimage.getDrawable() == null) {
+                displayAlertMessage("Teenpatti","Please select a image");
+            } else {
+                Bitmap bmp = ((BitmapDrawable) avatarimage.getDrawable()).getBitmap();
+                Intent intent = new Intent(PlayasguestActivity.this, MainActivity.class);
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                byte[] b = baos.toByteArray();
+                String encodeimage = Base64.encodeToString(b, Base64.DEFAULT);
+                String setNameHere=nametext.getText().toString().trim();
+
+                if (setNameHere.equalsIgnoreCase("") || setNameHere.equalsIgnoreCase(null)) {
+                    displayAlertMessage("Teenpatti","Name can't be empty");
+                } else {
+                    session.put(encodeimage, setNameHere);
+                    long result = loginDatabaseHelper.add(encodeimage, setNameHere);
+                    Toast.makeText(this, String.valueOf(result), Toast.LENGTH_SHORT).show();
+                    //intent.putExtra("img",bmp);
+                    //db.execSQL("insert into User id,image,name values " + "(" + 1 +"," + "" + ","  + String.valueOf(nametext.getText()) + ")");
+                    startActivity(intent);
+                    Toast.makeText(this, String.valueOf(bmp), Toast.LENGTH_SHORT).show();
+                }
+            }
         }
+    }
+
+    private void displayAlertMessage(String title, String message) {
+
+            TextView tv_alert_ok,tv_alert_title,tv_alert_message;
+            ImageView alert_box_close;
+
+            final Dialog myAlertDialog = new Dialog(this);
+            myAlertDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            myAlertDialog.setCanceledOnTouchOutside(false);
+            myAlertDialog.setContentView(R.layout.alert_box);
+
+        tv_alert_ok = myAlertDialog.findViewById(R.id.tv_alert_ok);
+        alert_box_close=myAlertDialog.findViewById(R.id.alert_box_close);
+        tv_alert_title=myAlertDialog.findViewById(R.id.tv_alert_title);
+        tv_alert_message=myAlertDialog.findViewById(R.id.tv_alert_message);
+
+        tv_alert_title.setText(title);
+        tv_alert_message.setText(message);
+
+        alert_box_close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    myAlertDialog.dismiss();
+                }
+            });
+
+        tv_alert_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myAlertDialog.dismiss();
+            }
+        });
+            myAlertDialog.show();
+
     }
 
     //    Implementation of camera
