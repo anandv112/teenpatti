@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!--slider-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -107,7 +107,7 @@
 
 
 
-
+    <!--Instructions for 6 patti-->
     <string name="firstpoint">• Click on "6 PATTI" Button</string>
     <string name="g_play1">Set the Buy-in value using slider.Then Click on "Join Now " button.</string>
     <string name="g_play2">• Once all the players have joined,game will start.</string>
@@ -142,7 +142,22 @@
     <string name="g_play15">• High card - three cards that do not belong to any of the above types. Compare the highest card first, then the second highest, then the lowest. The best hand of this type is A-K-J of mixed suits, and the worst is 5-3-2 </string>
     <string name="g_play16">Any hand of a higher type beats any hand of a lower type </string>
     <string name="sixpatti_infogame">This cards have been discarded for this tournament : </string>
+
+    <!--/////-->
     <string name="tourney_info">This is a high stakes knock-out tournament where you can win 5 times your buy in amount. All players start with the same number of chips. Players get knocked out when their balance chips become less than 10 times the boot value for the next round. The boot value will increase after every 2 rounds. There is a Force Show if any player does not have enough chips to place the next bet. In this case the dealer lends the player the balance chips. In case the player wins the round, 2 times the borrowed chips are returned to the dealer. </string>
     <string name="round_won_tourney">Rounds Won</string>
 
+    <!--Helps for variations-->
+
+    <string name="jokertxt" tools:ignore="DuplicateDefinition">The dealer pulls out one
+            card at random after
+            dealing and nominates
+            all other cards of the
+            same rank/strength/number
+            as jokers(wild cards).</string>
+    <string name="ak47">Ace,King,4 and 7
+            become the jokers
+            in this variation.</string>
+    <string name="xbootinfo">Boot will be 4 times in
+                this variation.</string>
 </resources>
