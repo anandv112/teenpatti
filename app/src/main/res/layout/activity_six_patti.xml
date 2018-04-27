@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.v4.widget.DrawerLayout
+
+<RelativeLayout
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -23,6 +27,18 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:src="@drawable/btn_handle_right" />
+
+
+        <ImageView
+            android:id="@+id/handle_right"
+            android:clickable="true"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_handle_right" />
+
 
 
         <RelativeLayout
@@ -90,7 +106,6 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true">
 
-
             <ImageView
                 android:id="@+id/table"
                 android:layout_width="400dp"
@@ -112,6 +127,7 @@
                     android:layout_alignTop="@+id/table"
                     android:layout_marginTop="70dp"
                     android:layout_marginLeft="20dp"
+
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling" />
 
@@ -125,6 +141,11 @@
                     android:src="@drawable/playerinviteavatar" />
 
 
+                    android:src="@drawable/player_bg"
+                    tools:ignore="NotSibling" />
+
+
+
                 <ImageView
                     android:id="@+id/playerbg3"
                     android:layout_width="110dp"
@@ -133,6 +154,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="70dp"
                     android:layout_marginRight="20dp"
+
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling"
                     android:layout_alignParentRight="true" />
@@ -147,6 +169,11 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"/>
+
+                    android:src="@drawable/player_bg"
+                    tools:ignore="NotSibling"
+                    android:layout_alignParentRight="true" />
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -164,6 +191,7 @@
                     android:layout_below="@+id/relativeLayout2"
                     android:layout_margin="20dp"
                     android:layout_marginTop="35dp"
+
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling,UnknownId" />
 
@@ -176,6 +204,9 @@
                     android:layout_marginTop="30dp"
                     android:src="@drawable/playerinviteavatar" />
 
+                    android:src="@drawable/player_bg" />
+
+
 
                 <ImageView
                     android:id="@+id/playerbg4"
@@ -186,6 +217,7 @@
                     android:layout_alignTop="@+id/table"
                     android:layout_margin="20dp"
                     android:layout_marginTop="35dp"
+
                     android:src="@drawable/myplayerbackground1"
                     tools:ignore="NotSibling" />
 
@@ -200,6 +232,11 @@
                     android:layout_marginTop="30dp"
                     android:src="@drawable/playerinviteavatar" />
 
+
+                    android:src="@drawable/player_bg"
+                    tools:ignore="NotSibling" />
+
+
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -210,6 +247,7 @@
                         android:id="@+id/myplayer"
                         android:layout_width="110dp"
                         android:layout_height="110dp"
+
                         android:src="@drawable/myplayerbackground1" />
 
                     <ImageView
@@ -219,6 +257,9 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="40dp"
                         android:src="@drawable/playerinviteavatar" />
+
+                        android:src="@drawable/player_bg" />
+
                 </RelativeLayout>
 
                 <!--Sort Button-->
@@ -322,6 +363,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true">
 
+
             <ImageView
                 android:id="@+id/dealer"
                 android:layout_width="100dp"
@@ -343,3 +385,17 @@
         app:headerLayout="@layout/leaderboard_popup" />
 
 </android.support.v4.widget.DrawerLayout>
+
+
+            <ImageView
+                android:id="@+id/dealer"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignTop="@+id/table"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/dealer"
+                tools:ignore="NotSibling" />
+        </RelativeLayout>
+
+</RelativeLayout>
+

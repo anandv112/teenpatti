@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-public class LoadingScreen_three_two_one_tournament extends AppCompatActivity {
+public class LoadingScreen_private extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loading_screen_three_two_one_tournament);
+        setContentView(R.layout.activity_loading_screen_private);
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
 
@@ -25,8 +25,8 @@ public class LoadingScreen_three_two_one_tournament extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                startActivity(new Intent(LoadingScreen_three_two_one_tournament.this, ThreetwooneTournament.class));
                 finish();
+                startActivity(new Intent(LoadingScreen_private.this, PrivateActivity.class));
 
             }
 
@@ -47,9 +47,8 @@ public class LoadingScreen_three_two_one_tournament extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation myanim) {
-                startActivity(new Intent(LoadingScreen_three_two_one_tournament.this, ThreetwooneTournament.class));
                 finish();
-
+                startActivity(new Intent(LoadingScreen_private.this, PrivateActivity.class));
             }
 
             @Override

@@ -164,6 +164,12 @@
                     android:layout_height="120dp"
                     android:layout_margin="20dp"
                     android:src="@drawable/ygreenchips"/>
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="115dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/privates"/>
             </RelativeLayout>
         </RelativeLayout>
     </HorizontalScrollView>
@@ -197,11 +203,9 @@
 
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentLeft="true">
 
         <LinearLayout
             android:id="@+id/share_icons_loader"
@@ -234,7 +238,8 @@
             android:paddingTop="10dp"
             android:text="BUY CHIPS"
             android:textColor="#FFFF00"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
