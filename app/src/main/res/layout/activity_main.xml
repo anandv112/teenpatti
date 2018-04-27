@@ -76,7 +76,7 @@
                     android:layout_height="120dp"
                     android:layout_margin="20dp"
                     android:src="@drawable/limegreenchips"
-                    android:onClick="sendVariationPage"/>
+                   />
                 <ImageView
                     android:id="@+id/innerlime"
                     android:layout_width="85dp"

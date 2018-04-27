@@ -21,6 +21,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -31,13 +32,17 @@ import android.app.DialogFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile,orangechipsbtn,close312help,closesixpattihelp,short321info,tourney_shortinfo_closebtn,shortsixpattiinfo,bluechipsbtn,cyanchipsbtn,shortinfo_tourney,tourney_join_closebtn,ygreenchipsbtn,closebtn_create_table,share_loader,facebook,whatsapp,general;
-    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow, tounpopupWindow,howto321popup,sixpattipopup,howtosixpattipopup,join_tourney_popupWindow,shortinfo_tourney_popupwindow,create_table_private_popupwindow;
+    ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile,orangechipsbtn,close312help,closesixpattihelp,short321info,tourney_shortinfo_closebtn,shortsixpattiinfo,bluechipsbtn,cyanchipsbtn,shortinfo_tourney,tourney_join_closebtn,ygreenchipsbtn,closebtn_create_table,mainlimegchipsbtn,variation_closebtn,share_loader,facebook,whatsapp,general;
+    PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow, tounpopupWindow,howto321popup,sixpattipopup,howtosixpattipopup,join_tourney_popupWindow,shortinfo_tourney_popupwindow,create_table_private_popupwindow,join_table_popupwindow;
     RelativeLayout RelativeLayoutloader,relativelayout321,relativeLayoutsixpatti,relativeLayout_tourney;
-    TextView loaderbuychips,joinnowbtn,howtoplay321btn,howtoplaysixpattibtn,joinnowsixpattibtn,join_tourneybtn,create_table_btn,nametext,code;
+    TextView loaderbuychips,joinnowbtn,howtoplay321btn,howtoplaysixpattibtn,joinnowsixpattibtn,join_tourneybtn,create_table_btn,join_variation_btn,nametext,code;
     Session session;
+    LinearLayout jokerlayout_btn,jokerinfo_layout,ak47_layout_btn,ak47info_layout,xboot_layout_btn,xboot_info_layout;
+    ImageView joker_img,ak_img,xboot_img;
 
+    int value=0;
+    int value1=0;
+    int value2=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -372,65 +377,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        Implementation of share
 
-        share_loader.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder=new AlertDialog.Builder(v.getContext());
-                LayoutInflater inflater=getLayoutInflater();
-                View view= inflater.inflate(R.layout.share_dialog,null);
-                builder.setView(view);
-                facebook=view.findViewById(R.id.facebook);
-                whatsapp=view.findViewById(R.id.whatsapp);
-                general=view.findViewById(R.id.general);
-                facebook.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-                        sharingIntent.setType("text/plain");
-                        sharingIntent.putExtra(Intent.EXTRA_TEXT, "http://www.facebook.com");
-                        startActivity(Intent.createChooser(sharingIntent, "Share via"));
-                    }
-                });
-                whatsapp.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
-                        whatsappIntent.setType("text/plain");
-                        whatsappIntent.setPackage("com.whatsapp");
-                        whatsappIntent.putExtra(Intent.EXTRA_TEXT, "The text you wanted to share");
-                        try {
-                            startActivity(whatsappIntent);
-                        } catch (android.content.ActivityNotFoundException ex) {
-                            Toast.makeText(MainActivity.this, "whatsapp not installed", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-                general.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //Uri pictureUri = Uri.parse("https://lifeclearance.com/androidImages/0.png");
-                        Intent shareIntent = new Intent();
-                        shareIntent.setAction(Intent.ACTION_SEND);
-                        shareIntent.putExtra(Intent.EXTRA_STREAM, "hi");
-                        shareIntent.setType("text/plain");
-                        //shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                        startActivity(Intent.createChooser(shareIntent, "Share images..."));
-                    }
-                });
-                AlertDialog alert= builder.create();
-                WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-                lp.copyFrom(alert.getWindow().getAttributes());
-                lp.width = WindowManager.LayoutParams.MATCH_PARENT;
-                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
-                alert.show();
-                alert.getWindow().setAttributes(lp);
-                // builder.show();
-
-
-            }
-        });
 
 
         //////////////// Popup for Tourney ////////////////
@@ -535,6 +482,174 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
+
+
+
+
+        //////////////// Popup for Variation ////////////////
+        mainlimegchipsbtn = findViewById(R.id.mainlimegchips);
+        RelativeLayoutloader = findViewById(R.id.linearLayoutloader);
+
+        mainlimegchipsbtn.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("WrongViewCast")
+            @Override
+            public void onClick(View v) {
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView = layoutInflater.inflate(R.layout.variation_join_table,null);
+                variation_closebtn =customView.findViewById(R.id.close_var_popup);
+                //instantiate popup window
+                join_table_popupwindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+
+                //display the popup window
+                join_table_popupwindow.showAtLocation(RelativeLayoutloader, Gravity.CENTER, 0, 0);
+
+                variation_closebtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        join_table_popupwindow.dismiss();
+                    }
+                });
+
+
+                // joker variation on click
+
+                jokerlayout_btn=customView.findViewById(R.id.joker_layout);
+                jokerinfo_layout=customView.findViewById(R.id.jokerinfo);
+                joker_img=customView.findViewById(R.id.joker_img);
+
+                 final Animation Animleft = AnimationUtils.loadAnimation(MainActivity.this, R.anim.left_translate);
+                 final Animation Animright = AnimationUtils.loadAnimation(MainActivity.this, R.anim.right_translate);
+
+                jokerlayout_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(value==0) {
+                            ak47info_layout.clearAnimation();
+                            ak_img.setImageDrawable(getResources().getDrawable(R.drawable.q));
+//                           ak_img.setVisibility(View.VISIBLE);
+                            jokerinfo_layout.setVisibility(View.VISIBLE);
+                            joker_img.setImageDrawable(getResources().getDrawable(R.drawable.circle_arrow));
+                            Toast.makeText(MainActivity.this, "joker out", Toast.LENGTH_SHORT).show();
+                            jokerinfo_layout.startAnimation(Animleft);
+                            Animleft.setFillAfter(true);
+                            value=1;
+                            value1=0;
+                            return;
+                        }
+                       else if(value==1){
+                            ak47info_layout.clearAnimation();
+                            jokerinfo_layout.clearAnimation();
+
+                            jokerinfo_layout.setVisibility(View.INVISIBLE);
+                            ak47info_layout.setVisibility(View.INVISIBLE);
+
+                            joker_img.setImageDrawable(getResources().getDrawable(R.drawable.q));
+                            Toast.makeText(MainActivity.this, "joker in", Toast.LENGTH_SHORT).show();
+
+                            jokerinfo_layout.startAnimation(Animright);
+                            Animright.setFillAfter(true);
+                            value=0;
+                            return;
+                        }
+                    }
+                });
+
+            // AK47 variation on click
+                ak47_layout_btn=customView.findViewById(R.id.ak47_layout);
+                ak47info_layout=customView.findViewById(R.id.ak47info);
+                ak_img=customView.findViewById(R.id.ak_img);
+                ak47_layout_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (value1==0) {
+
+                            jokerinfo_layout.clearAnimation();
+                            ak47info_layout.clearAnimation();
+                            joker_img.setImageDrawable(getResources().getDrawable(R.drawable.q));
+
+                            xboot_info_layout.clearAnimation();
+                            xboot_img.setImageDrawable(getResources().getDrawable(R.drawable.q));
+
+                            ak47info_layout.setVisibility(View.VISIBLE);
+                            jokerinfo_layout.setVisibility(View.INVISIBLE);
+
+                            Toast.makeText(MainActivity.this, "ak out", Toast.LENGTH_SHORT).show();
+
+                            ak_img.setImageDrawable(getResources().getDrawable(R.drawable.circle_arrow));
+                            ak47info_layout.startAnimation(Animleft);
+                            Animleft.setFillAfter(true);
+                            value1=1;
+                            value=0;
+                            return;
+                        }
+                        else if(value1==1){
+                            jokerinfo_layout.clearAnimation();
+                            ak47info_layout.clearAnimation();
+
+                            ak47info_layout.setVisibility(View.INVISIBLE);
+                            jokerinfo_layout.setVisibility(View.INVISIBLE);
+
+                            Toast.makeText(MainActivity.this, "ak in", Toast.LENGTH_SHORT).show();
+
+                            ak_img.setImageDrawable(getResources().getDrawable(R.drawable.q));
+
+                            ak47info_layout.startAnimation(Animright);
+                            Animright.setFillAfter(true);
+                            value1=0;
+                            return;
+                        }
+                    }
+                });
+
+
+                // 4X boot variation on click
+
+//                xboot_layout_btn=customView.findViewById(R.id.xboot_layout);
+//                xboot_info_layout=customView.findViewById(R.id.xboot_info);
+//                xboot_img=customView.findViewById(R.id.xboot_img);
+//                xboot_layout_btn.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        if (value2==0) {
+//                            ak47info_layout.clearAnimation();
+//
+//                            jokerinfo_layout.clearAnimation();
+//
+//                            xboot_info_layout.setVisibility(View.VISIBLE);
+//                            xboot_info_layout.startAnimation(Animleft);
+//                            Animleft.setFillAfter(true);
+//                            value2=1;
+//                            return;
+//                        }
+//                        if (value2==1){
+//                            jokerinfo_layout.clearAnimation();
+//                            ak47info_layout.clearAnimation();
+//                            xboot_info_layout.clearAnimation();
+//
+//                            xboot_info_layout.setVisibility(View.INVISIBLE);
+//                            xboot_info_layout.startAnimation(Animright);
+//                            value2 = 0;
+//                            Animright.setFillAfter(true);
+//                            return;
+//                        }
+//                    }
+//                });
+
+
+                //join now the popup window on button click
+                join_variation_btn = customView.findViewById(R.id.variation_jointble);
+
+                join_variation_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, LoadingScreen_variation.class);
+                        startActivity(intent);
+                    }
+                });
+            }
+        });
+
 
 
 //        Implementation of share
@@ -660,12 +775,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //////////// Onclick method for variation table /////////////1
-    public void sendVariationPage(View view)
-    {
-        Intent intent = new Intent(MainActivity.this, Variation.class);
-        startActivity(intent);
-    }
 
     //////////// Onclick method for new variation table /////////////1
     public void sendNewVariationPage(View view){
