@@ -23,7 +23,7 @@ import android.widget.Toast;
 
 public class PrivateActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
     ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;;
-    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn;
+    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,backtolobby;
     PopupWindow popupWindow,infopopupWindow,chatpopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow;
     Button msgbtn,blockbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
@@ -66,6 +66,7 @@ public class PrivateActivity extends AppCompatActivity implements View.OnClickLi
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
                 closebtn = (TextView) customView.findViewById(R.id.close);
+                backtolobby=customView.findViewById(R.id.backtolobby);
 
                 //instantiate popup window
                 popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -78,6 +79,15 @@ public class PrivateActivity extends AppCompatActivity implements View.OnClickLi
                     @Override
                     public void onClick(View v) {
                         popupWindow.dismiss();
+                    }
+                });
+
+                backtolobby.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(PrivateActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 });
             }
@@ -363,6 +373,7 @@ public class PrivateActivity extends AppCompatActivity implements View.OnClickLi
         View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
         closebtn = (TextView) customView.findViewById(R.id.close);
+        backtolobby=customView.findViewById(R.id.backtolobby);
 
         //instantiate popup window
         popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -375,6 +386,14 @@ public class PrivateActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onClick(View v) {
                 popupWindow.dismiss();
+            }
+        });
+        backtolobby.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PrivateActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

@@ -47,7 +47,7 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnD
 
 
     ImageView closeleadleader321,leaderboard321,closeTrophyBtn,handle_right, backbtn,infobtn,infoclosebtn,chat321,chatclosebtn,chatclosebtn2,themebtn,themeclosebtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;
-    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond;
+    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond,backtolobby;
     PopupWindow threetwooneleadboardpopupWindow,TrophypopupWindow,popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow;
     Button msgbtn,blockbtn,cards321shifterbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3,RelativeLayoutloader;
@@ -102,7 +102,7 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnD
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
                 closebtn = customView.findViewById(R.id.close);
-
+                backtolobby=customView.findViewById(R.id.backtolobby);
                 //instantiate popup window
                 popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
 
@@ -114,6 +114,15 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnD
                     @Override
                     public void onClick(View v) {
                         popupWindow.dismiss();
+                    }
+                });
+
+                backtolobby.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(ThreetwooneTournament.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 });
             }
@@ -481,6 +490,7 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnD
         View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
         closebtn = (TextView) customView.findViewById(R.id.close);
+        backtolobby=customView.findViewById(R.id.backtolobby);
 
         //instantiate popup window
         popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -495,16 +505,16 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnD
                 popupWindow.dismiss();
             }
         });
-    }
 
 
-    /////////// Onclick for Backtolobby /////////////
-
-    public void backtolobby(View view)
-    {
-        Intent intent = new Intent(ThreetwooneTournament.this, MainActivity.class);
-        startActivity(intent);
-        finish();
+        backtolobby.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ThreetwooneTournament.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 

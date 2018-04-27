@@ -588,8 +588,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             ak47info_layout.clearAnimation();
                             joker_img.setImageDrawable(getResources().getDrawable(R.drawable.q));
 
-                            xboot_info_layout.clearAnimation();
-                            xboot_img.setImageDrawable(getResources().getDrawable(R.drawable.q));
+//                            xboot_info_layout.clearAnimation();
+//                            xboot_img.setImageDrawable(getResources().getDrawable(R.drawable.q));
 
                             ak47info_layout.setVisibility(View.VISIBLE);
                             jokerinfo_layout.setVisibility(View.INVISIBLE);
@@ -845,7 +845,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.mainychips:
                 startActivity(new Intent(MainActivity.this, LoadingScreen_teenpatti.class));
                 finish();
@@ -861,6 +861,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 finish();
                 break;
         }
+    }
 
 
     //////////// Onclick method for new variation table /////////////1
