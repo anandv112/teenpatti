@@ -476,6 +476,7 @@ public class Variation extends AppCompatActivity implements View.OnClickListener
     {
         Intent intent = new Intent(Variation.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
 

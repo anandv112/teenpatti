@@ -31,7 +31,7 @@ import java.util.Collections;
 
 public class SixPatti extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
     ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,closebtnsixpattileadboard,leaderboardsixpattibtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;;
-    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond,sortbtn,gobtn;
+    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond,sortbtn,gobtn,backtolobby;
     PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow,sixpattileadboardpopupWindow;
     Button msgbtn,blockbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
@@ -46,6 +46,8 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
     int value3=0;
     int value4=0;
     int value5=0;
+
+    ArrayList<String> selectedCardArray=new ArrayList<String>();
 
     RelativeLayout playerbg2relativeLayout,rl_myplayer;
 
@@ -100,6 +102,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     animation.setFillAfter(true);
                     card1.startAnimation(animation);
                     value = 1;
+                    selectedCardArray.add("value");
                     return;
                 }
                 if (value==1)
@@ -109,6 +112,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     animation1.setFillAfter(true);
                     card1.startAnimation(animation1);
                     value=0;
+                    selectedCardArray.remove("value");
                     return;
                 }
             }
@@ -124,6 +128,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     animation2.setFillAfter(true);
                     card2.startAnimation(animation2);
                     value1 = 1;
+                    selectedCardArray.add("value1");
                     return;
                 }
                 if (value1==1)
@@ -133,6 +138,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     animation3.setFillAfter(true);
                     card2.startAnimation(animation3);
                     value1=0;
+                    selectedCardArray.remove("value1");
                     return;
                 }
             }
@@ -148,6 +154,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     animation4.setFillAfter(true);
                     card3.startAnimation(animation4);
                     value2= 1;
+                    selectedCardArray.add("value2");
                     return;
                 }
                 if (value2==1)
@@ -157,6 +164,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     animation5.setFillAfter(true);
                     card3.startAnimation(animation5);
                     value2=0;
+                    selectedCardArray.remove("value2");
                     return;
                 }
             }
@@ -172,6 +180,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     animation6.setFillAfter(true);
                     card4.startAnimation(animation6);
                     value3= 1;
+                    selectedCardArray.add("value3");
                     return;
                 }
                 if (value3==1)
@@ -181,6 +190,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     animation7.setFillAfter(true);
                     card4.startAnimation(animation7);
                     value3=0;
+                    selectedCardArray.remove("value3");
                     return;
                 }
             }
@@ -196,6 +206,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     animation8.setFillAfter(true);
                     card5.startAnimation(animation8);
                     value4= 1;
+                    selectedCardArray.add("value4");
                     return;
                 }
                 if (value4==1)
@@ -205,6 +216,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     animation9.setFillAfter(true);
                     card5.startAnimation(animation9);
                     value4=0;
+                    selectedCardArray.remove("value4");
                     return;
                 }
             }
@@ -220,6 +232,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     animation10.setFillAfter(true);
                     card6.startAnimation(animation10);
                     value5= 1;
+                    selectedCardArray.add("value5");
                     return;
                 }
                 if (value5==1)
@@ -229,6 +242,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     animation11.setFillAfter(true);
                     card6.startAnimation(animation11);
                     value5=0;
+                    selectedCardArray.remove("value5");
                     return;
                 }
             }
@@ -265,34 +279,175 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                 animations.setDuration(100);  // animation duration
                 animations.setFillAfter(true);
                 //animation.setFillAfter(true);
-                card1.startAnimation(animations);
-                card2.startAnimation(animations);
-                card3.startAnimation(animations);
-
-                if(gobtn.getVisibility()==View.VISIBLE) {
-                    gobtn.setVisibility(View.GONE);
-
+               if(selectedCardArray.size()==3){
+                    if(selectedCardArray.get(0).equalsIgnoreCase("value")){
+                        card1.startAnimation(animations);
+                        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card1.getLayoutParams();
+                        params.setMargins(-100, 0, 0, 50);
+                        params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                        params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                        card1.setLayoutParams(params);
+                        card1.setRotation(-30.0f);
+                    }
+                    if(selectedCardArray.get(0).equalsIgnoreCase("value1")){
+                        card2.startAnimation(animations);
+                        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card2.getLayoutParams();
+                        params.setMargins(-100, 0, 0, 50);
+                        params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                        params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                        card2.setLayoutParams(params);
+                        card2.setRotation(-30.0f);
+                    }
+                    if(selectedCardArray.get(0).equalsIgnoreCase("value2")){
+                        card3.startAnimation(animations);
+                        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card3.getLayoutParams();
+                        params.setMargins(-100, 0, 0, 50);
+                        params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                        params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                        card3.setLayoutParams(params);
+                        card3.setRotation(-30.0f);
+                    }
+                    if(selectedCardArray.get(0).equalsIgnoreCase("value3")){
+                        card4.startAnimation(animations);
+                        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card4.getLayoutParams();
+                        params.setMargins(-100, 0, 0, 50);
+                        params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                        params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                        card4.setLayoutParams(params);
+                        card4.setRotation(-30.0f);
+                    }
+                    if(selectedCardArray.get(0).equalsIgnoreCase("value4")){
+                        card5.startAnimation(animations);
+                        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card5.getLayoutParams();
+                        params.setMargins(-100, 0, 0, 50);
+                        params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                        params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                        card5.setLayoutParams(params);
+                        card5.setRotation(-30.0f);
+                    }
+                    if(selectedCardArray.get(0).equalsIgnoreCase("value5")){
+                        card6.startAnimation(animations);
+                        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card6.getLayoutParams();
+                        params.setMargins(-100, 0, 0, 50);
+                        params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                        params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                        card6.setLayoutParams(params);
+                        card6.setRotation(-30.0f);
+                    }
+                if(selectedCardArray.get(1).equalsIgnoreCase("value")){
+                    card1.startAnimation(animations);
                     RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card1.getLayoutParams();
-                    params.setMargins(-100, 0, 0, 50);
+                    params.setMargins(-80, 0, 0, 50);
                     params.addRule(RelativeLayout.CENTER_IN_PARENT);
                     params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
                     card1.setLayoutParams(params);
-                    card1.setRotation(-30.0f);
-
-                    RelativeLayout.LayoutParams params2 = (RelativeLayout.LayoutParams) card2.getLayoutParams();
-                    params2.setMargins(-80, 0, 0, 50);
-                    params2.addRule(RelativeLayout.CENTER_IN_PARENT);
-                    params2.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
-                    card2.setLayoutParams(params2);
+                    card1.setRotation(-10.0f);
+                }
+                if(selectedCardArray.get(1).equalsIgnoreCase("value1")){
+                    card2.startAnimation(animations);
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card2.getLayoutParams();
+                    params.setMargins(-80, 0, 0, 50);
+                    params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card2.setLayoutParams(params);
                     card2.setRotation(-10.0f);
+                }
+                if(selectedCardArray.get(1).equalsIgnoreCase("value2")){
+                    card3.startAnimation(animations);
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card3.getLayoutParams();
+                    params.setMargins(-80, 0, 0, 50);
+                    params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card3.setLayoutParams(params);
+                    card3.setRotation(-10.0f);
+                }
+                if(selectedCardArray.get(1).equalsIgnoreCase("value3")){
+                    card4.startAnimation(animations);
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card4.getLayoutParams();
+                    params.setMargins(-80, 0, 0, 50);
+                    params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card4.setLayoutParams(params);
+                    card4.setRotation(-10.0f);
+                }
+                if(selectedCardArray.get(1).equalsIgnoreCase("value4")){
+                    card5.startAnimation(animations);
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card5.getLayoutParams();
+                    params.setMargins(-80, 0, 0, 50);
+                    params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card5.setLayoutParams(params);
+                    card5.setRotation(-10.0f);
+                }
+                if(selectedCardArray.get(1).equalsIgnoreCase("value5")){
+                    card6.startAnimation(animations);
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card6.getLayoutParams();
+                    params.setMargins(-80, 0, 0, 50);
+                    params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card6.setLayoutParams(params);
+                    card6.setRotation(-10.0f);
+                }
 
-                    RelativeLayout.LayoutParams params3 = (RelativeLayout.LayoutParams) card3.getLayoutParams();
-                    params3.setMargins(-60, 0, 0, 30);
-                    params3.addRule(RelativeLayout.CENTER_IN_PARENT);
-                    params3.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
-                    card3.setLayoutParams(params2);
+                if(selectedCardArray.get(2).equalsIgnoreCase("value")){
+                    card1.startAnimation(animations);
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card1.getLayoutParams();
+                    params.setMargins(-60, 0, 0, 50);
+                    params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card1.setLayoutParams(params);
+                    card1.setRotation(10.0f);
+                }
+                if(selectedCardArray.get(2).equalsIgnoreCase("value1")){
+                    card2.startAnimation(animations);
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card2.getLayoutParams();
+                    params.setMargins(-60, 0, 0, 50);
+                    params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card2.setLayoutParams(params);
+                    card2.setRotation(10.0f);
+                }
+                if(selectedCardArray.get(2).equalsIgnoreCase("value2")){
+                    card3.startAnimation(animations);
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card3.getLayoutParams();
+                    params.setMargins(-60, 0, 0, 50);
+                    params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card3.setLayoutParams(params);
                     card3.setRotation(10.0f);
                 }
+                if(selectedCardArray.get(2).equalsIgnoreCase("value3")){
+                    card4.startAnimation(animations);
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card4.getLayoutParams();
+                    params.setMargins(-60, 0, 0, 50);
+                    params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card4.setLayoutParams(params);
+                    card4.setRotation(10.0f);
+                }
+                if(selectedCardArray.get(2).equalsIgnoreCase("value4")){
+                    card5.startAnimation(animations);
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card5.getLayoutParams();
+                    params.setMargins(-60, 0, 0, 50);
+                    params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card5.setLayoutParams(params);
+                    card5.setRotation(10.0f);
+                }
+                if(selectedCardArray.get(2).equalsIgnoreCase("value5")){
+                    card6.startAnimation(animations);
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) card6.getLayoutParams();
+                    params.setMargins(-60, 0, 0, 50);
+                    params.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    params.addRule(RelativeLayout.RIGHT_OF, R.id.rl_myplayer);
+                    card6.setLayoutParams(params);
+                    card6.setRotation(10.0f);
+                }
+                            gobtn.setVisibility(View.GONE);
+                    }
+                    else {
+                        Toast.makeText(SixPatti.this, "Only 3 cards", Toast.LENGTH_SHORT).show();
+                    }
             }
         });
         //////////////// Popup for Backbutton ///////////////////
@@ -308,6 +463,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
                 closebtn = (TextView) customView.findViewById(R.id.close);
+                backtolobby=(TextView) customView.findViewById(R.id.backtolobby);
 
                 //instantiate popup window
                 popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -320,6 +476,14 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     @Override
                     public void onClick(View v) {
                         popupWindow.dismiss();
+                    }
+                });
+
+                backtolobby.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(SixPatti.this, MainActivity.class));
+                        finish();
                     }
                 });
             }
@@ -638,6 +802,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
         closebtn = (TextView) customView.findViewById(R.id.close);
+        backtolobby=(TextView) customView.findViewById(R.id.backtolobby);
 
         //instantiate popup window
         popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -653,18 +818,14 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             }
         });
 
-    }
+        backtolobby.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SixPatti.this, MainActivity.class));
+                finish();
+            }
+        });
 
-
-
-
-
-    /////////// Onclick for Backtolobby /////////////
-
-    public void backtolobby(View view)
-    {
-        Intent intent = new Intent(SixPatti.this, MainActivity.class);
-        startActivity(intent);
     }
 
 

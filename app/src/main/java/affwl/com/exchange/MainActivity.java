@@ -3,6 +3,7 @@ package affwl.com.exchange;
 import android.annotation.SuppressLint;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,6 +17,7 @@ import android.util.Base64;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -30,7 +32,7 @@ import android.widget.Toast;
 import android.app.Dialog;
 import android.app.DialogFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     ImageView showPopupBtn, closeRateus, closeHelpBtn, closeTrophyBtn,profile,orangechipsbtn,close312help,closesixpattihelp,short321info,tourney_shortinfo_closebtn,shortsixpattiinfo,bluechipsbtn,cyanchipsbtn,shortinfo_tourney,tourney_join_closebtn,ygreenchipsbtn,closebtn_create_table,mainlimegchipsbtn,variation_closebtn,share_loader,facebook,whatsapp,general;
     PopupWindow RateuspopupWindow, HelpUspopupWindow, TrophypopupWindow, tounpopupWindow,howto321popup,sixpattipopup,howtosixpattipopup,join_tourney_popupWindow,shortinfo_tourney_popupwindow,create_table_private_popupwindow,join_table_popupwindow;
@@ -40,9 +42,14 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout jokerlayout_btn,jokerinfo_layout,ak47_layout_btn,ak47info_layout,xboot_layout_btn,xboot_info_layout;
     ImageView joker_img,ak_img,xboot_img;
 
+
     int value=0;
     int value1=0;
     int value2=0;
+
+    ImageView mainychips,mainlimegchips,blackchips;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +63,16 @@ public class MainActivity extends AppCompatActivity {
         profile=findViewById(R.id.profile);
         nametext=findViewById(R.id.nametext);
         share_loader=findViewById(R.id.share_loader);
+
+        mainychips=findViewById(R.id.mainychips);
+        mainychips.setOnClickListener(this);
+
+        mainlimegchips=findViewById(R.id.mainlimegchips);
+        mainlimegchips.setOnClickListener(this);
+
+        blackchips=findViewById(R.id.blackchips);
+        blackchips.setOnClickListener(this);
+
         code=findViewById(R.id.code);
         session=new Session(this);
         String encodedimage=session.getImage();
@@ -309,6 +326,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(MainActivity.this, LoadingScreen_sixpatti.class);
                         startActivity(intent);
+                        finish();
                     }
                 });
             }
@@ -372,6 +390,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(MainActivity.this, LoadingScreen_tourney.class);
                         startActivity(intent);
+                        finish();
                     }
                 });
             }
@@ -438,6 +457,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(MainActivity.this, LoadingScreen_tourney.class);
                         startActivity(intent);
+                        finish();
                     }
                 });
             }
@@ -769,17 +789,85 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //////////// Onclick method for teenpatti table /////////////
-    public void sendTeenpattiPage(View view)
-    {
-        Intent intent = new Intent(MainActivity.this, LoadingScreen_teenpatti.class);
-        startActivity(intent);
-    }
+
+
+
+
+    @Override
+    public void onBackPressed() {
+            displayExitAlert("Alert","Do you want to Exit?");
+        }
+
+    private void displayExitAlert(String title, String message) {
+
+            TextView tv_alert_ok,tv_alert_title,tv_alert_message,tv_alert_cancel;
+            ImageView alert_box_close;
+
+            final Dialog myAlertDialog = new Dialog(this);
+            myAlertDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            myAlertDialog.setCanceledOnTouchOutside(false);
+            myAlertDialog.setContentView(R.layout.alert_box);
+
+            tv_alert_ok = myAlertDialog.findViewById(R.id.tv_alert_ok);
+            tv_alert_cancel=myAlertDialog.findViewById(R.id.tv_alert_cancel);
+            alert_box_close=myAlertDialog.findViewById(R.id.alert_box_close);
+            tv_alert_title=myAlertDialog.findViewById(R.id.tv_alert_title);
+            tv_alert_message=myAlertDialog.findViewById(R.id.tv_alert_message);
+
+            tv_alert_title.setText(title);
+            tv_alert_message.setText(message);
+            tv_alert_ok.setText("Yes");
+            tv_alert_cancel.setText("No");
+
+            alert_box_close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    myAlertDialog.dismiss();
+                }
+            });
+
+            tv_alert_ok.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    System.exit(0);
+                }
+            });
+
+            tv_alert_cancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    myAlertDialog.dismiss();
+                }
+            });
+            myAlertDialog.show();
+
+        }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.mainychips:
+                startActivity(new Intent(MainActivity.this, LoadingScreen_teenpatti.class));
+                finish();
+                break;
+
+            case R.id.mainlimegchips:
+                startActivity(new Intent(MainActivity.this, Variation.class));
+                finish();
+                break;
+
+            case R.id.blackchips:
+                startActivity(new Intent(MainActivity.this, NewVariationActivity.class));
+                finish();
+                break;
+        }
 
 
     //////////// Onclick method for new variation table /////////////1
     public void sendNewVariationPage(View view){
         Intent intent = new Intent(MainActivity.this, LoadingScreen_new_variation.class);
         startActivity(intent);
+
     }
 }
 

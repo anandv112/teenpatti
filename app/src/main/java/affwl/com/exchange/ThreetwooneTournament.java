@@ -504,6 +504,7 @@ public class ThreetwooneTournament extends AppCompatActivity implements View.OnD
     {
         Intent intent = new Intent(ThreetwooneTournament.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
 

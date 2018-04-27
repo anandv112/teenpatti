@@ -29,8 +29,8 @@ public class LoadingScreen_teenpatti extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                finish();
                 startActivity(new Intent(LoadingScreen_teenpatti.this, TeenpattiActivity.class));
+                finish();
 
             }
 
@@ -51,8 +51,9 @@ public class LoadingScreen_teenpatti extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation myanim) {
-                finish();
                 startActivity(new Intent(LoadingScreen_teenpatti.this, TeenpattiActivity.class));
+                finish();
+
             }
 
             @Override
