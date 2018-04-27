@@ -39,7 +39,6 @@
             android:gravity="center"
             android:paddingLeft="20dp"
             android:text="@string/play"
-            android:onClick="sendMessage"
             android:textColor="#ffffff"/>
 
         <LinearLayout

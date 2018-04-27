@@ -54,6 +54,7 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
         choosepic=findViewById(R.id.choosepic);
         nametext=findViewById(R.id.nametext);
         login=findViewById(R.id.login);
+
         avatar1.setOnClickListener(this);
         avatar2.setOnClickListener(this);
         avatar3.setOnClickListener(this);
@@ -168,6 +169,7 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
                     //intent.putExtra("img",bmp);
                     //db.execSQL("insert into User id,image,name values " + "(" + 1 +"," + "" + ","  + String.valueOf(nametext.getText()) + ")");
                     startActivity(intent);
+                    finish();
                     Toast.makeText(this, String.valueOf(bmp), Toast.LENGTH_SHORT).show();
                 }
             }
@@ -176,7 +178,7 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
 
     private void displayAlertMessage(String title, String message) {
 
-            TextView tv_alert_ok,tv_alert_title,tv_alert_message;
+            TextView tv_alert_ok,tv_alert_title,tv_alert_message,tv_alert_cancel;
             ImageView alert_box_close;
 
             final Dialog myAlertDialog = new Dialog(this);
@@ -185,6 +187,7 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
             myAlertDialog.setContentView(R.layout.alert_box);
 
         tv_alert_ok = myAlertDialog.findViewById(R.id.tv_alert_ok);
+        tv_alert_cancel=myAlertDialog.findViewById(R.id.tv_alert_cancel);
         alert_box_close=myAlertDialog.findViewById(R.id.alert_box_close);
         tv_alert_title=myAlertDialog.findViewById(R.id.tv_alert_title);
         tv_alert_message=myAlertDialog.findViewById(R.id.tv_alert_message);
@@ -206,6 +209,8 @@ public class PlayasguestActivity extends AppCompatActivity implements View.OnCli
                 myAlertDialog.dismiss();
             }
         });
+
+        tv_alert_cancel.setVisibility(View.GONE);
             myAlertDialog.show();
 
     }

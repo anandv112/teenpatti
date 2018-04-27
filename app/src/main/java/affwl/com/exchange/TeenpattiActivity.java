@@ -387,6 +387,7 @@ public class TeenpattiActivity extends AppCompatActivity implements View.OnClick
     {
         Intent intent = new Intent(TeenpattiActivity.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
 

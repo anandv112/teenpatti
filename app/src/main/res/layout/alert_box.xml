@@ -69,5 +69,19 @@
             android:textColor="@color/colorBlack"
             android:layout_centerHorizontal="true"/>
 
+        <TextView
+            android:id="@+id/tv_alert_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_alert_ok"
+            android:background="@drawable/greenbtnbgcolor"
+            android:text="Cancel"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:layout_margin="10dp"
+            android:textColor="@color/colorBlack"
+            android:layout_centerHorizontal="true"/>
+
+
     </RelativeLayout>
 </RelativeLayout>

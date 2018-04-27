@@ -31,7 +31,7 @@ import java.util.Collections;
 
 public class SixPatti extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
     ImageView handle_right, backbtn,infobtn,infoclosebtn,chatbtn,chatclosebtn,chatclosebtn2,closebtnsixpattileadboard,leaderboardsixpattibtn,myplayerbtn,ustatusclosebtn,dealerbtn,dealerclsbtn,oplayerbtn,oustatusclosebtn,msgclosebtn,chngdealerclosebtn;;
-    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond,sortbtn,gobtn;
+    TextView closebtn,tipsbtn,chngdbtn,canceltipbtn,plusbtn,minusbtn,txtTimerSecond,sortbtn,gobtn,backtolobby;
     PopupWindow popupWindow,infopopupWindow,chatpopupWindow,themepopupWindow,ustatuspopupWindow,dealerpopupWindow,oustatuspopupWindow,sendmsgpopupWindow,chngdpopupWindow,sixpattileadboardpopupWindow;
     Button msgbtn,blockbtn;
     RelativeLayout relativeLayout,relativeLayout2,relativeLayout3;
@@ -463,6 +463,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                 View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
                 closebtn = (TextView) customView.findViewById(R.id.close);
+                backtolobby=(TextView) customView.findViewById(R.id.backtolobby);
 
                 //instantiate popup window
                 popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -475,6 +476,14 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
                     @Override
                     public void onClick(View v) {
                         popupWindow.dismiss();
+                    }
+                });
+
+                backtolobby.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(SixPatti.this, MainActivity.class));
+                        finish();
                     }
                 });
             }
@@ -793,6 +802,7 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
         View customView = layoutInflater.inflate(R.layout.backbutton_popup, null);
 
         closebtn = (TextView) customView.findViewById(R.id.close);
+        backtolobby=(TextView) customView.findViewById(R.id.backtolobby);
 
         //instantiate popup window
         popupWindow = new PopupWindow(customView, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -808,18 +818,14 @@ public class SixPatti extends AppCompatActivity implements View.OnClickListener,
             }
         });
 
-    }
+        backtolobby.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SixPatti.this, MainActivity.class));
+                finish();
+            }
+        });
 
-
-
-
-
-    /////////// Onclick for Backtolobby /////////////
-
-    public void backtolobby(View view)
-    {
-        Intent intent = new Intent(SixPatti.this, MainActivity.class);
-        startActivity(intent);
     }
 
 
