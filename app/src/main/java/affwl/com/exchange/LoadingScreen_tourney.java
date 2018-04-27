@@ -25,8 +25,8 @@ public class LoadingScreen_tourney extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                finish();
                 startActivity(new Intent(LoadingScreen_tourney.this, TourneyActivity.class));
+                finish();
 
             }
 
@@ -47,8 +47,9 @@ public class LoadingScreen_tourney extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation myanim) {
-                finish();
                 startActivity(new Intent(LoadingScreen_tourney.this, TourneyActivity.class));
+                finish();
+
             }
 
             @Override

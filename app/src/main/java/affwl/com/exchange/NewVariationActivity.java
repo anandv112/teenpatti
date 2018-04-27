@@ -461,6 +461,7 @@ public class NewVariationActivity extends AppCompatActivity implements View.OnCl
     {
         Intent intent = new Intent(NewVariationActivity.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
 

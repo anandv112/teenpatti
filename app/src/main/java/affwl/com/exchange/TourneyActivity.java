@@ -427,6 +427,7 @@ public class TourneyActivity extends AppCompatActivity implements View.OnClickLi
     {
         Intent intent = new Intent(TourneyActivity.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
 

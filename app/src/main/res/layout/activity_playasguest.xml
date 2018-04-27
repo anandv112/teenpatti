@@ -138,6 +138,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="6dp"
                     android:id="@+id/avatarimage"
+                    android:src="@drawable/avatar1"
                     android:layout_gravity="center"/>
             </FrameLayout>
             <EditText
